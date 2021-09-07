@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+// its connected
 const db = require('./db/db');
 require("dotenv").config();
 
