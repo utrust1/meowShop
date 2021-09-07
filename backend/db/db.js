@@ -8,6 +8,8 @@ const options = {
 	useFindAndModify: false,
 };
 
+DB_URI = process.env.DB_URI
+
 // connecting mongoose
 mongoose.connect(process.env.DB_URI, options).then(
 	() => {
