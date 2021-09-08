@@ -24,4 +24,4 @@ const createNewUser = (req, res) => {
     });
 };
 
-module.exports = createNewUser;
+module.exports = {createNewUser};
