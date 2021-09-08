@@ -1,12 +1,16 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-// its done 
 const usersModel = new mongoose.Schema({
-  firstName: { type: String , required: true },
-  lastName: { type: String , required: true  },
-  age: { type: Number , required: true  },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  age: { type: Number, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+});
+
+usersModle.pre("save", async function () {
+  this.email = this.email.toLowerCase();
+  this.password = await bcrypt.hash(this.password, 7);
 });
 
 module.exports = mongoose.model("User", usersModel);
