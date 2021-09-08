@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
 // its done 
 const usersModel = new mongoose.Schema({
   firstName: { type: String , required: true },
@@ -12,11 +11,6 @@ const usersModel = new mongoose.Schema({
 });
 
 
-usersModle.pre("save", async function () {
-    this.email = this.email.toLowerCase();
-    this.password = await bcrypt.hash(this.password, 7);
-  });
-  
 module.exports = mongoose.model("User", usersModel);
 
 
