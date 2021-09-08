@@ -21,6 +21,7 @@ const productRouter = require("./routers/routes/product")
 
 app.use(cors());
 
+
 //app routers
 app.use("/users" , usersRouter)
 app.use('/cart', cartRouter)
