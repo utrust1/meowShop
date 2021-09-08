@@ -14,12 +14,12 @@ const createNewUser = (req, res) => {
     .save()
     .then((result) => {
       res
-        .status(200)
+        .status(201)
         .json({ success: true, message: "Success user added", result: result });
     })
     .catch((err) => {
       res
-        .status(200)
+        .status(201)
         .json({ success: false, message: "this email already exist" });
     });
 };
