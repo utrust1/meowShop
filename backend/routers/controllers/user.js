@@ -19,7 +19,7 @@ const createNewUser = (req, res) => {
     })
     .catch((err) => {
       res
-        .status(201)
+        .status(409)
         .json({ success: false, message: "this email already exist" });
     });
 };
