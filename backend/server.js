@@ -11,6 +11,8 @@ app.use(express.json());
 //routers
 
 const usersRouter = require("./routers/routes/user")
+const productRouter = require("./routers/routes/products");
+
 
 //built-in middleware
 
@@ -19,9 +21,10 @@ const usersRouter = require("./routers/routes/user")
 app.use(cors());
 
 //app routers
-app.use("/users" , usersRouter)
+app.use("/users", usersRouter)
+app.use("/products", productRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-	console.log(`Server On ${PORT}`);
+    console.log(`Server On ${PORT}`);
 });
