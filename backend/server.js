@@ -11,6 +11,7 @@ app.use(express.json());
 //routers
 
 const usersRouter = require("./routers/routes/user")
+const cartRouter = require('./routers/routes/cart')
 
 //built-in middleware
 
@@ -20,6 +21,7 @@ app.use(cors());
 
 //app routers
 app.use("/users" , usersRouter)
+app.use('/cart', cartRouter)
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
