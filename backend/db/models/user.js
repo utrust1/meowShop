@@ -8,7 +8,7 @@ const usersModel = new mongoose.Schema({
   password: { type: String, required: true },
 });
 
-usersModle.pre("save", async function () {
+usersModel.pre("save", async function () {
   this.email = this.email.toLowerCase();
   this.password = await bcrypt.hash(this.password, 7);
 });
