@@ -1,11 +1,8 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-
 
 const cartModel = new mongoose.Schema({
-    purchase: [{ type: mongoose.Schema.Types.ObjectId, ref: "product" }],
+    purchase: [{ type: mongoose.Schema.Types.ObjectId, ref: "product", required: true }],
     Date: { type: Date, required: true },
-    role: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
 });
 module.exports = mongoose.model("Cart", cartModel);
