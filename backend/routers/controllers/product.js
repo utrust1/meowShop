@@ -50,7 +50,23 @@ const getProductById = (req, res) => {
 
     })
 }
+
+const getProductByPrice = (req, res) => {
+    productModel.find({}).where("newprice").gt(1220).lt(2000).exec().then((result) => {
+        console.log('sdfsdfsdf');
+        const priceFound = {
+            success: true,
+            message: "all Prodact have the price ",
+            result: result
+        }
+        res.status(200);
+        res.json(priceFound);
+    }).catch((err) => {
+        throw err;
+    })
+}
 module.exports = {
     createNewProduct,
-    getProductById
+    getProductById,
+    getProductByPrice
 };
