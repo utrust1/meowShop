@@ -41,10 +41,15 @@ const getAllCart = (req, res) => {
            massage: ` All the carts`,
            products: products,
          });
+       }).catch((err)=>{
+        res.status(500).json({
+          success: false,
+          massage: ` Server Error `,
+        });
        })
        
    };
 
 
 
-module.exports = { CreateNewCart };
+module.exports = { CreateNewCart ,getAllCart};
