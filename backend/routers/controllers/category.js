@@ -43,8 +43,8 @@ const deleteCategoryById = (req, res) => {
         }
         res.json(filedDeleted);
     })
-
 }
+
 
 module.exports = {
     createNewCategory,
