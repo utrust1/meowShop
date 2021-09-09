@@ -15,6 +15,7 @@ const cartRouter = require('./routers/routes/cart')
 const wishListRouter = require("./routers/routes/wishlist")
 const productRouter = require("./routers/routes/product")
 const cartegoryRouter = require("./routers/routes/category")
+const loginRouter = require("./routers/routes/login")
 
 //built-in middleware
 
