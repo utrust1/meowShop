@@ -5,6 +5,6 @@ productRouter.post("/", createNewProduct);
 productRouter.get("/byprice", getProductByPrice)
 productRouter.get("/:id", getProductById)
 productRouter.put("/:id", updateProductById )
-productRouter.delete("",  )
+productRouter.delete("/id",  )
 
 module.exports = productRouter;
