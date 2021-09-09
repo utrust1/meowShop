@@ -9,7 +9,16 @@ try{
         })
     }
 
-
+    const token  = req.headers.authorization.split(" ").pop()
+ 
+jwt.verify(token , process.env.SECRET , (error , result)=>{
+    if(error){
+res.status(403).json({
+    success: false,
+    message: `The token is invalid or expired`,
+})
+    }
+})
 
 
 
