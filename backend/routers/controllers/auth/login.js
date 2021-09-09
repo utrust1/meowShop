@@ -7,8 +7,6 @@ const login = (req, res) => {
   const { email, password } = req.body;
   usersModel
     .findOne({ email })
-    .populate("User")
-    .exec()
     .then(async (result) => {
       if (!result) {
         return res
@@ -18,23 +16,20 @@ const login = (req, res) => {
       try {
         const valid = await bcrypt.compare(password, result.password);
         if (!valid) {
-          return res
-            .status(403)
-            .json({
-              success: false,
-              message: `The password you’ve entered is incorrect`,
-            });
-        }
-        const payload = { userId: result._id, firstName: result.firstName };
-        const options = { expiresIn: "7d" };
-        const token = await jwt.sign(payload, process.env.SECRET, options);
-        res
-          .json(200)
-          .json({
+          return res.status(403).json({
+            success: false,
+            message: `The password you’ve entered is incorrect`,
+          });
+        } else {
+          const payload = { userId: result._id, firstName: result.firstName };
+          const options = { expiresIn: "7d" };
+          const token = await jwt.sign(payload, process.env.SECRET, options);
+          res.status(200).json({
             success: true,
             message: `Email and Password are correct`,
             token: token,
           });
+        }
       } catch (error) {
         throw error;
       }
