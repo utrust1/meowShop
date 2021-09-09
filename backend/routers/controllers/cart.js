@@ -31,4 +31,20 @@ const CreateNewCart = (req, res) => {
         });
 };
 
+const getAllCart = (req, res) => {
+    cartModel
+       .find({})
+       .then((result) => {
+         res.status(200);
+         res.json({
+           success: true,
+           massage: ` All the carts`,
+           products: products,
+         });
+       })
+       
+   };
+
+
+
 module.exports = { CreateNewCart };
