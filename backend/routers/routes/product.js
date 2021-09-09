@@ -6,8 +6,5 @@ productRouter.get("/byprice", getProductByPrice)
 productRouter.get("/:id", getProductById)
 productRouter.put("/:id", updateProductById )
 productRouter.delete("/:id", deleteProductById )
-productRouter.get("/:category",getProductByCategory )
-
-
 
 module.exports = productRouter;
