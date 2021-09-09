@@ -32,7 +32,16 @@ const createNewProduct = (req, res) => {
 };
 
 const getAllProduct = (req, res) => {
- 
+  productModel
+    .find({})
+    .then((products) => {
+      res.status(200);
+      res.json({
+        success: true,
+        massage: ` All the products`,
+        products: products,
+      });
+    })
 };
 
 const getProductById = (req, res) => {
