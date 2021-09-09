@@ -68,7 +68,11 @@ const getProductByPrice = (req, res) => {
 
 const updateProductById = (req, res)=>{
     const _id = req.params.id
-    productModel.findByIdAndUpdate({})
+    productModel.findByIdAndUpdate(_id , req.body , {new : true}).then((result)=>{
+        if(!result){
+            res.status(404).json({success:true , message: `The Product => ${_id} not found`})
+        }
+    })
 }
 module.exports = {
     createNewProduct,
