@@ -138,6 +138,7 @@ const getProductByCategory = (req,res)=>{
     })
 }
 
+
 module.exports = {
     createNewProduct,
     getProductById,
