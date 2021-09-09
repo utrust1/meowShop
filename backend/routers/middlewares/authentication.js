@@ -17,17 +17,17 @@ res.status(403).json({
     success: false,
     message: `The token is invalid or expired`,
 })
-} else {
-    req.token = result
-    next()
-}
-
+} else {req.token = result ; next()} 
 
 })
-
-
-
+}
+catch(error){
+    res.status(500).json({
+        success: false,
+        message: `Server Error`
+    })
 
 }
+
 }
 
