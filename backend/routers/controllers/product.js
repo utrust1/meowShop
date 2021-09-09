@@ -31,6 +31,10 @@ const createNewProduct = (req, res) => {
         });
 };
 
+const getAllProduct = (req, res) => {
+ 
+};
+
 const getProductById = (req, res) => {
     id = req.params.id;
     productModel
