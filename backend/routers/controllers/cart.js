@@ -31,4 +31,25 @@ const CreateNewCart = (req, res) => {
         });
 };
 
-module.exports = { CreateNewCart };
+const getAllCart = (req, res) => {
+    cartModel
+       .find({})
+       .then((result) => {
+         res.status(200);
+         res.json({
+           success: true,
+           massage: ` All the carts`,
+           products: products,
+         });
+       }).catch((err)=>{
+        res.status(500).json({
+          success: false,
+          massage: ` Server Error `,
+        });
+       })
+       
+   };
+
+
+
+module.exports = { CreateNewCart ,getAllCart};
