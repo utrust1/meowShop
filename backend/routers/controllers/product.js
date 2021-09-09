@@ -100,7 +100,24 @@ const updateProductById = (req, res) => {
         });
 };
 
-
+const deleteProductById = (req, res) => {
+    id = req.params.id;
+    productModel.findByIdAndRemove({ _id: id }).then((deletebyId) => {
+        const deleted = {
+            success: true,
+            message: "success Delete product"
+        };
+        res.status(200);
+        res.json(deleted);
+    }).catch((err) => {
+        const filedDeleted = {
+            success: false,
+            message: `can't find id ===> ${id}`
+        }
+        res.status(500);
+        res.json(filedDeleted);
+    })
+}
 module.exports = {
     createNewProduct,
     getProductById,
