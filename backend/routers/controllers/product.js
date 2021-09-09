@@ -118,10 +118,31 @@ const deleteProductById = (req, res) => {
         res.json(filedDeleted);
     })
 }
+
+const getProductByCategory = (req,res)=>{
+
+    const category = req.params.category
+
+    productModel.find({category:category}).then((result)=>{
+        res.status(200).json({
+            success : true ,
+            massage : " All The Products ",
+            result : result
+        })
+    }).catch((error)=>{
+        console.log(error);
+       res.status(404).json({
+        success : true ,
+        massage : ` ${category} Not Found  `
+       })
+    })
+}
+
 module.exports = {
     createNewProduct,
     getProductById,
     getProductByPrice,
     updateProductById,
-    deleteProductById
+    deleteProductById,
+    getProductByCategory
 };
