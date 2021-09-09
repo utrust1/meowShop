@@ -15,6 +15,7 @@ const cartRouter = require('./routers/routes/cart')
 const wishListRouter = require("./routers/routes/wishlist")
 const productRouter = require("./routers/routes/product")
 const cartegoryRouter = require("./routers/routes/category")
+const loginRouter = require("./routers/routes/auth/login")
 
 //built-in middleware
 
@@ -29,6 +30,7 @@ app.use('/cart', cartRouter)
 app.use("/wishlist" , wishListRouter)
 app.use("/product" , productRouter )
 app.use("/category" , cartegoryRouter)
+app.use("/login", loginRouter)
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
