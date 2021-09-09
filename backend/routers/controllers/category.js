@@ -41,7 +41,9 @@ const deleteCategoryById = (req, res) => {
             success: false,
             message: `Error not found id ==> ${id}`
         }
+        res.json(filedDeleted);
     })
+
 }
 
 module.exports = {
