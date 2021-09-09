@@ -5,5 +5,7 @@ productRouter.post("/", createNewProduct);
 productRouter.get("/byprice", getProductByPrice)
 productRouter.get("/:id", getProductById)
 
+productRouter.delete("", )
+
 
 module.exports = productRouter;
