@@ -31,3 +31,4 @@ catch(error){
 
 }
 
+module.exports = authentication
