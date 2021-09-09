@@ -118,6 +118,7 @@ const deleteProductById = (req, res) => {
         res.json(filedDeleted);
     })
 }
+
 module.exports = {
     createNewProduct,
     getProductById,
