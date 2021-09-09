@@ -3,3 +3,5 @@ const { login } = require("../routes/auth/login")
 
 const loginRouter = express.Router();
 
+loginRouter.post("/", login);
+
