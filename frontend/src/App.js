@@ -4,9 +4,7 @@ import Navigation from './components/navigation';
 
 const App = () => {
 	return <div className="App">
-		<Navigation></Navigation>
-
-
+		<Navigation/>
 	</div>;
 };
 
