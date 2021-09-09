@@ -1,5 +1,5 @@
 const express = require("express");
-const { createNewProduct, getProductById, getProductByPrice, updateProductById, deleteProductById, getProductByCategory } = require("../controllers/product")
+const { createNewProduct, getAllProduct , getProductById, getProductByPrice, updateProductById, deleteProductById, getProductByCategory } = require("../controllers/product")
 const productRouter = express.Router();
 productRouter.post("/", createNewProduct);
 productRouter.get("/", )
