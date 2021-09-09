@@ -44,8 +44,6 @@ const deleteCategoryById = (req, res) => {
         res.json(filedDeleted);
     })
 }
-
-
 const updateCategoryById = (req, res) => {
     id = req.params.id;
     const { title, description } = req.body;
