@@ -1,8 +1,8 @@
 const express = require("express");
-const { createNewUser } = require("../controllers/user")
+const { createNewWishList } = require("../controllers/wishList")
 
 const wishListRouter = express.Router();
 
-wishListRouter.post("/", createNewUser);
+wishListRouter.post("/", createNewWishList);
 
 module.exports = wishListRouter;
