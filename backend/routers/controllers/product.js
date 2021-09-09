@@ -65,6 +65,11 @@ const getProductByPrice = (req, res) => {
         throw err;
     })
 }
+
+const updateProductById = (req, res)=>{
+    const _id = req.params.id
+    productModel.findByIdAndUpdate({})
+}
 module.exports = {
     createNewProduct,
     getProductById,
