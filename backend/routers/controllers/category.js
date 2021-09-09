@@ -41,10 +41,34 @@ const deleteCategoryById = (req, res) => {
             success: false,
             message: `Error not found id ==> ${id}`
         }
+        res.json(filedDeleted);
     })
 }
 
+
+const updateCategoryById = (req, res) => {
+    id = req.params.id;
+    const { title, description } = req.body;
+    categoryModel.findOneAndUpdate({ _id: id }, { title, description }).then((result) => {
+        const successUpdated = {
+            success: true,
+            message: `Success updated`,
+            output: result
+        }
+        res.status(200);
+        res.json(successUpdated);
+
+    }).catch((err) => {
+        const filedUpdated = {
+            success: false,
+            message: `not found id ==> ${id} for this category`
+        }
+        res.status(500);
+        res.json(filedUpdated);
+    })
+}
 module.exports = {
     createNewCategory,
-    deleteCategoryById
+    deleteCategoryById,
+    updateCategoryById
 };
