@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FaBeer } from 'react-icons/fa';
 import './main.css';
 
 const Main = () => {
