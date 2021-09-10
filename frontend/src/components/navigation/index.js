@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './navigation.css'
 
 const Navigation = () => {
-	return <div className="Navigation">
+	return <div className="container">
+	<div className='Navigation'> 
 		<p>logoname</p>
 		<div className='Searchbar'>
 			<input type='text' placeholder='what do you want'></input>
@@ -11,7 +12,7 @@ const Navigation = () => {
 		<div>
 		<Link to="/login" className='navlogin'>Login </Link>
 		<Link to="/cart" className='navcart'>cart </Link></div>
-		
+		</div>
 		 </div>;
 };
 
