@@ -2,11 +2,12 @@ const categoryModel = require("./../../db/models/category");
 
 
 const createNewCategory = (req, res) => {
-    const { title, description } = req.body;
+    const { title, description, img } = req.body;
 
     const newCategory = new categoryModel({
         title,
         description,
+        img,
     });
 
     newCategory

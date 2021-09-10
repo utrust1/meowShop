@@ -1,12 +1,12 @@
-
 header {
     background-image: url("https://images.pexels.com/photos/374894/pexels-photo-374894.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
-    height : calc(100vh - 63.33px);
+    height: calc(100vh - 63.33px);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
-.overlay {
+
+header .overlay {
     position: absolute;
     left: 0;
     top: 0;
@@ -38,12 +38,14 @@ header {
     text-transform: uppercase;
     color: #ffff;
 }
-.details-header button{
-    padding:10px;
+
+.details-header button {
+    padding: 10px;
     transition: 1.5s;
     border: none;
 }
-.details-header button:hover{
+
+.details-header button:hover {
     background-color: #3655b3;
     color: #ffff;
     padding: 10px 50px;
