@@ -19,12 +19,13 @@ const Main = () => {
 		{getCategory&&
 		getCategory.map((cate)=>{
 			return (
-				<div>
+				<div className = "categoryMain">
 					<img src={cate.img}></img>
-					<p>{cate.img}</p>
+					<div className = "titleforCategory">
 					<h2>{cate.title}</h2>
-					<p>{cate.description}</p>
 					<button>Shop Now</button>
+					</div>
+					
 				</div>
 				
 			)
