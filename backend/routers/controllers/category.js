@@ -65,8 +65,25 @@ const updateCategoryById = (req, res) => {
         res.json(filedUpdated);
     })
 }
+const getallCategory = (req, res) => {
+    categoryModel.find({}).then((result) => {
+        res.json({
+            success: true,
+            message: `All Category found `,
+            result: result
+        });
+        res.status(200);
+    }).catch((err) => {
+        res.status(500);
+        res.json({
+            success: false,
+            message: `Server Error`
+        });
+    })
+}
 module.exports = {
     createNewCategory,
     deleteCategoryById,
-    updateCategoryById
+    updateCategoryById,
+    getallCategory
 };
