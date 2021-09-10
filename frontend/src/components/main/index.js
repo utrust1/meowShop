@@ -20,6 +20,7 @@ const Main = () => {
 		getCategory.map((cate)=>{
 			return (
 				<div>
+					<img src={cate.img}></img>
 					<p>{cate.img}</p>
 					<h2>{cate.title}</h2>
 					<p>{cate.description}</p>
