@@ -12,6 +12,16 @@ const Main = () => {
         })
     }, []);
 
+
+	useEffect(() => {
+		axios.get(`http://localhost:5000/product`).then((res) => {
+			setGetProduct(res.data.products);
+			
+		}).catch((err) => {
+			console.log(err);
+		})
+	})
+
     const [getCategory, setGetCategory] = useState();
     const [getProduct, setGetProduct] = useState();
 
@@ -38,6 +48,14 @@ const Main = () => {
 
 
 			<div className='product-section'>
+				{getProduct&&
+				getProduct.map((product)=>{
+					return (
+						<div className = "productMain">
+							<img src={product.img}></img>
+						</div>
+					)
+				})}
 				
 			</div>
 
