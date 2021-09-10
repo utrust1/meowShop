@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import './main.css';
 
 const Main = () => {
@@ -29,10 +30,12 @@ const Main = () => {
 ///Get All Category 
     return <div className = "container" >
 		<h2>What We Have Collections  </h2>
+
 		<div className = "category-section">
 		{getCategory&&
 		getCategory.map((cate)=>{
 			return (
+				
 				<div className = "categoryMain">
 						<img src={cate.img}></img>
 						<div className = "titleforCategory">
@@ -44,7 +47,6 @@ const Main = () => {
 			)
 		})}
 			</div>
-
 
 
 			<div className='product-section'>
@@ -65,7 +67,6 @@ const Main = () => {
 				})}
 				
 			</div>
-
 		</div>;
 };
 
