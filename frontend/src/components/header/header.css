@@ -1,13 +1,11 @@
 
 header {
     background-image: url("https://images.pexels.com/photos/374894/pexels-photo-374894.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
-    height: 100vh;
-    /*75.78px*/
+    height : calc(100vh - 63.33px);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
-
 .overlay {
     position: absolute;
     left: 0;
@@ -31,10 +29,8 @@ header {
 .details-header h1 {
     font-size: 80px;
     text-transform: uppercase;
-    color: var(--mainColor);
 }
 
 .details-header p {
     font-size: 60px;
-    color: var(--secColor);
 }
