@@ -14,17 +14,18 @@ const Main = () => {
 
     const [getCategory, setGetCategory] = useState();
 
-    return <div className = "App" >
+    return <div className = "container" >
+		
+		<h2>What We Have Collections  </h2>
 		<div className = "category-section">
 		{getCategory&&
 		getCategory.map((cate)=>{
 			return (
 				<div className = "categoryMain">
-							
 						<img src={cate.img}></img>
 						<div className = "titleforCategory">
 						<h2>{cate.title}</h2>
-						<button>Shop Now</button>
+						<button className ='buttonCategory'>Shop Now</button>
 						</div>
 				</div>
 				
