@@ -53,6 +53,13 @@ const Main = () => {
 					return (
 						<div className = "productMain">
 							<img src={product.img}></img>
+							<div class='showdetails'>
+								<div className = "show-icon">
+									<span>add cart </span>
+									<span>show item </span>
+									<span>wishlist </span>
+								</div>
+							</div>
 						</div>
 					)
 				})}
