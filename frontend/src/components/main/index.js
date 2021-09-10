@@ -20,17 +20,17 @@ const Main = () => {
 		getCategory.map((cate)=>{
 			return (
 				<div className = "categoryMain">
-					<img src={cate.img}></img>
-					<div className = "titleforCategory">
-					<h2>{cate.title}</h2>
-					<button>Shop Now</button>
-					</div>
-					
+							
+						<img src={cate.img}></img>
+						<div className = "titleforCategory">
+						<h2>{cate.title}</h2>
+						<button>Shop Now</button>
+						</div>
 				</div>
 				
 			)
 		})}
-		</div>
+			</div>
 		</div>;
 };
 
