@@ -6,8 +6,8 @@
 
 @media only screen and (max-width: 992px) {
     .category-section {
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
     }
 }
 
