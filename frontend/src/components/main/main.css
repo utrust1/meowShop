@@ -13,10 +13,11 @@
 
 .categoryMain {
     position: relative;
+    margin: 10px;
 }
 
 .categoryMain img {
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .categoryMain .titleforCategory {
@@ -28,4 +29,13 @@
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+}
+
+.categoryMain h2 {
+    color: #ffff;
+}
+
+.buttonCategory {
+    padding: 10px;
+    border: none;
 }
