@@ -13,9 +13,11 @@ const Main = () => {
     }, []);
 
     const [getCategory, setGetCategory] = useState();
+    const [getProduct, setGetProduct] = useState();
 
+
+///Get All Category 
     return <div className = "container" >
-		
 		<h2>What We Have Collections  </h2>
 		<div className = "category-section">
 		{getCategory&&
@@ -32,6 +34,13 @@ const Main = () => {
 			)
 		})}
 			</div>
+
+
+
+			<div className='product-section'>
+				
+			</div>
+
 		</div>;
 };
 

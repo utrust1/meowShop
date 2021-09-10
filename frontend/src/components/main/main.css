@@ -11,6 +11,13 @@
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .category-section {
+        display: grid;
+        grid-template-columns: repeat(1, 2fr);
+    }
+}
+
 .categoryMain {
     position: relative;
     margin: 10px;
