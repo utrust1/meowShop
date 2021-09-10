@@ -14,16 +14,21 @@ const Main = () => {
 
     const [getCategory, setGetCategory] = useState();
 
-
-
-
     return <div className = "App" >
+		<div className = "category-section">
 		{getCategory&&
 		getCategory.map((cate)=>{
 			return (
-				<h1>{cate.title}</h1>
+				<div>
+					<p>{cate.img}</p>
+					<h2>{cate.title}</h2>
+					<p>{cate.description}</p>
+					<button>Shop Now</button>
+				</div>
+				
 			)
 		})}
+		</div>
 		</div>;
 };
 
