@@ -29,8 +29,22 @@ header {
 .details-header h1 {
     font-size: 80px;
     text-transform: uppercase;
+    color: #3655b3;
+    letter-spacing: 5px;
 }
 
 .details-header p {
-    font-size: 60px;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffff;
+}
+.details-header button{
+    padding:10px;
+    transition: 1.5s;
+    border: none;
+}
+.details-header button:hover{
+    background-color: #3655b3;
+    color: #ffff;
+    padding: 10px 50px;
 }

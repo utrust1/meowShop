@@ -6,14 +6,13 @@ const Header = () => {
 	   <header>
         <div class='overlay'>
             <div class='details-header'>
-                <h1>stone washed</h1>
-                <p>Faded in time for a timeless look</p>
-            </div>
-            <div class='icon-button'>
-			Hello
+                <h1>summer sale </h1>
+                <p>don't comppomise on style get falt 30% off for new arrivals</p>
+				<button> Shop Now </button>
             </div>
         </div>
     </header>
+	
 	
 	</div>;
 };
