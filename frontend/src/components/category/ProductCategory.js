@@ -1,8 +1,9 @@
 import React from 'react'
-const ProductCategory=({id})=> {
+const ProductCategory=(cate)=> {
     return (
         <div> 
-            <p>id : 222222 {id}</p>
+            <p>id : 222222 </p>
+            <h1></h1>
         </div>
     )
 }

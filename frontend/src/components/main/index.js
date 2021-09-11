@@ -32,9 +32,9 @@ const Main = () => {
 
 
 // event on the shopnow butthon inside the category 
-	const eventOnButton =(title)=>{
+	const eventOnButton =(title , cate  )=>{
 
-		<ProductCategory title={title}/>
+		<ProductCategory cate = {cate} />
 		history.push(`/category/${title}`);
 		
 }
@@ -52,7 +52,7 @@ const Main = () => {
 						<img src={cate.img}></img>
 						<div className = "titleforCategory">
 						<h2>{cate.title}</h2>
-						<button className ='buttonCategory' onClick={()=>eventOnButton(cate.title)}>Shop 1 Now</button>
+						<button className ='buttonCategory' onClick={()=>eventOnButton(cate.title , cate)}>Shop 1 Now</button>
 						</div>
 				</div>
 				
