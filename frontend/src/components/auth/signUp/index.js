@@ -16,13 +16,15 @@ const Register =()=> {
 
 
 
-   
+
      return (
-
-
-
-        <div>
-
+        <div   className = "Register">
+ <input></input>
+ <input></input>
+ <input></input>
+ <input></input>
+ <input></input>
+ <button></button>
 
 
             
