@@ -11,8 +11,8 @@ const Navigation = () => {
 			<input type='text' placeholder='what do you want ' className= "SearchBarInput"></input> 
 					<FaSearch className="searchIcon"/> 
 		</div>
-		<p> logoname  </p>
-	
+		<p > <img src="https://mylovely-pet.com/wp-content/uploads/2021/01/Logoheader.svg?1000"/> </p>
+	     
 		<div className="navbar">
 		<Link to="/Home" className='navLogin'>Home</Link>
 		<Link to="/login" className='navLogin'>Login</Link>
