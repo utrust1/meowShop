@@ -57,9 +57,9 @@ const Main = () => {
 							<img src={product.img}></img>
 							<div class='showdetails'>
 								<div className = "show-icon">
-									<span>add cart </span>
-									<span>show item </span>
-									<span>wishlist </span>
+									<p>add cart </p>
+									<p>show item </p>
+									<p>wishlist </p>
 								</div>
 							</div>
 						</div>
