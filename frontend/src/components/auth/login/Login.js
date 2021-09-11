@@ -6,24 +6,22 @@ import "./Login.css";
 
 
 const  Login =()=> {
- const [email , setEmail] = useState("")
-const [password , setPassword] = useState("")
-const[messege , setMessege] = useState("") 
+
+const [email , setEmail] = useState("")
+const  [password , setPassword] = useState("")
+const  [messege , setMessege] = useState("") 
 
 
 const buttonEvent = ()=>{
-
-    }
+axios.get(`http://localhost:5000/users/`, {email,password}).then((result)=>{
     
+})
+}
     
-    
-    
-    
-    
-    return (
+return (
         <div>
-            <input placeholder="" type="text" onChange={(e)=>{setEmail(e.target.value)}}></input>
-            <input placeholder="" type="text" onChange={(e)=>{setPassword(e.target.value)}}></input>
+            <input placeholder=" Your Mail" type="text" onChange={(e)=>{setEmail(e.target.value)}}></input>
+            <input placeholder="Your Password" type="text" onChange={(e)=>{setPassword(e.target.value)}}></input>
             <button type="submit" onClick={()=>{}}>Login </button>
             <div> {messege}</div>
         </div>
