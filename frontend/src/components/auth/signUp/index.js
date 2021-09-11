@@ -12,7 +12,7 @@ const Register =()=> {
    const [age , setAge] = useState("")
    const [email , setEmail] = useState("")
    const [password , setPassword] =  useState("")
-   
+   const[messege , setMessege] =  useState("")
    
 const registerationEventButton =()=>{
 axios.post(`http://localhost:5000/users/` , {firstName,
@@ -20,7 +20,11 @@ lastName,
 age,
 email,
 password
+}).then((result)=>{
+    console.log(result);
+
 })
+setMessege(" The user has been created successfully ")
 }
 
 
@@ -29,13 +33,13 @@ password
 
         <div   className = "Register">
 
- <input placeholder="firstName" onChange={(e)=>{setFirstName(e.target.value)}}></input>
- <input placeholder="lastName" onChange={(e)=>{setlastName(e.target.value)}}></input>
- <input placeholder="age" onChange={(e)=>{setAge(e.target.value)}}></input>
- <input placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}></input>
- <input placeholder="password" onChange={(e)=>{setPassword(e.target.value)}}></input>
- <button onClick={()=>{}}> Register </button>
-
+ <input placeholder="firstName"   type="text" onChange={(e)=>{setFirstName(e.target.value)}}></input>
+ <input placeholder="lastName"  type="text" onChange={(e)=>{setlastName(e.target.value)}}></input>
+ <input placeholder="age" type="number" onChange={(e)=>{setAge(e.target.value)}}></input>
+ <input placeholder="Example@gmail.com" type="text" onChange={(e)=>{setEmail(e.target.value)}}></input>
+ <input placeholder="password" type="" onChange={(e)=>{setPassword(e.target.value)}}></input>
+ <button onClick={()=>{registerationEventButton()}}> Register </button>
+<p>{messege}</p>
 
             
         </div>
