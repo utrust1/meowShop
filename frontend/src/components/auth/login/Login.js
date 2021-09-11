@@ -21,7 +21,9 @@ const  Login =()=> {
     
     return (
         <div>
-            
+            <input placeholder="" type="text" onChange={(e)=>{setEmail(e.target.value)}}></input>
+            <input placeholder="" type="text" onChange={(e)=>{setPassword(e.target.value)}}></input>
+            <button type="submit" >Login </button>
         </div>
     )
 }
