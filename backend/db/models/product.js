@@ -5,6 +5,7 @@ const productModel = new mongoose.Schema({
     newprice: { type: Number, required: true },
     oldPrice: { type: Number, required: true },
     quantity: { type: Number, required: true },
+    img: { type: String, required: true },
     category: { type: mongoose.Schema.Types.ObjectId, ref: "Category", required: true }
 });
 
