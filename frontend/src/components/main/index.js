@@ -62,9 +62,12 @@ const getallProducts = (id)=>{
 				<div className = "categoryMain">
 						<img src={cate.img}></img>
 						<div className = "titleforCategory">
-						<h2>{cate.title}</h2>
-						<button className ='buttonCategory' onClick={()=>eventOnButton(cate.title,cate._id )}>Shop 1 Now</button>
+							<div className = "categorycontact">
+							<h2>{cate.title}</h2>
+						<button className ='buttonCategory' onClick={()=>eventOnButton(cate.title,cate._id )}>Shop Now</button>
+							</div>
 						</div>
+						
 				</div>
 				
 			)
