@@ -5,6 +5,7 @@ import axios from 'axios';
 const ProductCategory=(props)=> {
     const fofo = props.toto
     const {id} = useParams()
+    /// tseting the params
     console.log("id done " , id);
        console.log("id done " , props.toto);
 	// useEffect(() => {
