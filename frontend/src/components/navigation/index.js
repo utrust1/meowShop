@@ -16,7 +16,7 @@ const Navigation = () => {
 		<div className="navbar">
 		<Link to="/Home" className='navLogin'>Home</Link>
 		<Link to="/login" className='navLogin'>Login</Link>
-		<Link to="/Regster" className='navRegister'>Register</Link>
+		<Link to="/Register" className='navRegister'>Register</Link>
 		<Link to="/cart" className='navcart'><FaShoppingCart/></Link></div>
 		<Link to='/ProductCategory'>category</Link>
 		</div>
