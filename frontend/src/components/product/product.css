@@ -1,0 +1,7 @@
+.ProductMain {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    flex-wrap: wrap;
+}
