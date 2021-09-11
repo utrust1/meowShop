@@ -45,7 +45,8 @@ const Main = () => {
 ///when you click button it's will get product using id
 
 const getallProducts = (id)=>{
-	console.log(id);
+	
+	history.push(`product/${id}`)
 }
 
 ///Get All Category 
