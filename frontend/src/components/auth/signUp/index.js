@@ -15,7 +15,12 @@ const Register =()=> {
    
    
 const registerationEventButton =()=>{
-axios.post()
+axios.post(`http://localhost:5000/users/` , {firstName,
+lastName,
+age,
+email,
+password
+})
 }
 
 
