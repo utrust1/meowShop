@@ -32,8 +32,12 @@ const Main = () => {
 
 
 // event on the shopnow butthon inside the category 
-	const eventOnButton =()=>{
-		history.push('/category')
+	const eventOnButton =(id)=>{
+
+		<ProductCategory id={id}/>
+
+		history.push('/category');
+		
 }
 ///Get All Category 
     return <div className = "container" >
@@ -48,7 +52,7 @@ const Main = () => {
 						<img src={cate.img}></img>
 						<div className = "titleforCategory">
 						<h2>{cate.title}</h2>
-						<button className ='buttonCategory' onClick={eventOnButton}>Shop Now</button>
+						<button className ='buttonCategory' onClick={()=>{eventOnButton(cate._id)}}>Shop Now</button>
 						</div>
 				</div>
 				
