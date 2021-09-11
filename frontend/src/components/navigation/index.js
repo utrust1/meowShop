@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navigation.css'
-import { IconName , FaBirthdayCake } from "react-icons/fa";
+import { IconName , FaBirthdayCake , AiOutlineShoppingCart} from "react-icons/fa";
 
 const Navigation = () => {
 	return <div className="container">
@@ -12,7 +12,7 @@ const Navigation = () => {
 		</div>
 		<div>
 		<Link to="/login" className='navlogin'>Login </Link>
-		<Link to="/cart" className='navcart'>cart </Link></div>
+		<Link to="/cart" className='navcart'> <AiOutlineShoppingCart/>cart </Link></div>
 		</div>
 		 </div>;
 };
