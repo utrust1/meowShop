@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import axios from 'axios';
-
 import './main.css';
+import ProductCategory from '../category/ProductCategory';
+
 
 const Main = () => {
 
@@ -25,8 +27,14 @@ const Main = () => {
 
     const [getCategory, setGetCategory] = useState();
     const [getProduct, setGetProduct] = useState();
+    const history = useHistory()
 
 
+
+// event on the shopnow butthon inside the category 
+	const eventOnButton =()=>{
+		history.push('/category')
+}
 ///Get All Category 
     return <div className = "container" >
 		<h2>What We Have Collections  </h2>
@@ -40,7 +48,7 @@ const Main = () => {
 						<img src={cate.img}></img>
 						<div className = "titleforCategory">
 						<h2>{cate.title}</h2>
-						<button className ='buttonCategory'>Shop Now</button>
+						<button className ='buttonCategory' onClick={eventOnButton}>Shop Now</button>
 						</div>
 				</div>
 				
