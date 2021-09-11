@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navigation.css'
+import { IconName } from "react-icons/fa";
 
 const Navigation = () => {
 	return <div className="container">
