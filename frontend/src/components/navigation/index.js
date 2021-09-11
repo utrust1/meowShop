@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navigation.css'
-import { IconName } from "react-icons/fa";
+import { IconName , FaBirthdayCake } from "react-icons/fa";
 
 const Navigation = () => {
 	return <div className="container">
 	<div className='Navigation'> 
-		<p>logoname</p>
+		<p> logoname <FaBirthdayCake/> </p>
 		<div className='Searchbar'>
 			<input type='text' placeholder='what do you want'></input>
 		</div>
