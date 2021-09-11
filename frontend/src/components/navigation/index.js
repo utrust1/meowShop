@@ -6,11 +6,12 @@ import { IconName ,  FaUserTie , FaShoppingCart , FaSearch} from "react-icons/fa
 const Navigation = () => {
 	return <div className="container">
 	<div className='Navigation'> 
-		<p> logoname  </p>
-		<div className='Searchbar'>
+	<div className='Searchbar'>
 			<input type='text' placeholder='what do you want ' className= "SearchBarInput"></input> 
-				<FaSearch/>
+				<FaSearch className="searchIcon"/>
 		</div>
+		<p> logoname  </p>
+	
 		<div>
 		<Link to="/login" className='navlogin'><FaUserTie/></Link>
 		<Link to="/cart" className='navcart'><FaShoppingCart/></Link></div>
