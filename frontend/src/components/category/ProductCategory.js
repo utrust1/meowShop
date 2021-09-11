@@ -3,21 +3,22 @@ import { Route  , useParams} from 'react-router-dom';
 import axios from 'axios';
 
 const ProductCategory=(props)=> {
-    const fofo = props.toto
+    const [product , setProduct] = useState()
     const {id} = useParams()
     /// tseting the params
-    console.log("id done " , id);
-       console.log("id done " , props.toto);
-	// useEffect(() => {
-	// 	axios.get(`http://localhost:5000/category`).then((res) => {
-	// 		setGetCategory(res.data.result);
-    //     }).catch((err) => {
-    //         console.log(err);
-    //     })
-    // }, []);
+	useEffect(() => {
+		axios.get(`http://localhost:5000/product/cat/${id}`).then((res) => {
+			setProduct(res.data.result);
+        }).catch((err) => {
+            console.log(err);
+        })
+    }, []);
     return (
         <div> 
-            <p> hello {id} </p>
+            {product && product.map((elm)=>{
+                <img src={elm.img}/>
+                return (<div>{elm.title}</div>)
+            })}
         </div>
     )
 }

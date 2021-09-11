@@ -7,7 +7,7 @@ productRouter.get("/byprice", getProductByPrice)
 productRouter.get("/:id", getProductById)
 productRouter.put("/:id", updateProductById)
 productRouter.delete("/:id", deleteProductById)
-productRouter.get("/:category", getProductByCategory)
+productRouter.get("/cat/:category", getProductByCategory)
 
 
 
