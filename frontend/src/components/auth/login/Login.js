@@ -14,7 +14,10 @@ const  [messege , setMessege] = useState("")
 
 const buttonEvent = ()=>{
 axios.get(`http://localhost:5000/users/`, {email,password}).then((result)=>{
-    
+    console.log(result);
+    setMessege(" Logged in succesfully ").catch((error)=>{
+        console.log(error);
+    })
 })
 }
     
