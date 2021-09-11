@@ -9,7 +9,7 @@ const App = () => {
     return <div className = "App">
     <Navigation/>
     <Route  path="/Home" component={Main} />
-    <Route  path="/category/:title/:id" component={ProductCategory} />
+    <Route  path="/category/:title/:id" component={ProductCategory}/>
      </div>;
 };
 export default App;

@@ -154,7 +154,7 @@ const getProductByCategory = (req, res) => {
     }).catch((error) => {
         console.log(error);
         res.status(404).json({
-            success: true,
+            success: false,
             massage: ` ${category} Not Found  `
         })
     })

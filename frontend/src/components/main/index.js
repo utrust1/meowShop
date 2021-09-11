@@ -35,7 +35,7 @@ const Main = () => {
 	const eventOnButton =(title ,id)=>{
 		console.log("cate id"  , id );
 		console.log("cate title"  , title );
-	   <ProductCategory  toto = {id}  /> 
+	
 		history.push(`/category/${title}/${id}`);
 		
 }
