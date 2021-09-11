@@ -6,13 +6,14 @@ import "./Login.css";
 
 
 const  Login =()=> {
-    
+ const [email , setEmail] = useState("")
+const [password , setPassword] = useState("")
+const[messege , setMessege] = useState("") 
 
-    const [email , setEmail] = useState("")
-    const [password , setPassword] = useState("")
-    
-    
-    
+
+const buttonEvent = ()=>{
+
+    }
     
     
     
@@ -23,7 +24,8 @@ const  Login =()=> {
         <div>
             <input placeholder="" type="text" onChange={(e)=>{setEmail(e.target.value)}}></input>
             <input placeholder="" type="text" onChange={(e)=>{setPassword(e.target.value)}}></input>
-            <button type="submit" >Login </button>
+            <button type="submit" onClick={()=>{}}>Login </button>
+            <div> {messege}</div>
         </div>
     )
 }
