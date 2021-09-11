@@ -4,6 +4,8 @@ import axios from 'axios';
 import './main.css';
 import ProductCategory from '../category/ProductCategory';
 import Header from '../header';
+import {FaShoppingCart,FaSearch ,FaHeart} from "react-icons/fa";
+
 
 const Main = () => {
     const [getCategory, setGetCategory] = useState();
@@ -70,9 +72,12 @@ const Main = () => {
 							<img src={product.img}></img>
 							<div class='showdetails'>
 								<div className = "show-icon">
-									<p>add cart </p>
-									<p>show item </p>
-									<p>wishlist </p>
+							
+							<div className = "icon">
+							<FaShoppingCart className = "icon-cart"/>
+								<FaSearch className = "icon-search"/>
+								<FaHeart className = "icon-heart"/>
+							</div>
 								</div>
 							</div>
 						</div>
