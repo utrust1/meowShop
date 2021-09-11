@@ -1,6 +1,7 @@
 import "./signUp.css"
 import React from "react"
 import { useState ,  useEffect} from "react"
+import axios from "axios"
 
 
 
@@ -13,12 +14,14 @@ const Register =()=> {
    const [password , setPassword] =  useState("")
    
    
-
+const registerationEventButton =()=>{
+axios.post()
+}
 
 
 
      return (
-         
+
         <div   className = "Register">
 
  <input placeholder="firstName" onChange={(e)=>{setFirstName(e.target.value)}}></input>
