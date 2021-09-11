@@ -37,8 +37,8 @@ setMessege(" The user has been created successfully ")
  <input placeholder="lastName"  type="text" onChange={(e)=>{setlastName(e.target.value)}}></input>
  <input placeholder="age" type="number" onChange={(e)=>{setAge(e.target.value)}}></input>
  <input placeholder="Example@gmail.com" type="text" onChange={(e)=>{setEmail(e.target.value)}}></input>
- <input placeholder="password" type="" onChange={(e)=>{setPassword(e.target.value)}}></input>
- <button onClick={()=>{registerationEventButton()}}> Register </button>
+ <input placeholder="password" type="password" onChange={(e)=>{setPassword(e.target.value)}}></input>
+ <button type="submit" onClick={()=>{registerationEventButton()}}> Register </button>
 <p>{messege}</p>
 
             
