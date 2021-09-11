@@ -3,11 +3,14 @@ import { useHistory } from 'react-router';
 import axios from 'axios';
 import './main.css';
 import ProductCategory from '../category/ProductCategory';
-
+import Header from '../header';
 
 const Main = () => {
-
-    useEffect(() => {
+    const [getCategory, setGetCategory] = useState();
+    const [getProduct, setGetProduct] = useState();
+    const history = useHistory()
+    
+	useEffect(() => {
 		axios.get(`http://localhost:5000/category`).then((res) => {
 			setGetCategory(res.data.result);
         }).catch((err) => {
@@ -23,11 +26,8 @@ const Main = () => {
 		}).catch((err) => {
 			console.log(err);
 		})
-	})
+	},[])
 
-    const [getCategory, setGetCategory] = useState();
-    const [getProduct, setGetProduct] = useState();
-    const history = useHistory()
 
 
 
@@ -41,6 +41,7 @@ const Main = () => {
 }
 ///Get All Category 
     return <div className = "container" >
+		  <Header/>
 		<h2>What We Have Collections  </h2>
 
 		<div className = "category-section">
@@ -52,7 +53,7 @@ const Main = () => {
 						<img src={cate.img}></img>
 						<div className = "titleforCategory">
 						<h2>{cate.title}</h2>
-						<button className ='buttonCategory' onClick={()=>{eventOnButton(cate._id)}}>Shop Now</button>
+						<button className ='buttonCategory' onClick={()=>{eventOnButton(cate._id)}}>Shop 1 Now</button>
 						</div>
 				</div>
 				
