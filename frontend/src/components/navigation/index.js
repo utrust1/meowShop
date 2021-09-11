@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import './navigation.css'
 import { IconName ,  FaUserTie , FaShoppingCart , FaSearch} from "react-icons/fa";
 
@@ -16,6 +17,7 @@ const Navigation = () => {
 		<Link to="/login" className='navLogin'>Login</Link>
 		<Link to="/Regster" className='navRegister'>Register</Link>
 		<Link to="/cart" className='navcart'><FaShoppingCart/></Link></div>
+		<Link to='/ProductCategory'>category</Link>
 		</div>
 		 </div>;
 };

@@ -11,11 +11,7 @@ const App = () => {
     <Navigation/>
     <Header/>
     <Route  path="/Home" component={Main} />
-
-<Route  path="/category" component={ProductCategory} />
-
-
-
+    <Route  path="/category" component={ProductCategory} />
     <Main/>
      </div>;
 };
