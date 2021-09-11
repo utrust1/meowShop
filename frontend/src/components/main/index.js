@@ -41,6 +41,13 @@ const Main = () => {
 		history.push(`/category/${title}/${id}`);
 		
 }
+
+///when you click button it's will get product using id
+
+const getallProducts = (id)=>{
+	console.log(id);
+}
+
 ///Get All Category 
     return <div className = "container" >
 		  <Header/>
@@ -75,7 +82,7 @@ const Main = () => {
 							
 							<div className = "icon">
 							<FaShoppingCart className = "icon-cart"/>
-								<FaSearch className = "icon-search"/>
+								<FaSearch className = "icon-search" onClick={()=>getallProducts(product._id)}/>
 								<FaHeart className = "icon-heart"/>
 							</div>
 								</div>
