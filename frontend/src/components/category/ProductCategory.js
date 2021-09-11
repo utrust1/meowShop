@@ -1,9 +1,10 @@
 import React from 'react'
 const ProductCategory=(cate)=> {
+    console.log(cate);
     return (
         <div> 
-            <p>id : 222222 </p>
-            <h1></h1>
+            <p> {cate.id} </p>
+            <h1> {cate.title}</h1>
         </div>
     )
 }
