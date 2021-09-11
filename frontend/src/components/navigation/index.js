@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navigation.css'
-import { IconName , FaBirthdayCake , FaUserTie} from "react-icons/fa";
+import { IconName ,  FaUserTie , FaShoppingCart , FaSearch} from "react-icons/fa";
 
 const Navigation = () => {
 	return <div className="container">
 	<div className='Navigation'> 
-		<p> logoname <FaBirthdayCake/> </p>
+		<p> logoname  </p>
 		<div className='Searchbar'>
-			<input type='text' placeholder='what do you want'></input>
+			<input type='text' placeholder='what do you want ' className= "SearchBarInput"></input> 
+				<FaSearch/>
 		</div>
 		<div>
-		<Link to="/login" className='navlogin'>Login </Link>
-		<Link to="/cart" className='navcart'> cart </Link></div>
+		<Link to="/login" className='navlogin'><FaUserTie/></Link>
+		<Link to="/cart" className='navcart'><FaShoppingCart/></Link></div>
 		</div>
 		 </div>;
 };
