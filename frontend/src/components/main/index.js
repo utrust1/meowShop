@@ -8,7 +8,6 @@ import Header from '../header';
 const Main = () => {
     const [getCategory, setGetCategory] = useState();
     const [getProduct, setGetProduct] = useState();
-    const [Title, setTitle] = useState();
     const history = useHistory()
     
 	useEffect(() => {
@@ -33,11 +32,11 @@ const Main = () => {
 
 
 // event on the shopnow butthon inside the category 
-	const eventOnButton =(id)=>{
+	const eventOnButton =(title ,id)=>{
 		console.log("cate id"  , id );
-		console.log("cate title"  , Title );
-		<ProductCategory id = {id}  />
-		history.push(`/category/${Title}`);
+		console.log("cate title"  , title );
+	   <ProductCategory  toto = {id}  /> 
+		history.push(`/category/${title}/${id}`);
 		
 }
 ///Get All Category 
@@ -54,8 +53,7 @@ const Main = () => {
 						<img src={cate.img}></img>
 						<div className = "titleforCategory">
 						<h2>{cate.title}</h2>
-						{setTitle(cate.title)}
-						<button className ='buttonCategory' onClick={()=>eventOnButton(cate._id)}>Shop 1 Now</button>
+						<button className ='buttonCategory' onClick={()=>eventOnButton(cate.title,cate._id )}>Shop 1 Now</button>
 						</div>
 				</div>
 				
