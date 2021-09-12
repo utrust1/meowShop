@@ -1,0 +1,4 @@
+.MainSectionForViewProduct {
+    display: flex;
+    justify-content: space-around;
+}
