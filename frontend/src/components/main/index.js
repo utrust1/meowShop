@@ -7,9 +7,10 @@ import Header from '../header';
 import {FaShoppingCart,FaSearch ,FaHeart} from "react-icons/fa";
 
 
-const Main = () => {
+const Main = ({token}) => {
     const [getCategory, setGetCategory] = useState();
     const [getProduct, setGetProduct] = useState();
+	
     const history = useHistory()
     
 	useEffect(() => {
@@ -29,6 +30,20 @@ const Main = () => {
 			console.log(err);
 		})
 	},[])
+
+	const addToCart = (productId)=>{
+		const id = productId
+		axios.post(`http://localhost:5000/cart`,id, {headers:{'Authorization': `Bearer ${token}`}}).then((res)=>{
+			let numbers = localStorage.getItem('productNumber')
+			if(numbers){
+
+			}
+			console.log(res.data)
+
+		}).catch((err)=>{
+			console.log(err)
+		})
+	}
 
 
 
@@ -78,6 +93,7 @@ const getallProducts = (id)=>{
 			<div className='product-section'>
 				{getProduct&&
 				getProduct.map((product)=>{
+					console.log(product)
 					return (
 						<div className = "productMain">
 							<img src={product.img}></img>
@@ -85,7 +101,7 @@ const getallProducts = (id)=>{
 								<div className = "show-icon">
 							
 							<div className = "icon">
-							<FaShoppingCart className = "icon-cart"/>
+							<FaShoppingCart className = "icon-cart" onClick={()=>addToCart(product._id)}/>
 								<FaSearch className = "icon-search" onClick={()=>getallProducts(product._id)}/>
 								<FaHeart className = "icon-heart"/>
 							</div>
