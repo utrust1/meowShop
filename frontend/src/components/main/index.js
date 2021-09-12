@@ -41,6 +41,14 @@ const Main = () => {
 		history.push(`/category/${title}/${id}`);
 		
 }
+
+///when you click button it's will get product using id
+
+const getallProducts = (id)=>{
+	
+	history.push(`product/${id}`)
+}
+
 ///Get All Category 
     return <div className = "container" >
 		  <Header/>
@@ -54,9 +62,12 @@ const Main = () => {
 				<div className = "categoryMain">
 						<img src={cate.img}></img>
 						<div className = "titleforCategory">
-						<h2>{cate.title}</h2>
-						<button className ='buttonCategory' onClick={()=>eventOnButton(cate.title,cate._id )}>Shop 1 Now</button>
+							<div className = "categorycontact">
+							<h2>{cate.title}</h2>
+						<button className ='buttonCategory' onClick={()=>eventOnButton(cate.title,cate._id )}>Shop Now</button>
+							</div>
 						</div>
+						
 				</div>
 				
 			)
@@ -75,7 +86,7 @@ const Main = () => {
 							
 							<div className = "icon">
 							<FaShoppingCart className = "icon-cart"/>
-								<FaSearch className = "icon-search"/>
+								<FaSearch className = "icon-search" onClick={()=>getallProducts(product._id)}/>
 								<FaHeart className = "icon-heart"/>
 							</div>
 								</div>
