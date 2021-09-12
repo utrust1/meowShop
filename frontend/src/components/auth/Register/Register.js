@@ -31,6 +31,7 @@ const Register = () => {
 
   return (
     <div className="Register">
+     <div className="childRegister">
       <input
         placeholder="firstName"
         type="text"
@@ -76,6 +77,7 @@ const Register = () => {
         Sign Up{" "}
       </button>
       <div className="messgeDiv">{messege}</div>
+      </div>
     </div>
   );
 };

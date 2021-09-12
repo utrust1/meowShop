@@ -1,3 +1,17 @@
+
+  
 .Register{
-    background-color: green;
+   
+    position: relative;
+text-align: center;
+  }
+
+.childRegister{
+    position: absolute;
+    text-align: center;
 }
+
+.Register input{
+      display: block;
+      text-align: center;
+  }
