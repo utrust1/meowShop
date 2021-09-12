@@ -60,7 +60,7 @@ const getallProducts = (id)=>{
 			console.log("cate" , cate );
 			return (
 				<div className = "categoryMain">
-						<img src={cate.img}></img>
+						<img className="categoryImg" style={{height:"500px"}} src={cate.img}></img>
 						<div className = "titleforCategory">
 							<div className = "categorycontact">
 							<h2>{cate.title}</h2>
