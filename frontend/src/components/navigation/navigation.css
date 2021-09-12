@@ -3,21 +3,29 @@
     justify-content: space-between;
     align-items: center;
 }
-.Searchbar{
+
+.Searchbar {
     position: relative;
 }
-.SearchBarInput{
-        padding: 5px;
-        outline: none;
+
+.SearchBarInput {
+    padding: 5px;
+    outline: none;
 }
-.searchIcon{
-   position: absolute;
-   right: 5px;
-   top: 7px;
-   cursor: pointer;
-   color: rgba(0, 0, 0, 0.596);
-   font-size: 14px;
+
+.searchIcon {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.596);
+    font-size: 14px;
 }
-.navbar{
+
+.navbar {
     padding-right: 15px;
+}
+
+.logoName span {
+    color: red;
 }

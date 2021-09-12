@@ -7,7 +7,7 @@ import { IconName ,  FaUserTie , FaShoppingCart , FaSearch} from "react-icons/fa
 const Navigation = () => {
 	return <div className="container">
 	<div className='Navigation'> 
-		 <img src="https://mylovely-pet.com/wp-content/uploads/2021/01/Logoheader.svg?1000"/> 
+		<p className='logoName'>LA<span>MA.</span></p>
 	     
 		<div className='Searchbar'>
 			<input type='text' placeholder='what do you want ' className= "SearchBarInput"></input> 
