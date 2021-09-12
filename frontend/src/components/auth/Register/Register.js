@@ -10,6 +10,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [messege, setMessege] = useState("");
+  
 
   const registerationEventButton = () => {
     axios
@@ -24,7 +25,8 @@ const Register = () => {
         console.log(result);
         setMessege(" The user has been created successfully ");
       }).catch((error)=>{
-          console.log(error);
+          console.log(error.response);
+          setMessege(" The Email is already exist Please enter another Email ");
       })
    
   };
