@@ -20,7 +20,7 @@ const [token , setToken]  = useState("")
     <Route  path="/category/:title/:id" component={ProductCategory}/>
     <Route  path="/Register" component={Register} />
     <Route path="/product/:id" component={GetAllProduct}/>
-    <Route path="login" render={<Login token ={token} setToken ={setToken}/>}/>
+    <Route path="/login"render={() => <Login setToken={setToken} /> }/>
 
      </div>;
 };
