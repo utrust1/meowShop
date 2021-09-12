@@ -14,7 +14,9 @@ const ProductCategory=(props)=> {
         })
     }, []);
     return (
-        <div className="MainSectionForViewProduct"> 
+        <div className="MainSectionForViewProduct">
+Hello
+            <div className='Contect-Main-Section'> 
             {product && product.map((elm)=>{
                 return (
                 <div className='viewProduct'>
@@ -22,9 +24,12 @@ const ProductCategory=(props)=> {
                    <img src={elm.img}/>
                     <h1>{elm.title}</h1>
                     <p>{elm.description}</p>
+                    <p>{elm.oldPrice}</p>
+                    <p>{elm.newprice}</p>
                    </div>
                 </div>)
             })}
+        </div>
         </div>
     )
 }
