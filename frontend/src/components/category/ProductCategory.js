@@ -24,8 +24,7 @@ Hello
                    <img src={elm.img}/>
                     <h1>{elm.title}</h1>
                     <p>{elm.description}</p>
-                    <p>{elm.oldPrice}</p>
-                    <p>{elm.newprice}</p>
+                    
                    </div>
                 </div>)
             })}
