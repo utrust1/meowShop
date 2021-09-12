@@ -11,6 +11,7 @@ const Main = ({token}) => {
     const [getCategory, setGetCategory] = useState();
     const [getProduct, setGetProduct] = useState();
 	const [number , setNumber] = useState(0)
+	const [array , setArray] = useState([])
     const history = useHistory()
     
 	useEffect(() => {
@@ -31,12 +32,11 @@ const Main = ({token}) => {
 		})
 	},[])
 
-	const addToCart = (productId)=>{
-		const id = productId
-		axios.post(`http://localhost:5000/cart`,id, {headers:{'Authorization': `Bearer ${token}`}}).then(async (res)=>{
+	const addToCart = ()=>{
+		
+		axios.post(`http://localhost:5000/cart`,array, {headers:{'Authorization': `Bearer ${token}`}}).then(async (res)=>{
+             
 
-			let numbers = localStorage.getItem('productNumber')
-			numbers = parseInt(numbers)
 			if(number){
 				await setNumber(number+1)
 				console.log('second time : ' ,number)
@@ -52,6 +52,8 @@ const Main = ({token}) => {
 			console.log(err)
 		})
 	}
+
+	
 
 
 
