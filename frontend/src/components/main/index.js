@@ -10,7 +10,7 @@ import {FaShoppingCart,FaSearch ,FaHeart} from "react-icons/fa";
 const Main = ({token}) => {
     const [getCategory, setGetCategory] = useState();
     const [getProduct, setGetProduct] = useState();
-	
+	const [number , setNumber] = useState()
     const history = useHistory()
     
 	useEffect(() => {
@@ -34,11 +34,17 @@ const Main = ({token}) => {
 	const addToCart = (productId)=>{
 		const id = productId
 		axios.post(`http://localhost:5000/cart`,id, {headers:{'Authorization': `Bearer ${token}`}}).then((res)=>{
-			let numbers = localStorage.getItem('productNumber')
-			if(numbers){
 
+			let numbers = localStorage.getItem('productNumber')
+			numbers = parseInt(numbers)
+			if(number){
+				
+				localStorage.setItem("productNumber",setNumber(number+1))
+			}else{
+				console.log(setNumber)
+				localStorage.setItem("productNumber",setNumber(1))
+				
 			}
-			console.log(res.data)
 
 		}).catch((err)=>{
 			console.log(err)
@@ -68,6 +74,7 @@ const getallProducts = (id)=>{
     return <div className = "container" >
 		  <Header/>
 		<h2>What We Have Collections  </h2>
+		
 
 		<div className = "category-section">
 		{getCategory&&
@@ -88,6 +95,7 @@ const getallProducts = (id)=>{
 			)
 		})}
 			</div>
+			{number}
 
 
 			<div className='product-section'>
