@@ -1,11 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-import './navigation.css'
-import { IconName ,  FaUserTie , FaShoppingCart , FaSearch} from "react-icons/fa";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "./../../App";
+import "./navigation.css";
+import { IconName, FaUserTie, FaShoppingCart, FaSearch } from "react-icons/fa";
 
 const Navigation = () => {
-	return <div className="container">
+
+let token = useContext(UserContext);
+
+  return <div className="container">
 	<div className='Navigation'> 
 		<Link to='/Home'><p className='logoName'>LA<span>MA.</span></p> </Link>
 	     
@@ -14,11 +18,29 @@ const Navigation = () => {
 					<FaSearch className="searchIcon"/> 
 		</div>
 		<div className="navbar">
-		<Link to="/login" className='navLogin'>Login</Link>
-		<Link to="/Register" className='navRegister'>Register</Link>
-		<Link to="/cart" className='navcart'><FaShoppingCart/></Link></div>
+		{token ? (
+	<div>
+	  <Link to="/cart" className="navcart">
+		
+	  </Link> 
+	  <FaShoppingCart />
+	  <Link to="/logout" className="navRegister">
+		log out 
+	  </Link>
+	</div>
+  ) : (
+	<div>
+	  <Link to="/login" className="navLogin">
+		Login
+	  </Link>
+	  <Link to="/Register" className="navRegister">
+		Register
+	  </Link>
+	</div>
+  )}</div>
 		</div>
 		 </div>;
-};
 
+
+};
 export default Navigation;

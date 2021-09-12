@@ -10,8 +10,6 @@ import Register from './components/auth/Register/Register';
 import GetAllProduct from './components/product/index';
 import Login from './components/auth/Login/Login';
 import { Switch } from 'react-router';
-
-
 export const UserContext = createContext();
 
 const App = () => {
