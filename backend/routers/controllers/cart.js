@@ -33,7 +33,7 @@ const CreateNewCart = (req, res) => {
 
 const getAllCart = (req, res) => {
     cartModel
-       .find({})
+       .find({}).populate('purchase')
        .then((result) => {
          res.status(200);
          res.json({
