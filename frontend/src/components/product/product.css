@@ -1,7 +1,20 @@
+.showProduct {
+    background-color: #eee;
+    padding: 50px 0px;
+}
+
 .ProductMain {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-top: 50px;
     flex-wrap: wrap;
+}
+
+.old-price {
+    color: red;
+}
+
+.Saving {
+    color: green;
 }
