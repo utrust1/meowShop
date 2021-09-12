@@ -23,6 +23,10 @@ const GetAllProduct=(props)=> {
                        </div>
                        <div className='contactProduct'>
                            <h1>{product.title}</h1>
+                           <p>{product.description}</p>
+                           <p> old price <del> {product.oldPrice}</del></p>
+                           <p> new price {product.newprice}</p>
+                           <p>you Save {product.oldPrice - product.newprice}</p>
                        </div>
                        
                    </div>
