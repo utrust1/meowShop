@@ -24,6 +24,7 @@ const App = () => {
       <Route exact path="/Register" component={Register} />
       <Route exact path="/product/:id" component={GetAllProduct} />
       <Route exact path="/login" render={() => <Login setToken={setToken} />} />
+      {/* maamoun */}
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch>
     </div>
