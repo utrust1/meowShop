@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./Login.css";
 
+
 const  Login =({setToken})=> {
 
 const  [email , setEmail] = useState("")
@@ -14,6 +15,7 @@ const buttonEvent = ()=>{
 axios.get(`http://localhost:5000/users/`, {email,password}).then((result)=>{
     console.log(result);
     setToken(result.data.token)
+    console.log(result.data.token);
     setMessege(" Logged in succesfully ")
 }).catch((error)=>{
     console.log(error);
