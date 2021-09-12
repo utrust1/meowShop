@@ -1,4 +1,9 @@
 .MainSectionForViewProduct {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+}
+
+.viewProduct img {
+    max-width: 100%
 }
