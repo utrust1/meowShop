@@ -13,15 +13,11 @@ const  [password , setPassword] = useState("")
 
 const history = useHistory()
 const buttonEvent = ()=>{
-    // e.preventDefault()
+
 axios.post(`http://localhost:5000/login/`, {email,password}).then((result)=>{
     console.log(result);
     setToken(result.data.token)
     console.log(result.data.token);
-    // setMessege(" Logged in succesfully ")
-    // const history = useHistory()
-    history.push("/Home")
-
 }).catch((error)=>{
     console.log(error.response);
 })

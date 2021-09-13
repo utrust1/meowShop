@@ -1,9 +1,13 @@
-import React from "react";
+import React  , { useContext }from "react";
 import { Link } from "react-router-dom";
 import "./navigation.css";
-import { IconName, FaUserTie, FaShoppingCart, FaSearch } from "react-icons/fa";
+import { tokenContext } from "../../App"
+import { checkRegisterContext } from "../../App"
+import {FaShoppingCart, FaSearch } from "react-icons/fa";
 
-const Navigation = ({ token }) => {
+const Navigation = () => {
+  let token = useContext(tokenContext);
+  let checkRegister = useContext(checkRegisterContext)
   return (
     <div className="container">
       <div className="Navigation">
@@ -22,7 +26,7 @@ const Navigation = ({ token }) => {
           <FaSearch className="searchIcon" />
         </div>
         <div className="navbar">
-          {token ? (
+          { token || checkRegister ? (
             <div>
               <Link to="/cart" className="navcart"></Link>
               <FaShoppingCart />
