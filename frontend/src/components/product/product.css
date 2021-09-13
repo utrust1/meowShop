@@ -1,5 +1,4 @@
 .showProduct {
-    background-color: #eee;
     padding: 50px 0px;
 }
 
@@ -9,6 +8,19 @@
     align-items: center;
     padding-top: 50px;
     flex-wrap: wrap;
+}
+
+.viewProduct {
+    margin-top: 50px;
+}
+
+.contactProduct {
+    max-width: 100%;
+}
+
+.content img {
+    width: 350px;
+    height: 350px;
 }
 
 .old-price {

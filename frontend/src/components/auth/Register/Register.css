@@ -1,30 +1,26 @@
 body {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 14px;
-	background: #f2f2f2;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
 }
-.Register{
-    background: #fff ;
+
+.Register {
+    background: #fff;
     position: relative;
-text-align: center;
-background: #fff;
-	
-
-	box-sizing: border-box;
-	padding: 25px;
-	margin: 8% auto 0;
-	position: relative;
-	z-index: 1;
-	
-
+    text-align: center;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 25px;
+    margin: 8% auto 0;
+    position: relative;
+    z-index: 1;
 }
 
-.childRegister{
+.childRegister {
     position: absolute;
     text-align: center;
 }
 
-.Register input{
-      display: block;
-      text-align: center;
-  }
+.Register input {
+    display: block;
+    text-align: center;
+}
