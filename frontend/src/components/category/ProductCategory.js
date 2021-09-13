@@ -25,11 +25,10 @@ const ProductCategory=(props)=> {
             <div className='Contect-Main-Section'>
             {product && product.map((elm)=>{
                 return (
-                <div className='viewProduct'>
+                    <div className='viewProduct'>
                    <div className='content'>
                    <img src={elm.img}/>
                     <h1>{elm.title}</h1>
-                    <p>{elm.description}</p>
                     <button onClick={()=>{getbyid(elm._id)}}>Show</button>
                    </div>
                 </div>)
