@@ -43,7 +43,7 @@ const getAllCart = (req, res) => {
          res.json({
            success: true,
            massage: ` All the carts`,
-           products: products,
+           products: result,
          });
        }).catch((err)=>{
         res.status(500).json({

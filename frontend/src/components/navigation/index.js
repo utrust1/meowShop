@@ -1,4 +1,5 @@
-import React  , { useContext }from "react";
+import React  , { useContext , useState  }from "react";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import "./navigation.css";
 import axios from "axios";
@@ -10,10 +11,12 @@ import {FaSignOutAlt,FaShoppingCart, FaSearch } from "react-icons/fa";
 
 
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister} ) => {
+	const history = useHistory()
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
-  let sendsArray = useContext(sendsArrayContext)  
+  let sendsArray = useContext(sendsArrayContext)
+   const [insideCar , setInsideCart] = useState()
 const Logout = () => {
   setCheckLogout(false)
   setToken("")
@@ -32,6 +35,11 @@ const addToCart = () => {
     .catch((err) => {
       console.log(err);
     });
+	axios.get(`http://localhost:5000/cart`).then((result)=>{
+		setInsideCart(result.data.products)
+		history.push('/cart')
+
+	})
 };
 
   return (
