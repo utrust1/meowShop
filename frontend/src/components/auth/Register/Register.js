@@ -26,6 +26,7 @@ const Register = ({setcheckRegister}) => {
         console.log(result);
         setcheckRegister(true)
         history.push("/Home");
+        setMessege("good luck")
       })
       .catch((error) => {
         console.log(error.response);

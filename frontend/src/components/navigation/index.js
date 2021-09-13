@@ -6,6 +6,7 @@ import {FaShoppingCart, FaSearch } from "react-icons/fa";
 
 const Navigation = () => {
   let token = useContext(tokenContext);
+  console.log("token" , token);
   return (
     <div className="container">
       <div className="Navigation">

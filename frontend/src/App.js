@@ -20,7 +20,7 @@ const App = () => {
   history.push("/Home")
   return (
     <div className="App">
-      <tokenContext.Provider value={token} value={checkRegister}>
+      <tokenContext.Provider value={token} >
       <Navigation />
 <Switch>
       <Route exact path="/Home"  component={Main}  />
