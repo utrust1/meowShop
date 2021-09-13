@@ -1,16 +1,20 @@
 const cartModel = require('../../db/models/cart');
 
 const CreateNewCart = (req, res) => {
-    const { purchase, Date, user } = req.body;
-
+    let { purchase, Date, user } = req.body;
+    purchase =JSON.parse(purchase)
+    console.log("mm",req.body);
+    console.log("mmgg",purchase);
     const newCart = new cartModel({
         purchase,
         Date,
         user,
     });
+    // try in it 
     newCart
         .save()
         .then((result) => {
+            console.log("mmmm",result);
             const successAdded = {
                 success: true,
                 message: "Success Added Cart",

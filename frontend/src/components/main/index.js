@@ -45,7 +45,7 @@ const Main = ({sendsArray , setSendsArray}) => {
 	  let idProduct = product._id 
     if (token || checkRegister) {
       console.log("purchase", idProduct);
-      setSendsArray([...sendsArray , {purchase:idProduct}])
+      setSendsArray([...sendsArray , idProduct])
 	  console.log("whooo",sendsArray);
     //   sendsArray.push({ idProduct });
       console.log("plapla", sendsArray);
