@@ -39,7 +39,7 @@ const App = () => {
       </checkLogoutContext.Provider>
       </tokenContext.Provider>
       </checkRegisterContext.Provider>
-
+<Footer/>
 
     </div>
   );
