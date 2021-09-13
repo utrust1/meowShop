@@ -3,11 +3,21 @@ import { Link } from "react-router-dom";
 import "./navigation.css";
 import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
-import {FaShoppingCart, FaSearch } from "react-icons/fa";
+import { checkLogoutContext } from "../../App"
+import {FaSignOutAlt,FaShoppingCart, FaSearch } from "react-icons/fa";
 
-const Navigation = () => {
+
+const Navigation = ({setCheckLogout  , setToken ,setCheckRegister} ) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
+  let checkLogout = useContext(checkLogoutContext)
+     
+const Logout = () => {
+  setCheckLogout(false)
+  setToken("")
+  setCheckRegister(false)
+
+}
   return (
     <div className="container">
       <div className="Navigation">
@@ -26,13 +36,11 @@ const Navigation = () => {
           <FaSearch className="searchIcon" />
         </div>
         <div className="navbar">
-          { token || checkRegister ? (
+          { ((token || checkRegister) && checkLogout ) ? (
             <div>
               <Link to="/cart" className="navcart"></Link>
               <FaShoppingCart />
-              <Link to="/logout" className="navRegister">
-                log out
-              </Link>
+             <button onClick={Logout}> <FaSignOutAlt/> </button>
             </div>
           ) : (
             <div>

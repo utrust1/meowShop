@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 
-const Register = ({setCheckRegister}) => {
+const Register = ({setCheckRegister , setCheckLogout}) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [age, setAge] = useState("");
@@ -23,6 +23,7 @@ const Register = ({setCheckRegister}) => {
       .then((result) => {
         console.log(result);
         setCheckRegister(true)
+        setCheckLogout(true)
       }).catch((error)=>{
           console.log(error.response);
           setMessege(" The Email is already exist Please enter another Email ");
