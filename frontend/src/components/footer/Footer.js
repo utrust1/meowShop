@@ -2,6 +2,12 @@ import React from 'react';
 import {FaEnvelope} from  "react-icons/fa"
 import "./Footer.css";
 import { useHistory } from 'react-router';
+import "./Aboutus"
+import "./Contactus"
+import "./Ourpolicy"
+
+
+
 const Footer = () => {
 
 const history =useHistory() 
