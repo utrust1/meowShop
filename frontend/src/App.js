@@ -25,7 +25,7 @@ const App = () => {
        <checkRegisterContext.Provider value={checkRegister}>
        <tokenContext.Provider value={token} >
        <checkLogoutContext.Provider value={checkLogout}>
-      <Navigation />
+      <Navigation  setCheckLogout={setCheckLogout}/>
 <Switch>
       <Route exact path="/Home"  component={Main}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />

@@ -1,18 +1,20 @@
-import React  , { useContext ,useState }from "react";
+import React  , { useContext }from "react";
 import { Link } from "react-router-dom";
 import "./navigation.css";
 import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
+import { checkLogoutContext } from "../../App"
 import {FaSignOutAlt,FaShoppingCart, FaSearch } from "react-icons/fa";
 
 
-const Navigation = () => {
-    
+const Navigation = ({setCheckLogout}) => {
+  let token = useContext(tokenContext);
+  let checkRegister = useContext(checkRegisterContext)
+  let checkLogout = useContext(checkLogoutContext)
+     
 const Logout = () => {
   setCheckLogout(false)
 }
-  let token = useContext(tokenContext);
-  let checkRegister = useContext(checkRegisterContext)
   return (
     <div className="container">
       <div className="Navigation">
