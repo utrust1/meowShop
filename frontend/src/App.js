@@ -29,7 +29,7 @@ const App = () => {
 <Switch>
       <Route exact path="/Home"  component={Main}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
-      <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} />} />
+      <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/product/:id" component={GetAllProduct} />
       <Route exact path="/login" render={() => <Login  setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/cart" component={Cart} />
