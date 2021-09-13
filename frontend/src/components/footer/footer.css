@@ -1,8 +1,7 @@
 .FooterPerant{
-    background-color: rgb(252, 144, 144);
+ background: rgb(85, 84, 84); padding: 5px 0 ;
     position: relative;
    height: 150px;
-    
 }
 
 .footerChild{
