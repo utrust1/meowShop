@@ -7,13 +7,16 @@ import { checkLogoutContext } from "../../App"
 import {FaSignOutAlt,FaShoppingCart, FaSearch } from "react-icons/fa";
 
 
-const Navigation = ({setCheckLogout}) => {
+const Navigation = ({setCheckLogout  , setToken ,setCheckRegister} ) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
      
 const Logout = () => {
   setCheckLogout(false)
+  setToken("")
+  setCheckRegister(false)
+
 }
   return (
     <div className="container">
