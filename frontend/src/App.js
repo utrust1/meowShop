@@ -20,11 +20,13 @@ export const checkRegisterContext = createContext();
 export const checkLogoutContext  = createContext();
 export const sendsArrayContext  = createContext();
 
+
 const App = () => {
   const [token, setToken] = useState("");
   const [checkRegister, setCheckRegister] = useState(false);
   const [checkLogout, setCheckLogout] = useState(true);
   const [sendsArray, setSendsArray] = useState([]);
+  
   const history = useHistory()
   history.push("/Home")
   return (
@@ -33,6 +35,7 @@ const App = () => {
        <tokenContext.Provider value={token} >
        <checkLogoutContext.Provider value={checkLogout}>
        <sendsArrayContext.Provider value={sendsArray}>
+       
       <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} />
 <Switch>
       <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray}  setSendsArray={setSendsArray}/>}  />
@@ -40,14 +43,14 @@ const App = () => {
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/product/:id" component={GetAllProduct} />
       <Route exact path="/login" render={() => <Login  setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
+      <Route exact path="/cart" component={Cart}/>
       <Route exact path="/cart" component={Cart} />
       <Route exact path="/AboutUs" component={Aboutus} />
       <Route exact path="/ContactUs" component={Contactus} />
       <Route exact path="/OurPolicy" component={Ourpolicy} />
-
       <Route path= "*" component={()=>"404 NOT FOUND"} />
-</Switch>
-           </sendsArrayContext.Provider>
+</Switch> 
+      </sendsArrayContext.Provider>
       </checkLogoutContext.Provider>
       </tokenContext.Provider>
       </checkRegisterContext.Provider>
