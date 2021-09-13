@@ -4,6 +4,7 @@ import "./navigation.css";
 import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
 import { checkLogoutContext } from "../../App"
+import {sendsArrayContext} from "../../App"
 import {FaSignOutAlt,FaShoppingCart, FaSearch } from "react-icons/fa";
 
 
@@ -11,7 +12,7 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister} ) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
-     
+  let sendsArray = useContext(sendsArrayContext)  
 const Logout = () => {
   setCheckLogout(false)
   setToken("")
