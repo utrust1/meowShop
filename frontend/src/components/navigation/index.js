@@ -1,9 +1,11 @@
-import React from "react";
+import React  , { useContext }from "react";
 import { Link } from "react-router-dom";
 import "./navigation.css";
+import { tokenContext } from "../../App"
 import {FaShoppingCart, FaSearch } from "react-icons/fa";
 
-const Navigation = ({ token }) => {
+const Navigation = () => {
+  let token = useContext(tokenContext);
   return (
     <div className="container">
       <div className="Navigation">
