@@ -18,6 +18,19 @@ const Logout = () => {
   setCheckRegister(false)
 
 }
+
+const addToCart = () => {
+  let ;
+  axios
+    .post(`http://localhost:5000/cart`, senderFile, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then(async (res) => {})
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
   return (
     <div className="container">
       <div className="Navigation">
@@ -38,9 +51,9 @@ const Logout = () => {
         <div className="navbar">
           { ((token || checkRegister) && checkLogout ) ? (
             <div>
-              <Link to="/cart" className="navcart"></Link>
-              <FaShoppingCart />
-             <button onClick={Logout}> <FaSignOutAlt/> </button>
+              <Link to="/cart" className="navcart"></Link>             
+              <FaShoppingCart onClick={addToCart} />
+              <FaSignOutAlt  onClick={Logout} /> 
             </div>
           ) : (
             <div>
