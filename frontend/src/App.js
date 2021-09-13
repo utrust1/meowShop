@@ -13,11 +13,13 @@ import Cart from "./components/cart/Cart"
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
 export const checkLogoutContext  = createContext();
+export const sendsArrayContext  = createContext();
 
 const App = () => {
   const [token, setToken] = useState("");
   const [checkRegister, setCheckRegister] = useState(false);
   const [checkLogout, setCheckLogout] = useState(true);
+  const [sendsArray, setSendsArray] = useState([]);
   const history = useHistory()
   history.push("/Home")
   return (
@@ -25,9 +27,10 @@ const App = () => {
        <checkRegisterContext.Provider value={checkRegister}>
        <tokenContext.Provider value={token} >
        <checkLogoutContext.Provider value={checkLogout}>
+       <sendsArrayContext.Provider value={sendsArray}>
       <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} />
 <Switch>
-      <Route exact path="/Home"  component={Main}  />
+      <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray}  setSendsArray={setSendsArray}/>}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/product/:id" component={GetAllProduct} />
@@ -35,6 +38,7 @@ const App = () => {
       <Route exact path="/cart" component={Cart} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch>
+           </sendsArrayContext.Provider>
       </checkLogoutContext.Provider>
       </tokenContext.Provider>
       </checkRegisterContext.Provider>
