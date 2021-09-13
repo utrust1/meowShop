@@ -42,10 +42,12 @@ const Main = ({sendsArray , setSendsArray}) => {
   }, []);
 
   const saveTheProduct = (product) => {
+	  let idProduct = product._id 
     if (token || checkRegister) {
-      console.log("purchase", product);
-      // setSendsArray([...sendsArray , {purchase:product}])
-      sendsArray.push([{ product }]);
+      console.log("purchase", idProduct);
+      setSendsArray([...sendsArray , {purchase:idProduct}])
+	  console.log("whooo",sendsArray);
+    //   sendsArray.push({ idProduct });
       console.log("plapla", sendsArray);
       if (number) {
         setNumber(number + 1);
