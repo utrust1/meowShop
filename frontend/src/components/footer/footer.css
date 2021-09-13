@@ -1,17 +1,21 @@
 .FooterPerant{
     background-color: rgb(252, 144, 144);
     position: relative;
-   
+   height: 150px;
     
 }
 
 .footerChild{
     display: flex;
     gap: 35%;
-    margin: 5px;
+   margin-bottom: 60px;
     text-align: left;
     align-items: center;
     font-weight: bold;
     padding-left: 30px;
     cursor:pointer;
+}
+
+.footerChild p , .footerChild span {
+    margin-top: 60px;
 }
