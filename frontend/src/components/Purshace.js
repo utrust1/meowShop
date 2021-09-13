@@ -54,7 +54,7 @@ const Purshace = () => {
           setPhoneNumber(e.target.value);
         }}
       ></input>
-      <button
+      <button type="submit"
         onClick={() => {
           eventOnButton();
         }}
