@@ -45,7 +45,7 @@ const Main = ({sendsArray , setSendsArray}) => {
     if (token || checkRegister) {
       console.log("purchase", product);
       // setSendsArray([...sendsArray , {purchase:product}])
-      sendsArray.push({ product });
+      sendsArray.push([{ product }]);
       console.log("plapla", sendsArray);
       if (number) {
         setNumber(number + 1);

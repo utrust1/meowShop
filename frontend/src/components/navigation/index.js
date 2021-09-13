@@ -1,6 +1,7 @@
 import React  , { useContext }from "react";
 import { Link } from "react-router-dom";
 import "./navigation.css";
+import axios from "axios";
 import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
 import { checkLogoutContext } from "../../App"
@@ -21,12 +22,13 @@ const Logout = () => {
 }
 
 const addToCart = () => {
-  let ;
+  let  purchase = sendsArray ;
+  console.log("meow " , purchase);
   axios
-    .post(`http://localhost:5000/cart`, senderFile, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(async (res) => {})
+    .post(`http://localhost:5000/cart`,  purchase  ,{ 
+      headers: { Authorization: `Bearer ${token}`} } ,
+    )
+    .then(async (res) => {console.log("heheeee");})
     .catch((err) => {
       console.log(err);
     });
