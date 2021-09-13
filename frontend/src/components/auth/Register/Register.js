@@ -1,11 +1,9 @@
 import "./Register.css";
 import React from "react";
 import { useState } from "react";
-import { useHistory } from "react-router";
 import axios from "axios";
 
-const Register = ({setcheckRegister}) => {
-  const history = useHistory();
+const Register = ({setCheckRegister}) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [age, setAge] = useState("");
@@ -24,7 +22,7 @@ const Register = ({setcheckRegister}) => {
       })
       .then((result) => {
         console.log(result);
-        setMessege(" The user has been created successfully ");
+        setCheckRegister(true)
       }).catch((error)=>{
           console.log(error.response);
           setMessege(" The Email is already exist Please enter another Email ");

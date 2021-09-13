@@ -8,8 +8,6 @@ import {FaShoppingCart, FaSearch } from "react-icons/fa";
 const Navigation = () => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
-  console.log("checkRegister" , checkRegister);
-  console.log("token" , token);
   return (
     <div className="container">
       <div className="Navigation">
@@ -28,7 +26,7 @@ const Navigation = () => {
           <FaSearch className="searchIcon" />
         </div>
         <div className="navbar">
-          {token ? (
+          { token || checkRegister ? (
             <div>
               <Link to="/cart" className="navcart"></Link>
               <FaShoppingCart />

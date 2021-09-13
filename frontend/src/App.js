@@ -20,21 +20,20 @@ const App = () => {
   history.push("/Home")
   return (
     <div className="App">
-      <tokenContext.Provider value={token} >
       <checkRegisterContext.Provider value={checkRegister}>
+      <tokenContext.Provider value={token} >
       <Navigation />
 <Switch>
       <Route exact path="/Home"  component={Main}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
-      <Route exact path="/Register" component={Register} />
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} />} />
       <Route exact path="/product/:id" component={GetAllProduct} />
       <Route exact path="/login" render={() => <Login  setToken={setToken} />} />
       <Route exact path="/cart" component={Cart} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch>
-      </checkRegisterContext.Provider>
 </tokenContext.Provider>
+      </checkRegisterContext.Provider>
 
 
     </div>
