@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./navigation.css";
 import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
-import {FaShoppingCart, FaSearch } from "react-icons/fa";
+import {FaSignOutAlt,FaShoppingCart, FaSearch } from "react-icons/fa";
 
 const Navigation = () => {
   let token = useContext(tokenContext);
@@ -30,9 +30,7 @@ const Navigation = () => {
             <div>
               <Link to="/cart" className="navcart"></Link>
               <FaShoppingCart />
-              <Link to="/logout" className="navRegister">
-                log out
-              </Link>
+             <button> <FaSignOutAlt/> </button>
             </div>
           ) : (
             <div>
