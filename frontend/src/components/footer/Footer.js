@@ -1,15 +1,34 @@
 import React from 'react';
 import {FaEnvelope} from  "react-icons/fa"
 import "./Footer.css";
-
+import { useHistory } from 'react-router';
 const Footer = () => {
 
+const history =useHistory() 
+
+	const aboutUsEvent = ()=>{
+
+	}
+	
+
+	const ourPolicyEvent = ()=>{
+
+	}
+
+	const contactUsEvent = ()=>{
+
+
+	}
+	
+
+
+
+
 return <div className="FooterPerant"> 
- 
 <div className="footerChild">
-	<p>About us </p>
-	<p>Our Policy</p>
-	<span><FaEnvelope  className="emailIcon" />Contact us</span>
+	<p onClick={()=>{aboutUsEvent()}}>About us </p>
+	<p onClick={()=>{ourPolicyEvent()}}>Our Policy</p>
+	<span onClick={()=>{contactUsEvent()}} ><FaEnvelope  className="emailIcon" />Contact us</span>
 </div>
 
 
