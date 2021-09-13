@@ -24,14 +24,11 @@ const Register = ({setcheckRegister}) => {
       })
       .then((result) => {
         console.log(result);
-        setcheckRegister(true)
-        history.push("/Home");
-        setMessege("good luck")
+        setMessege(" The user has been created successfully ");
+      }).catch((error)=>{
+          console.log(error.response);
+          setMessege(" The Email is already exist Please enter another Email ");
       })
-      .catch((error) => {
-        console.log(error.response);
-        setMessege(" The Email is already exist Please enter another Email ");
-      });
   };
 
   return (
