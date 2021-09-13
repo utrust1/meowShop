@@ -9,6 +9,7 @@ import Register from "./components/auth/Register/Register";
 import GetAllProduct from "./components/product/index";
 import Login from "./components/auth/Login/Login";
 import { Switch , useHistory  } from "react-router";
+import Footer from "./components/Footer/Footer";
 import Cart from "./components/cart/Cart"
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
