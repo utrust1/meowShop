@@ -1,8 +1,13 @@
 .FooterPerant{
  background: rgb(85, 84, 84); padding: 5px 0 ;
-    position: relative;
-   height: 150px;
+ height: 150px;
+   position: relative;
+  
 }
+.between{
+    position: absolute;
+    bottom: 0px;
+} 
 
 .footerChild{
     display: flex;
