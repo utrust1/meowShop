@@ -22,10 +22,10 @@ const Logout = () => {
 }
 
 const addToCart = () => {
-  let  purchase = sendsArray ;
+  let  purchase = JSON.stringify(sendsArray) ;
   console.log("meow " , purchase);
   axios
-    .post(`http://localhost:5000/cart`,  purchase  ,{ 
+    .post(`http://localhost:5000/cart`, { purchase } ,{ 
       headers: { Authorization: `Bearer ${token}`} } ,
     )
     .then(async (res) => {console.log("heheeee");})
