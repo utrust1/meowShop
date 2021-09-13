@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {MdEmail} from  "react-icons/fa"
 
 const Footer = () => {
 
@@ -7,7 +7,7 @@ return <div className="Footer">
  
 <div className="our infprmation">
 	<p>About us </p>
-	<p>Contact us </p>
+	<MdEmail className="emialIcon"/>
 </div>
 
 <div  className="footer icons">
