@@ -2,10 +2,13 @@ import React  , { useContext }from "react";
 import { Link } from "react-router-dom";
 import "./navigation.css";
 import { tokenContext } from "../../App"
+import { checkRegisterContext } from "../../App"
 import {FaShoppingCart, FaSearch } from "react-icons/fa";
 
 const Navigation = () => {
   let token = useContext(tokenContext);
+  let checkRegister = useContext(checkRegisterContext)
+  console.log("checkRegister" , checkRegister);
   console.log("token" , token);
   return (
     <div className="container">

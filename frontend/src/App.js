@@ -21,6 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <tokenContext.Provider value={token} >
+      <checkRegisterContext.Provider value={checkRegister}>
       <Navigation />
 <Switch>
       <Route exact path="/Home"  component={Main}  />
@@ -32,6 +33,7 @@ const App = () => {
       <Route exact path="/cart" component={Cart} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch>
+      </checkRegisterContext.Provider>
 </tokenContext.Provider>
 
 
