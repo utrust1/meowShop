@@ -74,8 +74,6 @@ console.log("you have to log in first ");
 	}
 	
  /************************************ (wish list)  *****************************************/
-
-
 const wishList = ()=>{
 
 }
