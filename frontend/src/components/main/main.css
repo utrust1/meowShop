@@ -141,8 +141,19 @@
     -moz-transition: 2s;
     -ms-transition: 2s;
     -o-transition: 2s;
+    border-radius: 50%;
+    background-color: #ffff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: #000;
+    font-size: 20px;
+    margin: 5px;
 }
 
+
+/*
 .icon-cart:hover {
     transform: rotate(60deg);
     -webkit-transform: rotate(60deg);
@@ -166,3 +177,4 @@
     -ms-transform: rotate(60deg);
     -o-transform: rotate(60deg);
 }
+*/
