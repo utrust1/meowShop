@@ -14,10 +14,10 @@ const  Purshace =()=>{
 return (
         <div>
 
-        <input type="text"   placeholder =" Your Country "></input>
-        <input type="text"   placeholder =" Your City "></input>
-        <input type="text"   placeholder =" Your Address "></input>
-        <input type="number" placeholder =" Your Phone number"></input>
+        <input type="text"   placeholder =" Your Country " onChange={(e)=>{setCountry(e.target.value)}}></input>
+        <input type="text"   placeholder =" Your City " onChange={(e)=>{setCity(e.target.value)}}></input>
+        <input type="text"   placeholder =" Your Address " onChange={(e)=>{setAddress(e.target.value)}}></input>
+        <input type="number" placeholder =" Your Phone number" onChange={(e)=>{setPhoneNumber(e.target.value)}}></input>
         <button onClick={()=>{}}>Check out</button>
 
 
