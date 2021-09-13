@@ -1,149 +1,152 @@
-.category-section {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    margin-bottom: 30px;
-    gap: 10px;
-}
-
-@media only screen and (max-width: 992px) {
     .category-section {
-        display: grid;
-        grid-template-columns: repeat(2, 2fr);
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        margin-bottom: 30px;
+        gap: 10px;
     }
-}
-
-@media only screen and (max-width: 600px) {
-    .category-section {
-        display: grid;
-        grid-template-columns: repeat(1, 2fr);
+    
+    @media only screen and (max-width: 992px) {
+        .category-section {
+            display: grid;
+            grid-template-columns: repeat(2, 2fr);
+        }
     }
-}
-
-.categoryMain {
-    position: relative;
-}
-
-
-/**********/
-
-.categoryImg {
-    width: 400px;
-    ;
-}
-
-
-/**********/
-
-.categoryMain img {
-    max-width: 100%;
-    height: 650px;
-}
-
-.categoryMain .titleforCategory {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0, 0.6);
-}
-
-.categoryMain .categorycontact {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-}
-
-.categoryMain button {
-    padding: 10px 25px;
-    margin-top: 10px;
-}
-
-.categoryMain h2 {
-    color: #ffff;
-}
-
-.buttonCategory {
-    padding: 10px;
-    border: none;
-}
-
-
-/*Product Style*/
-
-.product-section {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-@media only screen and (max-width: 992px) {
+    
+    @media only screen and (max-width: 600px) {
+        .category-section {
+            display: grid;
+            grid-template-columns: repeat(1, 2fr);
+        }
+    }
+    
+    .categoryMain {
+        position: relative;
+    }
+    /**********/
+    
+    .categoryImg {
+        width: 400px;
+        ;
+    }
+    /**********/
+    
+    .categoryMain img {
+        max-width: 100%;
+        height: 650px;
+    }
+    
+    .categoryMain .titleforCategory {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.6);
+    }
+    
+    .categoryMain .categorycontact {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }
+    
+    .categoryMain button {
+        padding: 10px 25px;
+        margin-top: 10px;
+    }
+    
+    .categoryMain h2 {
+        color: #ffff;
+    }
+    
+    .buttonCategory {
+        padding: 10px;
+        border: none;
+    }
+    /*Product Style*/
+    
     .product-section {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
     }
-}
-
-.productMain {
-    position: relative;
-    transition: 0.4s;
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -ms-transition: 0.4s;
-    -o-transition: 0.4s;
-    width: 100%;
-}
-
-.productMain img {
-    max-width: 100%;
-}
-
-.productMain .showdetails {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0, 0.5);
-    display: none;
-}
-
-.productMain .showdetails .show-icon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    color: #ffff;
-}
-
-.productMain:hover .showdetails {
-    display: block;
-}
-
-.icon-cart,
-.icon-search,
-.icon-heart {
-    font-size: 30px;
-    padding: 10px;
-    transition: 2s;
-    -webkit-transition: 2s;
-    -moz-transition: 2s;
-    -ms-transition: 2s;
-    -o-transition: 2s;
-}
-
-.icon-cart:hover {
+    
+    @media only screen and (max-width: 992px) {
+        .product-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+    }
+    
+    .productMain {
+        position: relative;
+        transition: 0.4s;
+        -webkit-transition: 0.4s;
+        -moz-transition: 0.4s;
+        -ms-transition: 0.4s;
+        -o-transition: 0.4s;
+        width: 100%;
+    }
+    
+    .productMain img {
+        max-width: 100%;
+    }
+    
+    .productMain .showdetails {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.5);
+        display: none;
+    }
+    
+    .productMain .showdetails .show-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        color: #ffff;
+    }
+    
+    .productMain:hover .showdetails {
+        display: block;
+    }
+    
+    .icon-cart,
+    .icon-search,
+    .icon-heart {
+        font-size: 30px;
+        padding: 10px;
+        transition: 2s;
+        -webkit-transition: 2s;
+        -moz-transition: 2s;
+        -ms-transition: 2s;
+        -o-transition: 2s;
+        border-radius: 50%;
+        background-color: #ffff;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        color: #000;
+        font-size: 20px;
+        margin: 5px;
+        cursor: pointer;
+    }
+    /*.icon-cart:hover {
     transform: rotate(60deg);
     -webkit-transform: rotate(60deg);
     -moz-transform: rotate(60deg);
@@ -165,4 +168,4 @@
     -moz-transform: rotate(60deg);
     -ms-transform: rotate(60deg);
     -o-transform: rotate(60deg);
-}
+}*/
