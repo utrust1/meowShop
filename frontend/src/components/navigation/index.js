@@ -30,9 +30,9 @@ const Navigation = () => {
             <div>
               <Link to="/cart" className="navcart"></Link>
               <FaShoppingCart />
-             <button>
+              <Link to="/logout" className="navRegister">
                 log out
-            </button>
+              </Link>
             </div>
           ) : (
             <div>
