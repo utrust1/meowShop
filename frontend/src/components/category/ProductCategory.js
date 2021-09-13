@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Route  , useParams} from 'react-router-dom';
+import { useHistory  } from "react-router";
 import axios from 'axios';
 import './dashboard.css';
 const ProductCategory=(props)=> {
     const [product , setProduct] = useState()
     const {id} = useParams()
+    const history = useHistory()
     /// tseting the params
 	useEffect(() => {
 		axios.get(`http://localhost:5000/product/cat/${id}`).then((res) => {
@@ -13,18 +15,21 @@ const ProductCategory=(props)=> {
             console.log(err);
         })
     }, []);
+
+
+    const getbyid = (id) => {
+        history.push(`/product/${id}`)
+    }
     return (
         <div className="MainSectionForViewProduct">
-Hello
-            <div className='Contect-Main-Section'> 
+            <div className='Contect-Main-Section'>
             {product && product.map((elm)=>{
                 return (
-                <div className='viewProduct'>
+                    <div className='viewProduct'>
                    <div className='content'>
                    <img src={elm.img}/>
                     <h1>{elm.title}</h1>
-                    <p>{elm.description}</p>
-                    
+                    <button onClick={()=>{getbyid(elm._id)}}>Show</button>
                    </div>
                 </div>)
             })}
