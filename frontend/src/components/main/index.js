@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import axios from 'axios';
 import './main.css';
 import Header from '../header';
-import {FaShoppingCart,FaSearch ,FaHeart} from "react-icons/fa";
+import {FaShoppingCart,FaEye ,FaHeart} from "react-icons/fa";
 
 
 const Main = ({token}) => {
@@ -125,7 +125,7 @@ const getallProducts = (id)=>{
 							
 							<div className = "icon">
 							<FaShoppingCart className = "icon-cart" onClick={()=>sender(product._id)}/>
-								<FaSearch className = "icon-search" onClick={()=>getallProducts(product._id)}/>
+								<FaEye className = "icon-search" onClick={()=>getallProducts(product._id)}/>
 								<FaHeart className = "icon-heart"/>
 							</div>
 								</div>
