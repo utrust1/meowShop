@@ -9,7 +9,12 @@ import Register from "./components/auth/Register/Register";
 import GetAllProduct from "./components/product/index";
 import Login from "./components/auth/Login/Login";
 import { Switch , useHistory  } from "react-router";
+import Footer from "./components/Footer/Footer";
 import Cart from "./components/cart/Cart"
+import Aboutus from "./components/Footer/Aboutus";
+import Contactus from "./components/Footer/Contactus";
+import Ourpolicy from "./components/Footer/Ourpolicy";
+
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
 export const checkLogoutContext  = createContext();
@@ -36,13 +41,17 @@ const App = () => {
       <Route exact path="/product/:id" component={GetAllProduct} />
       <Route exact path="/login" render={() => <Login  setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/cart" component={Cart} />
+      <Route exact path="/AboutUs" component={Aboutus} />
+      <Route exact path="/ContactUs" component={Contactus} />
+      <Route exact path="/OurPolicy" component={Ourpolicy} />
+
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch>
            </sendsArrayContext.Provider>
       </checkLogoutContext.Provider>
       </tokenContext.Provider>
       </checkRegisterContext.Provider>
-
+<Footer/>
 
     </div>
   );
