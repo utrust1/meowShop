@@ -9,17 +9,19 @@ import ProductCategory from "./components/category/ProductCategory";
 import Register from "./components/auth/Register/Register";
 import GetAllProduct from "./components/product/index";
 import Login from "./components/auth/Login/Login";
-import { Switch } from "react-router";
+import { Switch , useHistory  } from "react-router";
 import Cart from "./components/cart/Cart"
 export const UserContext = createContext();
 
+
 const App = () => {
   const [token, setToken] = useState("");
-
+  const history = useHistory()
+  history.push("/Home")
   return (
     <div className="App">
       <Navigation token={token} />
-      <Main />
+
 <Switch>
       <Route exact path="/Home" render={()=><Main token={token}/>} />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
