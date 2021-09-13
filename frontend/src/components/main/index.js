@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import axios from 'axios';
 import './main.css';
-import ProductCategory from '../category/ProductCategory';
 import Header from '../header';
 import {FaShoppingCart,FaSearch ,FaHeart} from "react-icons/fa";
 
@@ -11,7 +10,7 @@ const Main = ({token}) => {
     const [getCategory, setGetCategory] = useState();
     const [getProduct, setGetProduct] = useState();
 	const [number , setNumber] = useState(0)
-	const [array , setArray] = useState([])
+	const [sendsArray , setSendsArray] = useState([])
     const history = useHistory()
     
 	useEffect(() => {
@@ -33,36 +32,50 @@ const Main = ({token}) => {
 	},[])
 
 	const addToCart = ()=>{
-		
-		axios.post(`http://localhost:5000/cart`,array, {headers:{'Authorization': `Bearer ${token}`}}).then(async (res)=>{
+		let senderFile = sendsArray
+		axios.post(`http://localhost:5000/cart`,senderFile, {headers:{'Authorization': `Bearer ${token}`}}).then(async (res)=>{
              
 
-			if(number){
-				await setNumber(number+1)
-				console.log('second time : ' ,number)
-				await localStorage.setItem("productNumber",number+1)
-			}else{				
-				await setNumber(1)
-				console.log('first time : ' ,number)
-				await localStorage.setItem("productNumber",number+1)
-				
-			}
+			
 
 		}).catch((err)=>{
 			console.log(err)
 		})
 	}
 
+	const sender = (id)=>{
+		let purchase = id 
+		console.log('purchase' , purchase);
+		setSendsArray([...sendsArray , {purchase:purchase}])
+		console.log("plapla" , sendsArray);
+		if(number){
+			 setNumber(number+1)
+			console.log('second time : ' ,number)
+			 localStorage.setItem("productNumber",number+1)
+		}else{				
+			 setNumber(1)
+			console.log('first time : ' ,number)
+			 localStorage.setItem("productNumber",number+1)
+			
+		}
+	}
 	
 
 
+//when i press on item, add item id to the cart array
+	//when i press on checkout send cart data to the db via axisos
+/*
+function (recieve param from on click )
+add param to array
+const array []
+----------------------------????? context function cart ---> cart axios, context  
 
+
+
+*/
 
 // event on the shopnow butthon inside the category 
 	const eventOnButton =(title ,id)=>{
-		console.log("cate id"  , id );
-		console.log("cate title"  , title );
-	
 		history.push(`/category/${title}/${id}`);
 		
 }
@@ -83,7 +96,6 @@ const getallProducts = (id)=>{
 		<div className = "category-section">
 		{getCategory&&
 		getCategory.map((cate)=>{
-			console.log("cate" , cate );
 			return (
 				<div className = "categoryMain">
 						<img className="categoryImg" style={{height:"500px"}} src={cate.img}></img>
@@ -105,7 +117,6 @@ const getallProducts = (id)=>{
 			<div className='product-section'>
 				{getProduct&&
 				getProduct.map((product)=>{
-					console.log(product)
 					return (
 						<div className = "productMain">
 							<img src={product.img}></img>
@@ -113,7 +124,7 @@ const getallProducts = (id)=>{
 								<div className = "show-icon">
 							
 							<div className = "icon">
-							<FaShoppingCart className = "icon-cart" onClick={()=>addToCart(product._id)}/>
+							<FaShoppingCart className = "icon-cart" onClick={()=>sender(product._id)}/>
 								<FaSearch className = "icon-search" onClick={()=>getallProducts(product._id)}/>
 								<FaHeart className = "icon-heart"/>
 							</div>
