@@ -1,8 +1,9 @@
 import React from 'react'
+import "./Footer.css";
 
 const  Ourpolicy= ()=> {
     return (
-        <div>
+        <div className="ourPolicy">
         <div>
            <h2> REFUNDS And RETURNS POLICY </h2>
            <h3> Order cancellation </h3>
