@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import axios from "axios";
 
-const Register = () => {
+const Register = ({setcheckRegister}) => {
   const history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
@@ -12,7 +12,6 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [messege, setMessege] = useState("");
-  const [checkRegister, setcheckRegister] = useState(false);
 
   const registerationEventButton = () => {
     axios
