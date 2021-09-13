@@ -15,7 +15,6 @@ const Main = () => {
   const [getCategory, setGetCategory] = useState();
   const [getProduct, setGetProduct] = useState();
   const [number, setNumber] = useState(0);
-  const [sendsArray, setSendsArray] = useState([]);
   const [wishListArray, setWishListArray] = useState([]);
   const [wishListNumber, setWishListNumber] = useState(0);
 
