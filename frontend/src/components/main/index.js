@@ -11,7 +11,7 @@ const Main = ({token}) => {
     const [getCategory, setGetCategory] = useState();
     const [getProduct, setGetProduct] = useState();
 	const [number , setNumber] = useState(0)
-	const [array , setArray] = useState([])
+	
     const history = useHistory()
     
 	useEffect(() => {
@@ -32,9 +32,9 @@ const Main = ({token}) => {
 		})
 	},[])
 
-	const addToCart = ()=>{
+	const addToCart = (id)=>{
 		
-		axios.post(`http://localhost:5000/cart`,array, {headers:{'Authorization': `Bearer ${token}`}}).then(async (res)=>{
+		axios.post(`http://localhost:5000/cart`,id, {headers:{'Authorization': `Bearer ${token}`}}).then(async (res)=>{
              
 
 			if(number){
@@ -54,8 +54,6 @@ const Main = ({token}) => {
 	}
 
 	
-
-
 
 
 // event on the shopnow butthon inside the category 
