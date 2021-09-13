@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import axios from "axios";
 import "./main.css";
 import Header from "../header";
-import { FaShoppingCart, FaSearch, FaHeart } from "react-icons/fa";
+import { FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
 import { useContext } from "react";
 import { tokenContext } from "../../App";
 import { checkRegisterContext } from "../../App";
@@ -144,7 +144,7 @@ const Main = ({sendsArray , setSendsArray}) => {
                         className="icon-cart"
                         onClick={() => saveTheProduct(product)}
                       />
-                      <FaSearch
+                      <FaEye
                         className="icon-search"
                         onClick={() => getallProducts(product._id)}
                       />
