@@ -19,6 +19,7 @@ const App = () => {
   return (
     <div className="App">
       <Navigation token={token} />
+      <Main />
 <Switch>
       <Route exact path="/Home" render={()=><Main token={token}/>} />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
