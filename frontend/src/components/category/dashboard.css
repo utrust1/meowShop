@@ -1,9 +1,42 @@
 .MainSectionForViewProduct {
+    padding: 15px;
+    background-color: #f7f7f7;
+}
+
+.Contect-Main-Section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.viewProduct {
     padding: 10px;
+    max-width: 100%;
 }
 
 .viewProduct img {
     max-width: 100%
+}
+
+@media only screen and (max-width: 992px) {
+    .Contect-Main-Section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+}
+
+@media only screen and (max-width: 722px) {
+    .Contect-Main-Section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .Contect-Main-Section {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
 }
