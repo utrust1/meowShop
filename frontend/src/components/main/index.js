@@ -4,6 +4,7 @@ import axios from 'axios';
 import './main.css';
 import Header from '../header';
 import {FaShoppingCart,FaSearch ,FaHeart} from "react-icons/fa";
+import { useContext } from 'react';
 import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
  
@@ -79,8 +80,6 @@ const wishList = ()=>{
 
 }
 
-
-
 const addToWishList =(id)=>{
  if (token ||checkRegister){
 	let productId = id 
@@ -98,17 +97,6 @@ const addToWishList =(id)=>{
 	 console.log("you have to log in first ")
  }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 // event on the shopnow butthon inside the category 
