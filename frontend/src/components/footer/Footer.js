@@ -1,13 +1,15 @@
 import React from 'react';
 import {FaEnvelope} from  "react-icons/fa"
+import "./Footer.css";
 
 const Footer = () => {
 
-return <div className="Footer"> 
+return <div className="FooterPerant"> 
  
-<div className="our infprmation">
+<div className="footerChild">
 	<p>About us </p>
-	<span><FaEnvelope  className="emialIcon" style={{fontSize:"50px"}} />Contact us</span>
+	<p>Our Policy</p>
+	<span><FaEnvelope  className="emailIcon" />Contact us</span>
 </div>
 
 

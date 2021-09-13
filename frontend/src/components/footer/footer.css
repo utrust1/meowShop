@@ -1,5 +1,7 @@
-/* .Footer{font-size: 30px;
-    padding: 10px;
+/* .Footer{
+    display: flex;
+    font-size: 40px ;
+    padding: 20px;
     transition: 2s;
     -webkit-transition: 2s;
     -moz-transition: 2s;
@@ -14,8 +16,12 @@
     color: #000;
     font-size: 20px;
     margin: 5px;
-    cursor: pointer; } */
+    cursor: pointer
+} */
+.FooterPerant{
+    background-color: rgb(252, 144, 144);
+}
 
-.Footer{
-    font-size: 40px
+.footerChild{
+    display: flex;
 }
