@@ -4,14 +4,24 @@ import axios from 'axios';
 import './main.css';
 import Header from '../header';
 import {FaShoppingCart,FaSearch ,FaHeart} from "react-icons/fa";
+import { tokenContext } from "../../App"
+import { checkRegisterContext } from "../../App"
+ 
 
 
-const Main = ({token}) => {
+
+const Main = () => {
+	let token = useContext(tokenContext);
+	let checkRegister = useContext(checkRegisterContext)
+	
     const [getCategory, setGetCategory] = useState();
     const [getProduct, setGetProduct] = useState();
 	const [number , setNumber] = useState(0)
 	const [sendsArray , setSendsArray] = useState([])
+	const [wishListArray , setWishListArray] = useState([])
+	const [wishListNumber , setWishListNumber] =useState(0)
     const history = useHistory()
+	
     
 	useEffect(() => {
 		axios.get(`http://localhost:5000/category`).then((res) => {
@@ -31,19 +41,16 @@ const Main = ({token}) => {
 		})
 	},[])
 
-	const addToCart = ()=>{
+	const navigationCart  = ()=>{
 		let senderFile = sendsArray
 		axios.post(`http://localhost:5000/cart`,senderFile, {headers:{'Authorization': `Bearer ${token}`}}).then(async (res)=>{
-             
-
-			
-
-		}).catch((err)=>{
+        }).catch((err)=>{
 			console.log(err)
 		})
 	}
 
 	const sender = (id)=>{
+		if (token){}
 		let purchase = id 
 		console.log('purchase' , purchase);
 		setSendsArray([...sendsArray , {purchase:purchase}])
@@ -60,19 +67,40 @@ const Main = ({token}) => {
 		}
 	}
 	
+ /************************************ (wish list)  *****************************************/
 
 
-//when i press on item, add item id to the cart array
-	//when i press on checkout send cart data to the db via axisos
-/*
-function (recieve param from on click )
-add param to array
-const array []
-----------------------------????? context function cart ---> cart axios, context  
+const wishList = ()=>{
+
+}
 
 
 
-*/
+const addToWishList =(id)=>{
+	let productId = id 
+setWishListArray([...wishListArray , {purchase:productId}])
+	if(wishListNumber){
+		setWishListNumber(wishListNumber+1)
+	
+		 localStorage.setItem("wishList",wishListNumber+1)
+	}else{				
+		setWishListNumber(1)
+		localStorage.setItem("wishList",wishListNumber+1)
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 // event on the shopnow butthon inside the category 
 	const eventOnButton =(title ,id)=>{
@@ -112,7 +140,7 @@ const getallProducts = (id)=>{
 		})}
 			</div>
 			{number}
-
+            {wishListNumber}
 
 			<div className='product-section'>
 				{getProduct&&
@@ -126,7 +154,7 @@ const getallProducts = (id)=>{
 							<div className = "icon">
 							<FaShoppingCart className = "icon-cart" onClick={()=>sender(product._id)}/>
 								<FaSearch className = "icon-search" onClick={()=>getallProducts(product._id)}/>
-								<FaHeart className = "icon-heart"/>
+								<FaHeart className = "icon-heart"  onClick={()=>addToWishList(product._id)} />
 							</div>
 								</div>
 							</div>
