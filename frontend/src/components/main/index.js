@@ -13,13 +13,14 @@ import { checkRegisterContext } from "../../App"
 const Main = () => {
 	let token = useContext(tokenContext);
 	let checkRegister = useContext(checkRegisterContext)
-	
+
     const [getCategory, setGetCategory] = useState();
     const [getProduct, setGetProduct] = useState();
 	const [number , setNumber] = useState(0)
 	const [sendsArray , setSendsArray] = useState([])
 	const [wishListArray , setWishListArray] = useState([])
 	const [wishListNumber , setWishListNumber] =useState(0)
+	
     const history = useHistory()
 	
     
@@ -50,8 +51,8 @@ const Main = () => {
 	}
 
 	const sender = (id)=>{
-		if (token){}
-		let purchase = id 
+		if (token ||checkRegister ){
+			let purchase = id 
 		console.log('purchase' , purchase);
 		setSendsArray([...sendsArray , {purchase:purchase}])
 		console.log("plapla" , sendsArray);
@@ -65,6 +66,10 @@ const Main = () => {
 			 localStorage.setItem("productNumber",number+1)
 			
 		}
+		}else {
+console.log("you have to log in first ");
+		}
+		
 	}
 	
  /************************************ (wish list)  *****************************************/
@@ -77,17 +82,21 @@ const wishList = ()=>{
 
 
 const addToWishList =(id)=>{
+ if (token ||checkRegister){
 	let productId = id 
-setWishListArray([...wishListArray , {purchase:productId}])
-	if(wishListNumber){
-		setWishListNumber(wishListNumber+1)
-	
-		 localStorage.setItem("wishList",wishListNumber+1)
-	}else{				
-		setWishListNumber(1)
-		localStorage.setItem("wishList",wishListNumber+1)
+	setWishListArray([...wishListArray , {purchase:productId}])
+		if(wishListNumber){
+			setWishListNumber(wishListNumber+1)
 		
-	}
+			 localStorage.setItem("wishList",wishListNumber+1)
+		}else{				
+			setWishListNumber(1)
+			localStorage.setItem("wishList",wishListNumber+1)
+			
+		}
+ } else {
+	 console.log("you have to log in first ")
+ }
 }
 
 
