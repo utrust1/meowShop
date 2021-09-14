@@ -10,8 +10,8 @@ const WishList = () => {
         axios.get(`http://localhost:5000/wishlist`, {
             headers: { Authorization: `Bearer ${token}` }
         }).then((res) => {
-            console.log(res.data);
-            let wish = res.data.result;
+            console.log(res.data.result.product);
+            let wish = res.data.result.product;
             setinsideWishlist(wish);
         }).catch((err) => {
             console.log(err);
