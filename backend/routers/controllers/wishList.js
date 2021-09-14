@@ -28,6 +28,10 @@ const createNewWishList = (req, res) => {
         });
 };
 
+const getAllWishlist = (req, res) => {
+   
+   };
+
 module.exports = {
     createNewWishList,
 };
