@@ -7,6 +7,10 @@ import { FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
 import { useContext } from "react";
 import { tokenContext } from "../../App";
 import { checkRegisterContext } from "../../App";
+
+
+
+
 const Main = ({sendsArray , setSendsArray}) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);

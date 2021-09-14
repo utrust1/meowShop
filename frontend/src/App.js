@@ -14,11 +14,13 @@ import Cart from "./components/cart/Cart"
 import Aboutus from "./components/footer/Aboutus";
 import Contactus from "./components/footer/Contactus";
 import Ourpolicy from "./components/footer/Ourpolicy";
+import { Search } from "./components/header/Search";
 
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
 export const checkLogoutContext  = createContext();
 export const sendsArrayContext  = createContext();
+export const searchContext  = createContext();
 
 
 const App = () => {
@@ -26,6 +28,7 @@ const App = () => {
   const [checkRegister, setCheckRegister] = useState(false);
   const [checkLogout, setCheckLogout] = useState(true);
   const [sendsArray, setSendsArray] = useState([]);
+  const [searchBar , setSearchBar] = useState()
   
   const history = useHistory()
   history.push("/Home")
@@ -35,6 +38,7 @@ const App = () => {
        <tokenContext.Provider value={token} >
        <checkLogoutContext.Provider value={checkLogout}>
        <sendsArrayContext.Provider value={sendsArray}>
+       <searchContext.Provider value= {searchBar}>
        
       <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} />
 <Switch>
@@ -47,8 +51,10 @@ const App = () => {
       <Route exact path="/AboutUs" component={Aboutus} />
       <Route exact path="/ContactUs" component={Contactus} />
       <Route exact path="/OurPolicy" component={Ourpolicy} />
+      <Route exact path="/search" component={Search} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
+      </searchContext.Provider>
       </sendsArrayContext.Provider>
       </checkLogoutContext.Provider>
       </tokenContext.Provider>
