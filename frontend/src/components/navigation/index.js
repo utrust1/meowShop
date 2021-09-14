@@ -72,6 +72,7 @@ const addToWish = ()=>{
 }
   return (
     <div className="container">
+      <img src='https://a.namshicdn.com/cms/large/bau/20200323/module_01_b_en.gif' className="headerImg"/>
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
          Meow <span>Shop</span>
@@ -92,14 +93,12 @@ const addToWish = ()=>{
         <div className="navbar">
           { ((token || checkRegister) && checkLogout ) ? (
             <div>
-              <Link to="/cart" className="navcart"></Link>
               <span className="shopCartMain">
-              <FaHeart onClick={addToWish}/>
+              <FaHeart onClick={addToWish} className="HeartIcon"/>
               <FaShoppingCart className='CartShop'onClick={addToCart} />
               <span className='valueShop'>{cartNumber}</span>
-              </span>             
-              <FaSignOutAlt className='Logout' onClick={Logout} /> 
-             
+              </span>         
+              <span onClick={Logout} className='LogoutIcon'>Logout</span>
             </div>
            
           ) : (

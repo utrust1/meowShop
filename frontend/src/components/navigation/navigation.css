@@ -5,6 +5,10 @@
     padding: 15px 0px;
 }
 
+.headerImg {
+    width: 100%;
+}
+
 .Searchbar {
     position: relative;
 }
@@ -42,6 +46,23 @@
     color: #345B63;
 }
 
+.navbar {
+    font-size: 18px;
+    color: green;
+}
+
+.HeartIcon,
+.CartShop,
+.Logout {
+    padding-right: 10px;
+}
+
+.LogoutIcon {
+    border-left: 2px solid red;
+    font-size: 18px;
+    padding: 5px;
+}
+
 .navLogin,
 .navRegister {
     border-left: 2px solid red;
@@ -64,10 +85,11 @@
 
 .shopCartMain .valueShop {
     position: absolute;
-    right: -5px;
+    right: 12px;
     padding: 3px;
-    font-size: 11px;
-    top: -15px;
+    color: #ffff;
+    font-size: 8px;
+    top: -7px;
     background-color: red;
     border-radius: 50%;
     -webkit-border-radius: 50%;
