@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "Nunito";
+    padding: 10px 0px;
 }
 
 .Searchbar {
@@ -23,14 +23,24 @@
     font-size: 14px;
 }
 
-.navbar {
-    padding-right: 15px;
-}
-
 .logoName {
     /* color: rgb(0, 238, 255);*/
     color: #09111b;
     font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.navLogin,
+.navRegister {
+    border: 2px solid #309975;
+    padding: 5px;
+    text-decoration: none;
+    color: #09111b;
+    margin-left: 5px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
