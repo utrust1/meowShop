@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0px;
+    padding: 15px 0px;
 }
 
 .Searchbar {
@@ -10,16 +10,23 @@
 }
 
 .SearchBarInput {
-    padding: 5px;
+    border: 1.5px solid red;
+    width: 300px;
+    border-radius: 20px;
+    padding: 2px;
     outline: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 .searchIcon {
     position: absolute;
     right: 5px;
     top: 7px;
+    color: green;
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.596);
     font-size: 14px;
 }
 
@@ -37,16 +44,11 @@
 
 .navLogin,
 .navRegister {
-    border: 2px solid #309975;
+    border-left: 2px solid red;
     padding: 5px;
     text-decoration: none;
     color: #09111b;
     margin-left: 5px;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
 }
 
 .CartShop,
