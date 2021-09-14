@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import "./footer.css";
+import "./Footer.css";
 
 const Contactus =()=> {
 

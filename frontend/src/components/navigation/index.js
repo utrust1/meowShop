@@ -7,7 +7,7 @@ import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
 import { checkLogoutContext } from "../../App"
 import {sendsArrayContext} from "../../App"
-import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars} from "react-icons/fa";
+import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 
 
@@ -73,11 +73,12 @@ const addToCart = () => {
             <div>
               <Link to="/cart" className="navcart"></Link>
               <span className="shopCartMain">
+              <FaHeart/>
               <FaShoppingCart className='CartShop'onClick={addToCart} />
               <span className='valueShop'>0</span>
               </span>             
               <FaSignOutAlt className='Logout' onClick={Logout} /> 
-              
+             
             </div>
            
           ) : (
