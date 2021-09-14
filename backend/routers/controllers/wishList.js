@@ -29,7 +29,7 @@ const createNewWishList = (req, res) => {
 };
 
 const getAllWishlist = (req, res) => {
-   
+    const id = req.token.userId
    };
 
 module.exports = {
