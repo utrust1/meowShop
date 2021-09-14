@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: "Nunito";
 }
 
 .Searchbar {
@@ -26,6 +27,10 @@
     padding-right: 15px;
 }
 
-.logoName span {
-    color: red;
+.logoName {
+    /* color: rgb(0, 238, 255);*/
+    color: #09111b;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
 }

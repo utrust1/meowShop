@@ -37,10 +37,8 @@ const addToCart = () => {
   return (
     <div className="container">
       <div className="Navigation">
-        <Link to="/Home">
-          <p className="logoName">
-            LA<span>MA.</span>
-          </p>{" "}
+        <Link to="/Home" className='logoName'>
+         Lama
         </Link>
 
         <div className="Searchbar">
