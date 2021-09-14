@@ -73,6 +73,7 @@ const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber }) => {
     const id = product._id;
     if (token || checkRegister) {
        setWishListArray([...wishListArray , id])
+	   console.log(wishListArray)
 
       if (wishListNumber) {
         setWishListNumber(wishListNumber + 1);
