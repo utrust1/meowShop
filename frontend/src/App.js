@@ -15,13 +15,18 @@ import Aboutus from "./components/footer/Aboutus";
 import Contactus from "./components/footer/Contactus";
 import Ourpolicy from "./components/footer/Ourpolicy";
 import { Search } from "./components/header/Search";
+import WishList from "./components/Wishlist/Wishlist";
 
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
 export const checkLogoutContext  = createContext();
 export const sendsArrayContext  = createContext();
 export const searchContext  = createContext();
+
+export const wishlistContext = createContext();
+
 export const numberContext = createContext();
+
 
 const App = () => {
   const [token, setToken] = useState("");
@@ -29,6 +34,7 @@ const App = () => {
   const [checkLogout, setCheckLogout] = useState(true);
   const [sendsArray, setSendsArray] = useState([]);
   const [searchBar , setSearchBar] = useState()
+  const [wishList , setWishList] = useState([]);
   const [number,  setNumber ] = useState(0);
 
   const history = useHistory()
@@ -39,10 +45,13 @@ const App = () => {
        <tokenContext.Provider value={token} >
        <checkLogoutContext.Provider value={checkLogout}>
        <sendsArrayContext.Provider value={sendsArray}>
+      <wishlistContext.Provider value={wishList}>
        <searchContext.Provider value= {searchBar}>
        <numberContext.Provider value={number}>
       <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
 <Switch>
+      <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray}  setSendsArray={setSendsArray} wishList={wishList} setWishList={setWishList}/>}  />
+
       <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray}  setSendsArray={setSendsArray} number={number}  setNumber={setNumber}/>}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} setCheckLogout={setCheckLogout}/>} />
@@ -53,10 +62,12 @@ const App = () => {
       <Route exact path="/ContactUs" component={Contactus} />
       <Route exact path="/OurPolicy" component={Ourpolicy} />
       <Route exact path="/search" component={Search} />
+      <Route exact path="/wishlist" component={WishList} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
        </numberContext.Provider>
       </searchContext.Provider>
+      </wishlistContext.Provider>
       </sendsArrayContext.Provider>
       </checkLogoutContext.Provider>
       </tokenContext.Provider>

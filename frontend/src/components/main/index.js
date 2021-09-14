@@ -70,11 +70,9 @@ const Main = ({sendsArray , setSendsArray , number ,setNumber }) => {
   const wishList = () => {};
 
   const addToWishList = (product) => {
+    const id = product._id;
     if (token || checkRegister) {
-      // setWishListArray([...wishListArray , {purchase:productId}])
-      wishListArray.push({ product });
-      console.log("purchase", product);
-      console.log("plapla", wishListArray);
+       setWishListArray([...wishListArray , id])
 
       if (wishListNumber) {
         setWishListNumber(wishListNumber + 1);
