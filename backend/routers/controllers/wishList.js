@@ -4,6 +4,7 @@ const wishlistModel = require("./../../db/models/wishlist");
 const createNewWishList = (req, res) => {
     const { product } = req.body;
     let user = req.token.userId
+    product =JSON.parse(product)
     const newWishList = new wishlistModel({
         product,
         user,
