@@ -72,7 +72,6 @@ const addToWish = ()=>{
 }
   return (
     <div className="container">
-      <img src='https://a.namshicdn.com/cms/large/bau/20200323/module_01_b_en.gif' className="headerImg"/>
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
          Meow <span>Shop</span>
