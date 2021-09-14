@@ -47,5 +47,5 @@ const getAllWishlist = (req, res) => {
    };
 
 module.exports = {
-    createNewWishList,
+    createNewWishList,getAllWishlist
 };
