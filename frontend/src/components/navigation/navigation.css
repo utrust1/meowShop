@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0px;
 }
 
 .Searchbar {
@@ -22,10 +23,65 @@
     font-size: 14px;
 }
 
-.navbar {
-    padding-right: 15px;
+.logoName {
+    /* color: rgb(0, 238, 255);*/
+    color: #09111b;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-.logoName span {
-    color: red;
+.navLogin,
+.navRegister {
+    border: 2px solid #309975;
+    padding: 5px;
+    text-decoration: none;
+    color: #09111b;
+    margin-left: 5px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.CartShop,
+.Logout {
+    font-size: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.shopCartMain {
+    position: relative;
+}
+
+.shopCartMain .valueShop {
+    position: absolute;
+    right: -5px;
+    padding: 3px;
+    font-size: 11px;
+    top: -15px;
+    background-color: red;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.fabars {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .Searchbar,
+    .navbar {
+        display: none;
+    }
+    .fabars {
+        display: block;
+        font-size: 20px;
+        cursor: pointer;
+    }
 }
