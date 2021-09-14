@@ -3,23 +3,26 @@ import axios from "axios";
 import { useContext, useState, useEffect } from "react";
 import {tokenContext} from '../../App'
 
-const Cart = () => {
+const Cart =  () => {
     let token = useContext(tokenContext)
     const [insideCart, setInsideCart] = useState();
 
-  useEffect( () => {
-    axios
+  useEffect (() => {
+     axios
       .get(`http://localhost:5000/cart`,{ 
         headers: { Authorization: `Bearer ${token}`}})
-      .then(async (result) => {
-        console.log("kokokokokok", result.data.products.purchase);
-        await setInsideCart(result.data.products.purchase);
+      .then( (result) => {
+        
+        let x=  result.data.products.purchase
+         setInsideCart(x);
         console.log("momomomom",insideCart)
       })
       .catch((err) => {
         console.log(err);
+        return 
       });
-  }, []);
+  },[])
+  
   return (
     <div>
       okoko
