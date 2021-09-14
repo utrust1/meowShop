@@ -6,7 +6,7 @@ import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
 import { checkLogoutContext } from "../../App"
 import {sendsArrayContext} from "../../App"
-import {FaSignOutAlt,FaShoppingCart, FaSearch } from "react-icons/fa";
+import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars} from "react-icons/fa";
 
 
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister} ) => {
@@ -49,6 +49,7 @@ const addToCart = () => {
           ></input>
           <FaSearch className="searchIcon" />
         </div>
+        <FaBars className='fabars'/>
         <div className="navbar">
           { ((token || checkRegister) && checkLogout ) ? (
             <div>
@@ -58,7 +59,9 @@ const addToCart = () => {
               <span className='valueShop'>0</span>
               </span>             
               <FaSignOutAlt className='Logout' onClick={Logout} /> 
+              
             </div>
+           
           ) : (
             <div>
               <Link to="/login" className="navLogin">

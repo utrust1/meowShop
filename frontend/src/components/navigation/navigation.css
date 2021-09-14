@@ -69,3 +69,19 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+
+.fabars {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .Searchbar,
+    .navbar {
+        display: none;
+    }
+    .fabars {
+        display: block;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
