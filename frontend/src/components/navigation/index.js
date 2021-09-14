@@ -74,7 +74,7 @@ const addToWish = ()=>{
     <div className="container">
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
-         Lama
+         Meow <span>Shop</span>
         </Link>
 
         <div className="Searchbar">

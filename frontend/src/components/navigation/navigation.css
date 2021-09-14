@@ -25,10 +25,14 @@
 
 .logoName {
     /* color: rgb(0, 238, 255);*/
-    color: #09111b;
+    color: #D4ECDD;
     font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.logoName span {
+    color: #345B63;
 }
 
 .navLogin,
