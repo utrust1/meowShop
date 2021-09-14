@@ -11,12 +11,14 @@ import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars} from "react-icons/fa";
 
 
 
-const Navigation = ({setCheckLogout  , setToken ,setCheckRegister,setInsideCart} ) => {
+const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar} ) => {
 	const history = useHistory()
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
   let sendsArray = useContext(sendsArrayContext)
+
+  const [search, setSearch] = useState()
 
 const Logout = () => {
   setCheckLogout(false)
@@ -24,6 +26,15 @@ const Logout = () => {
   setCheckRegister(false)
 
 }
+
+const searchByTitle = ()=>{
+	axios.post(`http://localhost:5000/product/search?title=${search}`).then((result)=>{
+		setSearchBar(result.data.result)
+		console.log('sadsad',result.data.result)
+		history.push('/search')
+	})
+}
+
 
 const addToCart = () => {
   let  purchase = JSON.stringify(sendsArray) ;
@@ -50,8 +61,11 @@ const addToCart = () => {
             type="text"
             placeholder="what do you want "
             className="SearchBarInput"
+			onChange={(e)=>{
+				setSearch(e.target.value)
+			}}
           ></input>
-          <FaSearch className="searchIcon" />
+          <FaSearch className="searchIcon" onClick={searchByTitle} />
         </div>
         <FaBars className='fabars'/>
         <div className="navbar">

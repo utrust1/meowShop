@@ -160,6 +160,34 @@ const getProductByCategory = (req, res) => {
     })
 }
 
+const search = (req , res )=>{
+    const title = req.query.title
+    
+    productModel.find({
+        $or:[
+            {
+                title:{
+                    $regex:title,
+                    $options:"i"
+                }
+            },
+            {
+                description:{
+                    $regex:title,
+                    $options:"i"
+                }
+            }
+        ]
+    }).then((result)=>{
+        if(!result){
+            res.status(400).json('product not available')
+        }
+        res.status(200).json({success:true , messsage:"found",result:result })
+    }).catch((err)=>{
+        res.status(409).json({success:false , message:'server error'})
+    })
+}
+
 module.exports = {
     createNewProduct,
     getProductById,
@@ -167,5 +195,6 @@ module.exports = {
     updateProductById,
     deleteProductById,
     getProductByCategory,
-    getAllProduct
+    getAllProduct,
+    search
 };
