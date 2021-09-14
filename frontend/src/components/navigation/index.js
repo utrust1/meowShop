@@ -58,10 +58,11 @@ const addToCart = () => {
 };
 
 const addToWish = ()=>{
-  let wish = JSON.stringify(wishList);
-  axios.post(`http://localhost:5000/wishlist` , {wish},{ 
+  let product = JSON.stringify(wishList);
+  axios.post(`http://localhost:5000/wishlist` , {product},{ 
     headers: { Authorization: `Bearer ${token}`} },
    ).then((res)=>{
+	   console.log(res.data)
      history.push('/wishlist')
 
    }).catch((err)=>{
