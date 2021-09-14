@@ -3,17 +3,13 @@ import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import "./navigation.css";
 import axios from "axios";
+import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
 import { checkLogoutContext } from "../../App"
-import {sendsArrayContext} from "../../App"
-
-import { wishlistContext } from "../../App";
-import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
-
-import {cartNumberContext} from "../../App"
-
-
+import { sendsArrayContext } from "../../App"
+import { cartNumberContext } from "../../App"
+import { wishlistNumberContext } from "../../App";
 
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar} ) => {
 	const history = useHistory()
@@ -21,9 +17,9 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar}
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
   let sendsArray = useContext(sendsArrayContext)
+  let cartNumber = useContext(cartNumberContext)
+  let wishlistNumber = useContext(wishlistNumberContext) 
 
-  let wishList = useContext(wishlistContext) 
-  let number = useContext(cartNumberContext)
 
 
   const [search, setSearch] = useState()
@@ -58,7 +54,7 @@ const addToCart = () => {
 };
 
 const addToWish = ()=>{
-  let wish = JSON.stringify(wishList);
+  let wish = JSON.stringify(wishlistNumber);
   axios.post(`http://localhost:5000/wishlist` , {wish},{ 
     headers: { Authorization: `Bearer ${token}`} },
    ).then((res)=>{
@@ -92,9 +88,10 @@ const addToWish = ()=>{
             <div>
               <Link to="/cart" className="navcart"></Link>
               <span className="shopCartMain">
-              <FaHeart onClick={addToWish}/>
+              <FaHeart onClick={addToWish}/> 
+              <span className="favNumber"> {wishlistNumber} </span>
               <FaShoppingCart className='CartShop'onClick={addToCart} />
-              <span className='valueShop'>{number}</span>
+              <span className='valueShop'>{cartNumber}</span>
               </span>             
               <FaSignOutAlt className='Logout' onClick={Logout} /> 
              

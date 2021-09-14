@@ -10,8 +10,7 @@ import { checkRegisterContext } from "../../App";
 
 
 
-
-const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber  , wishlistNumber }) => {
+const Main = ({sendsArray , setSendsArray , cartNumber , setCartNumber  , wishlistNumber , setWishlistNumber }) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
   const [getCategory, setGetCategory] = useState();
@@ -66,19 +65,18 @@ const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber  , wishlis
   };
 
   /************************************ (wish list)  *****************************************/
-  const wishList = () => {};
-
+  
   const addToWishList = (product) => {
     const id = product._id;
     if (token || checkRegister) {
        setWishListArray([...wishListArray , id])
 
       if (wishlistNumber) {
-        setwishlistNumber(wishlistNumber + 1);
+        setWishlistNumber(wishlistNumber + 1);
 
         localStorage.setItem("wishList", wishlistNumber + 1);
       } else {
-        setwishlistNumber(1);
+        setWishlistNumber(1);
         localStorage.setItem("wishList", wishlistNumber + 1);
       }
     } else {
