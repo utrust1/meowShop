@@ -22,10 +22,8 @@ export const checkRegisterContext = createContext();
 export const checkLogoutContext  = createContext();
 export const sendsArrayContext  = createContext();
 export const searchContext  = createContext();
-
-export const wishlistContext = createContext();
-
-export const numberContext = createContext();
+export const cartNumberContext = createContext();
+export const wishlistNumberContext = createContext();
 
 
 const App = () => {
@@ -35,8 +33,8 @@ const App = () => {
   const [sendsArray, setSendsArray] = useState([]);
   const [searchBar , setSearchBar] = useState()
   const [wishList , setWishList] = useState([]);
-  const [number,  setNumber ] = useState(0);
-
+  const [cartNumber,  setCartNumber ] = useState(0);
+  const [wishlistNumber, setWishlistNumber] = useState(0);
   const history = useHistory()
   history.push("/Home")
   return (
@@ -45,14 +43,12 @@ const App = () => {
        <tokenContext.Provider value={token} >
        <checkLogoutContext.Provider value={checkLogout}>
        <sendsArrayContext.Provider value={sendsArray}>
-      <wishlistContext.Provider value={wishList}>
        <searchContext.Provider value= {searchBar}>
-       <numberContext.Provider value={number}>
+       <cartNumberContext.Provider value={cartNumber}>
+       <wishlistNumber.Provider value={wishlistNumber}>
       <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
 <Switch>
-      <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray}  setSendsArray={setSendsArray} wishList={wishList} setWishList={setWishList}/>}  />
-
-      <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray}  setSendsArray={setSendsArray} number={number}  setNumber={setNumber}/>}  />
+      <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray}  setSendsArray={setSendsArray} cartNumber={cartNumber}  setCartNumber={setCartNumber} wishlistNumber={wishlistNumber} setWishlistNumber={setWishlistNumber}/>}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/product/:id" component={GetAllProduct} />
@@ -65,9 +61,9 @@ const App = () => {
       <Route exact path="/wishlist" component={WishList} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
-       </numberContext.Provider>
+      </wishlistNumber.Provider>
+       </cartNumberContext.Provider>
       </searchContext.Provider>
-      </wishlistContext.Provider>
       </sendsArrayContext.Provider>
       </checkLogoutContext.Provider>
       </tokenContext.Provider>
