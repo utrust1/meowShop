@@ -37,7 +37,12 @@ const getAllWishlist = (req, res) => {
           success: true,
           massage: ` All the Wishlist`,
           products: result,
-        })
+        }).catch((err)=>{
+            res.status(500).json({
+              success: false,
+              massage: ` Server Error `,
+            });
+           })
         })
    };
 
