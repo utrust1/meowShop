@@ -8,6 +8,12 @@ export const Search = () =>{
     let searchBar = useContext(searchContext)
     console.log("sosososooss",searchBar)
     return <div>{searchBar.map((elm)=>{
-        return <div>{elm.title}</div>
+       console.log(elm.img)
+        return (
+            
+        <div>{elm.title}  <img src={elm.img}/></div> )
+      
+       
+       
     })}</div>
 }
