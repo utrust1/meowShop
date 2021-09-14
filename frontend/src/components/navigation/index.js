@@ -52,9 +52,12 @@ const addToCart = () => {
         <div className="navbar">
           { ((token || checkRegister) && checkLogout ) ? (
             <div>
-              <Link to="/cart" className="navcart"></Link>             
-              <FaShoppingCart onClick={addToCart} />
-              <FaSignOutAlt  onClick={Logout} /> 
+              <Link to="/cart" className="navcart"></Link>
+              <span className="shopCartMain">
+              <FaShoppingCart className='CartShop'onClick={addToCart} />
+              <span className='valueShop'>0</span>
+              </span>             
+              <FaSignOutAlt className='Logout' onClick={Logout} /> 
             </div>
           ) : (
             <div>

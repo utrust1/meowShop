@@ -44,3 +44,28 @@
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
 }
+
+.CartShop,
+.Logout {
+    font-size: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.shopCartMain {
+    position: relative;
+}
+
+.shopCartMain .valueShop {
+    position: absolute;
+    right: -5px;
+    padding: 3px;
+    font-size: 11px;
+    top: -15px;
+    background-color: red;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
