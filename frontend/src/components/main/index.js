@@ -11,13 +11,13 @@ import { checkRegisterContext } from "../../App";
 
 
 
-const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber }) => {
+const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,setWishList}) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
 
   const [getCategory, setGetCategory] = useState();
   const [getProduct, setGetProduct] = useState();
-  const [wishListArray, setWishListArray] = useState([]);
+//   const [wishListArray, setWishListArray] = useState([]);
   const [wishListNumber, setWishListNumber] = useState(0);
 
   const history = useHistory();
@@ -67,13 +67,13 @@ const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber }) => {
   };
 
   /************************************ (wish list)  *****************************************/
-  const wishList = () => {};
+  
 
   const addToWishList = (product) => {
     const id = product._id;
     if (token || checkRegister) {
-       setWishListArray([...wishListArray , id])
-	   console.log(wishListArray)
+		setWishList([...wishList , id])
+	   console.log("ppopopopo",wishList)
 
       if (wishListNumber) {
         setWishListNumber(wishListNumber + 1);

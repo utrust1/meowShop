@@ -5,5 +5,5 @@ const {authentication} = require("./../middlewares/authentication")
 const wishListRouter = express.Router();
 
 wishListRouter.post("/", authentication , createNewWishList);
-wishListRouter.get("/",  authentication , getAllWishlist)
+wishListRouter.get("/getwishlist",  authentication , getAllWishlist)
 module.exports = wishListRouter;

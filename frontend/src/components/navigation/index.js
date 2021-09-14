@@ -15,14 +15,14 @@ import { wishlistContext } from "../../App";
 import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 
-const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar} ) => {
+const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar ,wishList} ) => {
 	const history = useHistory()
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
   let sendsArray = useContext(sendsArrayContext)
 
-  let wishList = useContext(wishlistContext) 
+//   let wishList = useContext(wishlistContext) 
   let cartNumber = useContext(cartNumberContext)
 
 
@@ -59,6 +59,7 @@ const addToCart = () => {
 
 const addToWish = ()=>{
   let product = JSON.stringify(wishList);
+  console.log("sadads",product)
   axios.post(`http://localhost:5000/wishlist` , {product},{ 
     headers: { Authorization: `Bearer ${token}`} },
    ).then((res)=>{
