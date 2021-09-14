@@ -1,6 +1,6 @@
 import React from 'react';
 import {FaEnvelope} from  "react-icons/fa"
-import "./Footer.css";
+import "./footer.css";
 import { useHistory } from 'react-router';
 import "./Aboutus"
 import "./Contactus"

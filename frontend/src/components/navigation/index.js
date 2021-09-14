@@ -25,6 +25,11 @@ const Logout = () => {
 
 }
 
+const searchByTitle = ()=>{
+	axios.get
+}
+
+
 const addToCart = () => {
   let  purchase = JSON.stringify(sendsArray) ;
   console.log("meow " , purchase);
@@ -51,7 +56,7 @@ const addToCart = () => {
             placeholder="what do you want "
             className="SearchBarInput"
           ></input>
-          <FaSearch className="searchIcon" />
+          <FaSearch className="searchIcon" onClick={searchByTitle} />
         </div>
         <FaBars className='fabars'/>
         <div className="navbar">

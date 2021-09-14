@@ -5,15 +5,16 @@ import {tokenContext} from '../../App'
 
 const Cart = () => {
     let token = useContext(tokenContext)
-  const [insideCart, setInsideCart] = useState("");
+    const [insideCart, setInsideCart] = useState();
 
   useEffect( () => {
     axios
       .get(`http://localhost:5000/cart`,{ 
         headers: { Authorization: `Bearer ${token}`}})
-      .then(async(result) => {
-        console.log("kokokokokok", result.data.products);
-        await setInsideCart(result.data.products);
+      .then(async (result) => {
+        console.log("kokokokokok", result.data.products.purchase);
+        await setInsideCart(result.data.products.purchase);
+        console.log("momomomom",insideCart)
       })
       .catch((err) => {
         console.log(err);
@@ -21,11 +22,12 @@ const Cart = () => {
   }, []);
   return (
     <div>
-      {insideCart.map((elm)=>{
-          return 
-      })}
+      okoko
     </div>
   );
+
 };
+
+
 
 export default Cart;
