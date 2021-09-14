@@ -9,7 +9,6 @@ const createNewWishList = (req, res) => {
         product,
         user,
     });
-
     newWishList
         .save()
         .then((result) => {
@@ -30,7 +29,7 @@ const createNewWishList = (req, res) => {
 
 const getAllWishlist = (req, res) => {
     const id = req.token.userId
-    .findOne({user:id}).populate('purchase')
+    .findOne({user:id}).populate('product')
        .then((result) => {
         res.status(200);
         res.json({
