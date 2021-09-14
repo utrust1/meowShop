@@ -161,7 +161,7 @@ const getProductByCategory = (req, res) => {
 }
 
 const search = (req , res )=>{
-    const {title , description} = req.query
+    const title = req.query.title
     
     productModel.find({
         $or:[
@@ -173,7 +173,7 @@ const search = (req , res )=>{
             },
             {
                 description:{
-                    $regex:description,
+                    $regex:title,
                     $options:"i"
                 }
             }
