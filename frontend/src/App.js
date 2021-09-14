@@ -15,7 +15,7 @@ import Aboutus from "./components/Footer/Aboutus";
 import Contactus from "./components/Footer/Contactus";
 import Ourpolicy from "./components/Footer/Ourpolicy";
 import { Search } from "./components/header/Search";
-import WishList from "./components/Wishlist/Wishlist";
+import WishList from "./components/Wishlist/Wishlist"
 
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
@@ -78,3 +78,5 @@ const App = () => {
   );
 };
 export default App;
+
+// helllllllllllo 
