@@ -12,7 +12,6 @@ import { wishlistContext } from "../../App";
 import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 import {numberContext} from "../../App"
-import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars} from "react-icons/fa";
 
 
 
