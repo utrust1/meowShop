@@ -3,13 +3,13 @@ const wishlistModel = require("./../../db/models/wishlist");
 
 const createNewWishList = (req, res) => {
     console.log("meme");
-    let  product = req.body;
+    let  {product }= req.body;
     let user = req.token.userId
     console.log("pro", product );
     console.log("user", user );
 
-    product =JSON.parse(product)
-    console.log("pro 2 ", product );
+    // product =JSON.parse(product)
+    // console.log("pro 2 ", product );
     const newWishList = new wishlistModel({
         product,
         user,
