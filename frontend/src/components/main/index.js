@@ -11,13 +11,12 @@ import { checkRegisterContext } from "../../App";
 
 
 
-const Main = ({sendsArray , setSendsArray}) => {
+const Main = ({sendsArray , setSendsArray , number ,setNumber }) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
 
   const [getCategory, setGetCategory] = useState();
   const [getProduct, setGetProduct] = useState();
-  const [number, setNumber] = useState(0);
   const [wishListArray, setWishListArray] = useState([]);
   const [wishListNumber, setWishListNumber] = useState(0);
 
@@ -132,7 +131,6 @@ const Main = ({sendsArray , setSendsArray}) => {
             );
           })}
       </div>
-      {number}
       {wishListNumber}
 
       <div className="product-section">
