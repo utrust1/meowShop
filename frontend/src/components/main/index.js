@@ -11,13 +11,12 @@ import { checkRegisterContext } from "../../App";
 
 
 
-const Main = ({sendsArray , setSendsArray}) => {
+const Main = ({sendsArray , setSendsArray , number ,setNumber }) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
 
   const [getCategory, setGetCategory] = useState();
   const [getProduct, setGetProduct] = useState();
-  const [number, setNumber] = useState(0);
   const [wishListArray, setWishListArray] = useState([]);
   const [wishListNumber, setWishListNumber] = useState(0);
 
@@ -71,11 +70,9 @@ const Main = ({sendsArray , setSendsArray}) => {
   const wishList = () => {};
 
   const addToWishList = (product) => {
+    const id = product._id;
     if (token || checkRegister) {
-      // setWishListArray([...wishListArray , {purchase:productId}])
-      wishListArray.push({ product });
-      console.log("purchase", product);
-      console.log("plapla", wishListArray);
+       setWishListArray([...wishListArray , id])
 
       if (wishListNumber) {
         setWishListNumber(wishListNumber + 1);
@@ -132,7 +129,6 @@ const Main = ({sendsArray , setSendsArray}) => {
             );
           })}
       </div>
-      {number}
       {wishListNumber}
 
       <div className="product-section">
