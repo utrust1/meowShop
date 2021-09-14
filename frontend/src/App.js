@@ -21,7 +21,7 @@ export const checkRegisterContext = createContext();
 export const checkLogoutContext  = createContext();
 export const sendsArrayContext  = createContext();
 export const searchContext  = createContext();
-
+export const numberContext = createContext();
 
 const App = () => {
   const [token, setToken] = useState("");
@@ -29,7 +29,8 @@ const App = () => {
   const [checkLogout, setCheckLogout] = useState(true);
   const [sendsArray, setSendsArray] = useState([]);
   const [searchBar , setSearchBar] = useState()
-  
+  const [number,  setNumber ] = useState(0);
+
   const history = useHistory()
   history.push("/Home")
   return (
@@ -39,10 +40,10 @@ const App = () => {
        <checkLogoutContext.Provider value={checkLogout}>
        <sendsArrayContext.Provider value={sendsArray}>
        <searchContext.Provider value= {searchBar}>
-       
+       <numberContext.Provider value={number}>
       <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
 <Switch>
-      <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray}  setSendsArray={setSendsArray}/>}  />
+      <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray}  setSendsArray={setSendsArray} number={number}  setNumber={setNumber}/>}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/product/:id" component={GetAllProduct} />
@@ -54,6 +55,7 @@ const App = () => {
       <Route exact path="/search" component={Search} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
+       </numberContext.Provider>
       </searchContext.Provider>
       </sendsArrayContext.Provider>
       </checkLogoutContext.Provider>
