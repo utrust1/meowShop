@@ -22,8 +22,8 @@ export const checkRegisterContext = createContext();
 export const checkLogoutContext  = createContext();
 export const sendsArrayContext  = createContext();
 export const searchContext  = createContext();
-export const wishlistContext = createContext([]);
-export const cartNumberContext = createContext(0);
+export const wishlistContext = createContext();
+export const cartNumberContext = createContext();
 
 
 
@@ -47,7 +47,7 @@ const App = () => {
        <searchContext.Provider value= {searchBar}>
        <cartNumberContext.Provider value={cartNumber}>
       <wishlistContext.Provider value={wishList}>
-      <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
+      <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} wishList={wishList}/>
 <Switch>
       <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray} setSendsArray={setSendsArray} cartNumber={cartNumber} setCartNumber={setCartNumber} wishList={wishList} setWishList={setWishList}/>}  />
 
