@@ -1,18 +1,93 @@
-header {
+/* header {
     background-image: url("https://image.shutterstock.com/image-photo/closeup-portrait-dogs-cat-holding-260nw-1561073999.jpg");
     height: calc(100vh - 63.33px);
     background-repeat: no-repeat;
-    background-size: cover ;
+    background-size: cover;
+    position: relative;
+} */
+
+header {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #09111b;
+}
+
+.main-header h1 {
+    font-size: 4.7rem;
+    color: rgb(0, 238, 255);
     position: relative;
 }
 
+.main-header h1::before {
+    position: absolute;
+    content: attr(data-text);
+    text-shadow: 0px 0px 0px rgb(0, 238, 255);
+    filter: blur(10px) brightness(0);
+    animation: flicker 2s linear forwards;
+    animation-delay: 1s;
+    -webkit-filter: blur(10px) brightness(0);
+    -webkit-animation: flicker 2s linear forwards;
+}
+
+@keyframes flicker {
+    0% {
+        filter: blur(5px) brightness(1);
+        -webkit-filter: blur(5px) brightness(1);
+    }
+    3% {
+        filter: blur(5px) brightness(0);
+        -webkit-filter: blur(5px) brightness(0);
+    }
+    6% {
+        filter: blur(5px) brightness(0);
+        -webkit-filter: blur(5px) brightness(0);
+    }
+    7% {
+        filter: blur(5px) brightness(1);
+        -webkit-filter: blur(5px) brightness(1);
+    }
+    8% {
+        filter: blur(5px) brightness(0);
+        -webkit-filter: blur(5px) brightness(0);
+    }
+    9% {
+        filter: blur(5px) brightness(1);
+        -webkit-filter: blur(5px) brightness(1);
+    }
+    10% {
+        filter: blur(5px) brightness(0);
+        -webkit-filter: blur(5px) brightness(0);
+    }
+    20% {
+        filter: blur(5px) brightness(1);
+        -webkit-filter: blur(5px) brightness(1);
+    }
+    50% {
+        filter: blur(5px) brightness(1);
+        -webkit-filter: blur(5px) brightness(1);
+    }
+    99% {
+        filter: blur(5px) brightness(0);
+        -webkit-filter: blur(5px) brightness(0);
+    }
+    100% {
+        filter: blur(5px) brightness(1);
+        -webkit-filter: blur(5px) brightness(1);
+    }
+}
+
+
+/*
 header .overlay {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0,0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .details-header {
@@ -49,4 +124,4 @@ header .overlay {
     background-color: #3655b3;
     color: #ffff;
     padding: 10px 50px;
-}
+}*/
