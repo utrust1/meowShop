@@ -7,9 +7,14 @@ import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icon
 import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
 import { checkLogoutContext } from "../../App"
-import { sendsArrayContext } from "../../App"
-import { cartNumberContext } from "../../App"
-import { wishlistNumberContext } from "../../App";
+import {sendsArrayContext} from "../../App"
+
+
+import {cartNumberContext} from "../../App"
+import { wishlistContext } from "../../App";
+
+import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
+
 
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar} ) => {
 	const history = useHistory()
@@ -20,6 +25,8 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar}
   let cartNumber = useContext(cartNumberContext)
   let wishlistNumber = useContext(wishlistNumberContext) 
 
+  let wishList = useContext(wishlistContext) 
+  let cartNumber = useContext(cartNumberContext)
 
 
   const [search, setSearch] = useState()

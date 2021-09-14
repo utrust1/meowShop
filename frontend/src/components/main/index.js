@@ -10,7 +10,8 @@ import { checkRegisterContext } from "../../App";
 
 
 
-const Main = ({sendsArray , setSendsArray , cartNumber , setCartNumber  , wishlistNumber , setWishlistNumber }) => {
+
+const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber }) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
   const [getCategory, setGetCategory] = useState();
@@ -53,11 +54,11 @@ const Main = ({sendsArray , setSendsArray , cartNumber , setCartNumber  , wishli
       if (cartNumber) {
         setCartNumber(cartNumber + 1);
         console.log("second time : ", cartNumber);
-        localStorage.setItem("productCartNumber", cartNumber + 1);
+        localStorage.setItem("productcartNumber", cartNumber + 1);
       } else {
         setCartNumber(1);
         console.log("first time : ", cartNumber);
-        localStorage.setItem("productCartNumber", cartNumber + 1);
+        localStorage.setItem("productcartNumber", cartNumber + 1);
       }
     } else {
       console.log("you have to log in first ");
