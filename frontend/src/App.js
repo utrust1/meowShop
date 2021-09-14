@@ -51,7 +51,7 @@ const App = () => {
       <Route exact path="/AboutUs" component={Aboutus} />
       <Route exact path="/ContactUs" component={Contactus} />
       <Route exact path="/OurPolicy" component={Ourpolicy} />
-      <Route exact path="/search" render={Search} />
+      <Route exact path="/search" component={Search} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
       </searchContext.Provider>

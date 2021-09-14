@@ -6,5 +6,8 @@ import axios from "axios";
 
 export const Search = () =>{
     let searchBar = useContext(searchContext)
-    console.log(searchBar)
+    console.log("sosososooss",searchBar)
+    return <div>{searchBar.map((elm)=>{
+        return <div>{elm.title}</div>
+    })}</div>
 }
