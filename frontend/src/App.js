@@ -9,11 +9,11 @@ import Register from "./components/auth/Register/Register";
 import GetAllProduct from "./components/product/index";
 import Login from "./components/auth/Login/Login";
 import { Switch , useHistory  } from "react-router";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/Footer/Footer";
 import Cart from "./components/cart/Cart"
-import Aboutus from "./components/footer/Aboutus";
-import Contactus from "./components/footer/Contactus";
-import Ourpolicy from "./components/footer/Ourpolicy";
+import Aboutus from "./components/Footer/Aboutus";
+import Contactus from "./components/Footer/Contactus";
+import Ourpolicy from "./components/Footer/Ourpolicy";
 import { Search } from "./components/header/Search";
 
 export const tokenContext = createContext();
