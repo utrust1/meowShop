@@ -11,7 +11,7 @@ import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars} from "react-icons/fa";
 
 
 
-const Navigation = ({setCheckLogout  , setToken ,setCheckRegister} ) => {
+const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar} ) => {
 	const history = useHistory()
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
@@ -29,6 +29,7 @@ const Logout = () => {
 
 const searchByTitle = ()=>{
 	axios.post(`http://localhost:5000/product/search?title=${search}`).then((result)=>{
+		setSearchBar(result.data.result)
 		history.push('/search')
 	})
 }

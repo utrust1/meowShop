@@ -40,7 +40,7 @@ const App = () => {
        <sendsArrayContext.Provider value={sendsArray}>
        <searchContext.Provider value= {searchBar}>
        
-      <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} />
+      <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
 <Switch>
       <Route exact path="/Home"  render={() => <Main sendsArray={sendsArray}  setSendsArray={setSendsArray}/>}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
@@ -51,7 +51,7 @@ const App = () => {
       <Route exact path="/AboutUs" component={Aboutus} />
       <Route exact path="/ContactUs" component={Contactus} />
       <Route exact path="/OurPolicy" component={Ourpolicy} />
-      <Route exact path="/search" component={Search} />
+      <Route exact path="/search" render={Search} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
       </searchContext.Provider>
