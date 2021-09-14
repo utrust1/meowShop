@@ -8,11 +8,11 @@ import { checkRegisterContext } from "../../App"
 import { checkLogoutContext } from "../../App"
 import {sendsArrayContext} from "../../App"
 
+
+import {cartNumberContext} from "../../App"
 import { wishlistContext } from "../../App";
+
 import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
-
-import {numberContext} from "../../App"
-
 
 
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar} ) => {
@@ -23,7 +23,7 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar}
   let sendsArray = useContext(sendsArrayContext)
 
   let wishList = useContext(wishlistContext) 
-  let number = useContext(numberContext)
+  let cartNumber = useContext(cartNumberContext)
 
 
   const [search, setSearch] = useState()
@@ -94,7 +94,7 @@ const addToWish = ()=>{
               <span className="shopCartMain">
               <FaHeart onClick={addToWish}/>
               <FaShoppingCart className='CartShop'onClick={addToCart} />
-              <span className='valueShop'>{number}</span>
+              <span className='valueShop'>{cartNumber}</span>
               </span>             
               <FaSignOutAlt className='Logout' onClick={Logout} /> 
              

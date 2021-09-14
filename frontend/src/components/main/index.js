@@ -11,7 +11,7 @@ import { checkRegisterContext } from "../../App";
 
 
 
-const Main = ({sendsArray , setSendsArray , number ,setNumber }) => {
+const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber }) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
 
@@ -52,14 +52,14 @@ const Main = ({sendsArray , setSendsArray , number ,setNumber }) => {
 	  console.log("whooo",sendsArray);
     //   sendsArray.push({ idProduct });
       console.log("plapla", sendsArray);
-      if (number) {
-        setNumber(number + 1);
-        console.log("second time : ", number);
-        localStorage.setItem("productNumber", number + 1);
+      if (cartNumber) {
+        setCartNumber(cartNumber + 1);
+        console.log("second time : ", cartNumber);
+        localStorage.setItem("productcartNumber", cartNumber + 1);
       } else {
-        setNumber(1);
-        console.log("first time : ", number);
-        localStorage.setItem("productNumber", number + 1);
+        setCartNumber(1);
+        console.log("first time : ", cartNumber);
+        localStorage.setItem("productcartNumber", cartNumber + 1);
       }
     } else {
       console.log("you have to log in first ");
