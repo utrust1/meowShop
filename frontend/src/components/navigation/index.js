@@ -18,6 +18,8 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister,setInsideCart}
   let checkLogout = useContext(checkLogoutContext)
   let sendsArray = useContext(sendsArrayContext)
 
+  const [search, setSearch] = useState()
+
 const Logout = () => {
   setCheckLogout(false)
   setToken("")
@@ -26,7 +28,9 @@ const Logout = () => {
 }
 
 const searchByTitle = ()=>{
-	axios.get
+	axios.post(`http://localhost:5000/product/search?title=${search}`).then((result)=>{
+		
+	})
 }
 
 
@@ -55,6 +59,9 @@ const addToCart = () => {
             type="text"
             placeholder="what do you want "
             className="SearchBarInput"
+			onChange={(e)=>{
+				setSearch(e.target.value)
+			}}
           ></input>
           <FaSearch className="searchIcon" onClick={searchByTitle} />
         </div>
