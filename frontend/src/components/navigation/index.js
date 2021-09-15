@@ -47,7 +47,7 @@ const addToWish = ()=>{
     <div className="container">
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
-         Meow <span>Shop</span>
+         <img src='https://cdn.shopify.com/s/files/1/0301/4295/5565/files/logo_ong_180x.png?v=1580764148'/>
         </Link>
 
         <div className="Searchbar">
