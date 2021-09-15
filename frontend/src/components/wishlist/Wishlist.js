@@ -2,18 +2,20 @@ import React from 'react';
 import axios from 'axios';
 import { useContext, useState, useEffect } from "react";
 import { tokenContext } from '../../App';
+
+/////////// hehehe 
+
+
 const WishList = () => {
     let token = useContext(tokenContext);
-    const [insideWishlist, setInsideWishlist] = useState()
+    const [insideWishlist, setInsideWishlist] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/wishlist/getwishlist`, {
+        axios.get(`http://localhost:5000/wishlist`, {
             headers: { Authorization: `Bearer ${token}` }
         }).then((res) => {
-            console.log("iwiewieiwie",res.data.products.product);
-            let wish = res.data.products.product;
-            setInsideWishlist(wish);
-
+            console.log("reeeeeeeeeeee" , res.data.products);
+            setInsideWishlist(res.data.products);
         }).catch((err) => {
             console.log(err);
         })
@@ -21,10 +23,11 @@ const WishList = () => {
 
     return(
         <div>
-
+            <h1> mmm </h1>
             {insideWishlist&&
-            insideWishlist.map((elment)=>{
-                return( <div> {elment.title}</div> );
+            insideWishlist.map((elem)=>{
+             console.log("whooooooooooooooooo",elem.product[0]);
+                return( <div> {elem.product[0].title}</div> );
             })}
         </div>
     )

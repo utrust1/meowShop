@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./Cart.css"
 import { useContext, useState, useEffect } from "react";
 import {tokenContext} from '../../App'
 
@@ -12,26 +13,33 @@ const Cart =  () => {
       .get(`http://localhost:5000/cart`,{ 
         headers: { Authorization: `Bearer ${token}`}})
       .then( (result) => {
-        console.log(result.data.products.purchase)
-        let x=  result.data.products.purchase
-         setInsideCart(x);
-        
+        console.log("res222" , result.data.products );
+        setInsideCart(result.data.products )
       })
       .catch((err) => {
         console.log(err);
         return 
       });
   },[])
+
   
   return (
-    <div>
-      {insideCart&&insideCart.map((elm)=>{
-          return <div>{elm.title}</div>
-
-      })}
-    </div>
+    <>
+      {insideCart&&insideCart.map((elem )=>{
+      console.log("elmmmmm",elem.purchase[0].title);
+          return( <>
+          <div className="CartBox">
+            <img  src={elem.purchase[0].img }/>
+            {elem.purchase[0].title}
+            <button >delete</button>
+            </div>
+            <br />
+            </>)       
+      })
+    }
+    {(insideCart && insideCart)?(<button> check out </button>):(<p>""</p>)}
+    </>
   );
-
 };
 
 
