@@ -2,7 +2,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0px;
+    padding: 15px 0px;
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    z-index: 8888;
+}
+
+.headerImg {
+    width: 100%;
+    height: 50px;
 }
 
 .Searchbar {
@@ -10,39 +19,62 @@
 }
 
 .SearchBarInput {
-    padding: 5px;
+    border: 1.5px solid red;
+    width: 300px;
+    border-radius: 20px;
+    padding: 2px;
     outline: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 .searchIcon {
     position: absolute;
     right: 5px;
     top: 7px;
+    color: green;
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.596);
     font-size: 14px;
 }
 
 .logoName {
     /* color: rgb(0, 238, 255);*/
-    color: #09111b;
+    color: #D4ECDD;
     font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
 }
 
+.logoName span {
+    color: #345B63;
+}
+
+.navbar {
+    font-size: 18px;
+    color: green;
+}
+
+.HeartIcon,
+.CartShop,
+.Logout {
+    padding-right: 10px;
+}
+
+.LogoutIcon {
+    border-left: 2px solid red;
+    font-size: 18px;
+    padding: 5px;
+}
+
 .navLogin,
 .navRegister {
-    border: 2px solid #309975;
+    border-left: 2px solid red;
     padding: 5px;
     text-decoration: none;
     color: #09111b;
     margin-left: 5px;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
 }
 
 .CartShop,
@@ -58,10 +90,11 @@
 
 .shopCartMain .valueShop {
     position: absolute;
-    right: -5px;
+    right: 12px;
     padding: 3px;
-    font-size: 11px;
-    top: -15px;
+    color: #ffff;
+    font-size: 8px;
+    top: -7px;
     background-color: red;
     border-radius: 50%;
     -webkit-border-radius: 50%;
