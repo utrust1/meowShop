@@ -9,7 +9,7 @@ const WishList = () => {
     let token = useContext(tokenContext);
     const [insideWishlist, setInsideWishlist] = useState([])
 
-    useEffect(() => {
+    const getWishlist = () => {
         axios.get(`http://localhost:5000/wishlist`, {
             headers: { Authorization: `Bearer ${token}` }
         }).then((res) => {
@@ -19,7 +19,20 @@ const WishList = () => {
         }).catch((err) => {
             console.log(err);
         })
-    }, [])
+    }
+
+    useEffect(()=>{getWishlist()},[])
+
+    const deleteWishlist = (id) =>{
+        axios
+          .delete(`http://localhost:5000/wishlist/${id}`).then((result)=>{
+            getWishlist()
+    
+    
+          }).catch((err)=>{
+            console.log(err)
+          })
+      }
 
     return(
         <div>
@@ -30,7 +43,7 @@ const WishList = () => {
                 return( <>
                 <div className="wishlistBox"> {elem.product[0].title}
                 <img src={elem.product[0].img} />
-                <button> delete  </button>
+                <button onClick={()=>{deleteWishlist(elem._id)}}> delete  </button>
                 </div>
                 <br />
                 </> );
