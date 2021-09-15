@@ -1,0 +1,8 @@
+.wishlistBox{
+    background-color: aqua;
+}
+
+.wishlistBox img {
+    width: 45px;
+    height: 60px;
+}
