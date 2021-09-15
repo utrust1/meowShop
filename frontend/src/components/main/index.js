@@ -76,7 +76,7 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
       headers: { Authorization: `Bearer ${token}`} },
      ).then((res)=>{
        console.log("meow 22");
-       console.log(res.data)
+       console.log("3oo",res.data)
        if (token || checkRegister) {
         if (wishListNumber) {
           setWishListNumber(wishListNumber + 1);
