@@ -11,8 +11,14 @@
     width: 100%;
 }
 
+.SearchBarInput::placeholder {
+    color: white;
+    opacity: 1;
+    /* Firefox */
+}
+
 .Navigation img {
-    width: 50%;
+    width: 60%;
 }
 
 .Searchbar {
@@ -72,18 +78,17 @@
 }
 
 .LogoutIcon {
-    border-left: 2px solid red;
+    border-left: 2px solid white;
     font-size: 18px;
     padding: 5px;
 }
 
 .navLogin,
 .navRegister {
-    border-left: 2px solid red;
     padding: 5px;
     text-decoration: none;
-    color: #09111B;
-    margin-left: 5px;
+    color: white;
+    font-size: 11px
 }
 
 .CartShop,

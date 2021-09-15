@@ -44,6 +44,7 @@ const addToWish = ()=>{
   history.push('/wishlist')
 };
   return (
+    
     <div className="container">
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
@@ -61,7 +62,7 @@ const addToWish = ()=>{
           ></input>
           <FaSearch className="searchIcon" onClick={searchByTitle} />
         </div>
-        <FaBars className='fabars'/>
+        {/* <FaBars className='fabars'/> */}
         <div className="navbar">
           { ((token || checkRegister) && checkLogout ) ? (
             <div>
@@ -78,10 +79,10 @@ const addToWish = ()=>{
           ) : (
             <div>
               <Link to="/login" className="navLogin">
-                Login
+                Sign in or
               </Link>
               <Link to="/Register" className="navRegister">
-                Register
+                Create an Account
               </Link>
             </div>
           )}
