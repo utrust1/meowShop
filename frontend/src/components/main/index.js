@@ -9,6 +9,7 @@ import { tokenContext } from "../../App";
 import { checkRegisterContext } from "../../App";
 
 const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber, }) => {
+
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
   const [getCategory, setGetCategory] = useState();
@@ -67,6 +68,7 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
   };
 
   /************************************ (wish list)  *****************************************/
+
 
   const addToWishList = (products) => {
     let  product = products._id
