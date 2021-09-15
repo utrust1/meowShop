@@ -53,7 +53,7 @@ const addToWish = ()=>{
         <div className="Searchbar">
           <input
             type="text"
-            placeholder=" Search ..."
+            placeholder=" Search all products..."
             className="SearchBarInput"
 			onChange={(e)=>{
 				setSearch(e.target.value)
