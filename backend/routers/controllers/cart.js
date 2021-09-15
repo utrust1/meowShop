@@ -56,9 +56,10 @@ const getAllCart = (req, res) => {
 };
 
 const deleteCartById = (req,res) =>{
-    const id = req.body._id
+    const id = req.params.id
     cartModel.findByIdAndDelete(id).then((result)=>{
-        res.status(200).json({success:true, message:'successful delete'})
+        console.log(result)
+        res.status(200).json({success:true, message:'successful delete' , result : result})
         
 
     }).catch((err)=>{
