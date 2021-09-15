@@ -11,10 +11,9 @@ import { checkRegisterContext } from "../../App";
 
 
 
-const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,setWishList}) => {
+const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,setWishList , }) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
-
   const [getCategory, setGetCategory] = useState();
   const [getProduct, setGetProduct] = useState();
 //   const [wishListArray, setWishListArray] = useState([]);
@@ -68,7 +67,6 @@ const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,
 
   /************************************ (wish list)  *****************************************/
   
-
   const addToWishList = (product) => {
     const id = product._id;
     if (token || checkRegister) {

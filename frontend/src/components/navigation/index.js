@@ -10,7 +10,7 @@ import {sendsArrayContext} from "../../App"
 
 
 import {cartNumberContext} from "../../App"
-import { wishlistContext } from "../../App";
+// import { wishlistContext } from "../../App";
 
 import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
@@ -21,6 +21,8 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar 
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
   let sendsArray = useContext(sendsArrayContext)
+ 
+  // let wishlistNumber = useContext(wishlistNumberContext) 
 
 //   let wishList = useContext(wishlistContext) 
   let cartNumber = useContext(cartNumberContext)
