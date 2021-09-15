@@ -49,7 +49,7 @@ console.log("ememememe" , elem._id);
           <div className="CartBox">
             <img  src={elem.purchase[0].img }/>
             {elem.purchase[0].title}
-            <button onClick={deleteCart(elem._id)} >delete</button>
+            <button onClick={()=>{deleteCart(elem._id)}} >delete</button>
             </div>
             <br />
             </>)       
