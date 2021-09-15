@@ -1,5 +1,8 @@
 .LoginMain {
     position: relative;
+   margin: 25vh;
+  
+
 }
 
 .loginChild {
@@ -12,4 +15,12 @@
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+    display: grid;
+   gap: 20px;
+ 
+}
+
+.loginChild input {
+   width: 50%;
+   height: 50%;
 }
