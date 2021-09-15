@@ -53,8 +53,21 @@ const getAllCart = (req, res) => {
         });
        })
        
-   };
+};
+
+const deleteCartById = (req,res) =>{
+    const id = req.params.id
+    cartModel.findByIdAndDelete(id).then((result)=>{
+        console.log(result)
+        res.status(200).json({success:true, message:'successful delete' , result : result})
+        
+
+    }).catch((err)=>{
+        res.status(500).json({success:false  , message:'server error'})
+    })
+}
 
 
 
-module.exports = { CreateNewCart ,getAllCart};
+
+module.exports = { CreateNewCart ,getAllCart,deleteCartById};
