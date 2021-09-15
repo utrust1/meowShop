@@ -3,7 +3,6 @@ import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import "./navigation.css";
 import axios from "axios";
-import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
 import { checkLogoutContext } from "../../App"
@@ -11,7 +10,7 @@ import {sendsArrayContext} from "../../App"
 
 
 import {cartNumberContext} from "../../App"
-import { wishlistContext } from "../../App";
+// import { wishlistContext } from "../../App";
 
 import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
@@ -22,8 +21,8 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar 
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
   let sendsArray = useContext(sendsArrayContext)
-  let cartNumber = useContext(cartNumberContext)
-  let wishlistNumber = useContext(wishlistNumberContext) 
+ 
+  // let wishlistNumber = useContext(wishlistNumberContext) 
 
 //   let wishList = useContext(wishlistContext) 
   let cartNumber = useContext(cartNumberContext)
