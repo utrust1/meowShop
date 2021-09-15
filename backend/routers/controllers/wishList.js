@@ -50,7 +50,21 @@ const getAllWishlist = (req, res) => {
         })
 };
 
+
+const deleteWishlistById = (req,res) =>{
+    const id = req.params.id
+    wishlistModel.findByIdAndDelete(id).then((result)=>{
+        console.log(result)
+        res.status(200).json({success:true, message:'successful delete wishlist' , result : result})
+        
+
+    }).catch((err)=>{
+        res.status(500).json({success:false  , message:'server error'})
+    })
+}
+
 module.exports = {
     createNewWishList,
-    getAllWishlist
+    getAllWishlist,
+    deleteWishlistById
 };
