@@ -9,8 +9,8 @@ const createNewWishList = (req, res) => {
     console.log("user", user);
 
     //
-    //product = JSON.parse(product)
-    // console.log("pro 2 ", product );
+    product = JSON.parse(product)
+    console.log("pro 2 ", product );
     const newWishList = new wishlistModel({
         product,
         user,
@@ -26,7 +26,7 @@ const createNewWishList = (req, res) => {
             });
         })
         .catch((error) => {
-            console.log(error.response);
+            
             res.status(404).json({
                 success: false,
                 message: `Error happened while creating a new Wishlist, please try again`,
@@ -36,19 +36,19 @@ const createNewWishList = (req, res) => {
 
 const getAllWishlist = (req, res) => {
     const id = req.token.userId
-        .findOne({ user: id }).populate('product')
+    wishlistModel.findOne({ user: id }).populate('product')
         .then((result) => {
             res.status(200);
             res.json({
                 success: true,
                 massage: ` All the Wishlist`,
                 products: result,
-            }).catch((err) => {
-                res.status(500).json({
-                    success: false,
-                    massage: ` Server Error `,
-                });
             })
+        }).catch((err) => {
+            res.status(500).json({
+                success: false,
+                massage: ` Server Error `,
+            });
         })
 };
 

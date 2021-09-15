@@ -16,7 +16,7 @@ import { wishlistContext } from "../../App";
 import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 
-const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar} ) => {
+const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar ,wishList} ) => {
 	const history = useHistory()
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
@@ -25,7 +25,7 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar}
   let cartNumber = useContext(cartNumberContext)
   let wishlistNumber = useContext(wishlistNumberContext) 
 
-  let wishList = useContext(wishlistContext) 
+//   let wishList = useContext(wishlistContext) 
   let cartNumber = useContext(cartNumberContext)
 
 
@@ -61,10 +61,12 @@ const addToCart = () => {
 };
 
 const addToWish = ()=>{
-  let wish = JSON.stringify(wishlistNumber);
-  axios.post(`http://localhost:5000/wishlist` , {wish},{ 
+  let product = JSON.stringify(wishList);
+  console.log("sadads",product)
+  axios.post(`http://localhost:5000/wishlist` , {product},{ 
     headers: { Authorization: `Bearer ${token}`} },
    ).then((res)=>{
+	   console.log(res.data)
      history.push('/wishlist')
 
    }).catch((err)=>{
