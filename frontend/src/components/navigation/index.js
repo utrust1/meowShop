@@ -76,13 +76,13 @@ const addToWish = ()=>{
     <div className="container">
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
-         Lama
+         Meow <span>Shop</span>
         </Link>
 
         <div className="Searchbar">
           <input
             type="text"
-            placeholder="what do you want "
+            placeholder=" Search ..."
             className="SearchBarInput"
 			onChange={(e)=>{
 				setSearch(e.target.value)
@@ -94,15 +94,12 @@ const addToWish = ()=>{
         <div className="navbar">
           { ((token || checkRegister) && checkLogout ) ? (
             <div>
-              <Link to="/cart" className="navcart"></Link>
               <span className="shopCartMain">
-              <FaHeart onClick={addToWish}/> 
-              <span className="favNumber"> {wishlistNumber} </span>
+              <FaHeart onClick={addToWish} className="HeartIcon"/>
               <FaShoppingCart className='CartShop'onClick={addToCart} />
               <span className='valueShop'>{cartNumber}</span>
-              </span>             
-              <FaSignOutAlt className='Logout' onClick={Logout} /> 
-             
+              </span>         
+              <span onClick={Logout} className='LogoutIcon'>Logout</span>
             </div>
            
           ) : (

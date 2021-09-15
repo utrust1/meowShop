@@ -24,9 +24,9 @@ const contactUsEvent = ()=>{
 return <div className="FooterPerant"> 
 <div className="between">
 <div className="footerChild">
-	<p onClick={()=>{aboutUsEvent()}}>About us </p>
+	{/* <p onClick={()=>{aboutUsEvent()}}>About us </p>
 	<p onClick={()=>{ourPolicyEvent()}}>Our Policy</p>
-	<span onClick={()=>{contactUsEvent()}} >Contact us <FaEnvelope  className="emailIcon" /></span>
+	<span onClick={()=>{contactUsEvent()}} >Contact us <FaEnvelope  className="emailIcon" /></span> */}
 </div>
 </div>
 

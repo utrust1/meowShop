@@ -25,11 +25,12 @@ axios.post(`http://localhost:5000/login/`, {email,password}).then((result)=>{
 }
     
 return (
-        <div>
-            <input placeholder=" Your Mail" type="text" onChange={(e)=>{setEmail(e.target.value)}}></input>
+        <div className="LoginMain">
+            <div className="loginChild">
+            <input placeholder=" Your Mail" type="text" className='email'onChange={(e)=>{setEmail(e.target.value)}}></input>
             <input placeholder="Your Password" type="text" onChange={(e)=>{setPassword(e.target.value)}}></input>
             <button type="submit" onClick={()=>{buttonEvent()}}>Login </button>
-
+            </div>
             {/* <div> {messege}</div> */}
         </div>
     )
