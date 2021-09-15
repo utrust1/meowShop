@@ -11,7 +11,7 @@ import { checkRegisterContext } from "../../App";
 
 
 
-const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,setWishList}) => {
+const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,setWishList , }) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
   const [getCategory, setGetCategory] = useState();
@@ -73,13 +73,13 @@ const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,
 		setWishList([...wishList , id])
 	   console.log("ppopopopo",wishList)
 
-      if (wishlistNumber) {
-        setWishlistNumber(wishlistNumber + 1);
+      if (wishListNumber) {
+        setWishListNumber(wishListNumber + 1);
 
-        localStorage.setItem("wishList", wishlistNumber + 1);
+        localStorage.setItem("wishList", wishListNumber + 1);
       } else {
-        setWishlistNumber(1);
-        localStorage.setItem("wishList", wishlistNumber + 1);
+        setWishListNumber(1);
+        localStorage.setItem("wishList", wishListNumber + 1);
       }
     } else {
       console.log("you have to log in first ");
