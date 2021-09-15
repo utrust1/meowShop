@@ -86,7 +86,7 @@
     position: relative;
 }
 
-.shopCartMain .valueShop {
+.shopCartMain .valueShop  {
     position: absolute;
     right: 12px;
     padding: 3px;

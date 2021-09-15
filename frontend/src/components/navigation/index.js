@@ -6,28 +6,18 @@ import axios from "axios";
 import { tokenContext } from "../../App"
 import { checkRegisterContext } from "../../App"
 import { checkLogoutContext } from "../../App"
-import {sendsArrayContext} from "../../App"
+import { cartNumberContext } from "../../App"
+import { wishListNumberContext } from "../../App"
+import {FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 
-import {cartNumberContext} from "../../App"
-// import { wishlistContext } from "../../App";
-
-import {FaSignOutAlt,FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
-
-
-const Navigation = ({setCheckLogout  , setToken ,setCheckRegister ,setSearchBar ,wishList} ) => {
+const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setSearchBar } ) => {
 	const history = useHistory()
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
-  let sendsArray = useContext(sendsArrayContext)
- 
-  // let wishlistNumber = useContext(wishlistNumberContext) 
-
-//   let wishList = useContext(wishlistContext) 
   let cartNumber = useContext(cartNumberContext)
-
-
+  let wishlistNumber = useContext(wishListNumberContext)
   const [search, setSearch] = useState()
 
 const Logout = () => {
@@ -47,31 +37,12 @@ const searchByTitle = ()=>{
 
 
 const addToCart = () => {
-  let  purchase = JSON.stringify(sendsArray) ;
-  console.log("meow " , purchase);
-  axios
-    .post(`http://localhost:5000/cart`, { purchase } ,{ 
-      headers: { Authorization: `Bearer ${token}`} } ,
-    )
-    .then((res) => {history.push('/cart')})
-    .catch((err) => {
-      console.log(err);
-    });
+  history.push("/cart")
 };
 
 const addToWish = ()=>{
-  let product = JSON.stringify(wishList);
-  console.log("sadads",product)
-  axios.post(`http://localhost:5000/wishlist` , {product},{ 
-    headers: { Authorization: `Bearer ${token}`} },
-   ).then((res)=>{
-	   console.log(res.data)
-     history.push('/wishlist')
-
-   }).catch((err)=>{
-     console.error(err);
-   })
-}
+  history.push('/wishlist')
+};
   return (
     <div className="container">
       <div className="Navigation">
@@ -96,6 +67,8 @@ const addToWish = ()=>{
             <div>
               <span className="shopCartMain">
               <FaHeart onClick={addToWish} className="HeartIcon"/>
+              <span className='wishNumberSpan' >{wishlistNumber}</span>
+
               <FaShoppingCart className='CartShop'onClick={addToCart} />
               <span className='valueShop'>{cartNumber}</span>
               </span>         

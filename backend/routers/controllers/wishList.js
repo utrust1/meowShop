@@ -9,8 +9,6 @@ const createNewWishList = (req, res) => {
     console.log("user", user);
 
     //
-    product = JSON.parse(product)
-    console.log("pro 2 ", product );
     const newWishList = new wishlistModel({
         product,
         user,
@@ -35,8 +33,8 @@ const createNewWishList = (req, res) => {
 };
 
 const getAllWishlist = (req, res) => {
-    const id = req.token.userId
-    wishlistModel.findOne({ user: id }).populate('product')
+    const user = req.token.userId
+    wishlistModel.find({ user }).populate('product')
         .then((result) => {
             res.status(200);
             res.json({

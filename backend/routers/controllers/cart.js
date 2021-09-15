@@ -3,9 +3,6 @@ const cartModel = require('../../db/models/cart');
 const CreateNewCart = (req, res) => {
     let { purchase, Date } = req.body;
     let user = req.token.userId
-    purchase =JSON.parse(purchase)
-    console.log("mm",req.body);
-    console.log("mmgg",user);
     const newCart = new cartModel({
         purchase,
         Date,
@@ -37,12 +34,12 @@ const CreateNewCart = (req, res) => {
 };
 
 const getAllCart = (req, res) => {
-    const id = req.token.userId
-    console.log(id)
+    const user = req.token.userId   
+    console.log("iddd",user)
     cartModel
-       .findOne({user:id}).populate('purchase')
+       .find({user}).populate('purchase')
        .then((result) => {
-           console.log(result)
+           console.log("res ةخةخ",result)
          res.status(200);
          res.json({
            success: true,

@@ -8,17 +8,11 @@ import { useContext } from "react";
 import { tokenContext } from "../../App";
 import { checkRegisterContext } from "../../App";
 
-
-
-
-const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,setWishList , }) => {
+const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber, }) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
   const [getCategory, setGetCategory] = useState();
   const [getProduct, setGetProduct] = useState();
-//   const [wishListArray, setWishListArray] = useState([]);
-  const [wishListNumber, setWishListNumber] = useState(0);
-
   const history = useHistory();
 
   useEffect(() => {
@@ -43,47 +37,59 @@ const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,
       });
   }, []);
 
-  const saveTheProduct = (product) => {
-	  let idProduct = product._id 
-    if (token || checkRegister) {
-      console.log("purchase", idProduct);
-      setSendsArray([...sendsArray , idProduct])
-	  console.log("whooo",sendsArray);
-    //   sendsArray.push({ idProduct });
-      console.log("plapla", sendsArray);
-      if (cartNumber) {
-        setCartNumber(cartNumber + 1);
-        console.log("second time : ", cartNumber);
-        localStorage.setItem("productcartNumber", cartNumber + 1);
-      } else {
-        setCartNumber(1);
-        console.log("first time : ", cartNumber);
-        localStorage.setItem("productcartNumber", cartNumber + 1);
-      }
-    } else {
-      console.log("you have to log in first ");
-    }
+  const addToCart = (product) => {
+    console.log("pp" , product);
+   let purchase = product._id
+   console.log("pp22" ,purchase);
+    axios
+      .post(`http://localhost:5000/cart`, {purchase} , {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log("whooo");
+        if (token || checkRegister) {
+          if (cartNumber) {
+            setCartNumber(cartNumber + 1);
+            console.log("second time : ", cartNumber);
+            localStorage.setItem("productcartNumber", cartNumber + 1);
+          } else {
+            setCartNumber(1);
+            console.log("first time : ", cartNumber);
+            localStorage.setItem("productcartNumber", cartNumber + 1);
+          }
+        } else {
+          console.log("you have to log in first ");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   /************************************ (wish list)  *****************************************/
-  
-  const addToWishList = (product) => {
-    const id = product._id;
-    if (token || checkRegister) {
-		setWishList([...wishList , id])
-	   console.log("ppopopopo",wishList)
 
-      if (wishListNumber) {
-        setWishListNumber(wishListNumber + 1);
-
-        localStorage.setItem("wishList", wishListNumber + 1);
+  const addToWishList = (products) => {
+    let  product = products._id
+    axios.post(`http://localhost:5000/wishlist` , {product},{ 
+      headers: { Authorization: `Bearer ${token}`} },
+     ).then((res)=>{
+       console.log("meow 22");
+       console.log(res.data)
+       if (token || checkRegister) {
+        if (wishListNumber) {
+          setWishListNumber(wishListNumber + 1);
+          localStorage.setItem("wishList", wishListNumber + 1);
+        } else {
+          setWishListNumber(1);
+          localStorage.setItem("wishList", wishListNumber + 1);
+        }
       } else {
-        setWishListNumber(1);
-        localStorage.setItem("wishList", wishListNumber + 1);
+        console.log("you have to log in first ");
       }
-    } else {
-      console.log("you have to log in first ");
-    }
+     }).catch((err)=>{
+       console.error(err);
+     })
+    
   };
 
   // event on the shopnow butthon inside the category
@@ -128,8 +134,6 @@ const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,
             );
           })}
       </div>
-      {wishListNumber}
-
       <div className="product-section">
         {getProduct &&
           getProduct.map((product) => {
@@ -141,7 +145,7 @@ const Main = ({sendsArray , setSendsArray , cartNumber ,setCartNumber ,wishList,
                     <div className="icon">
                       <FaShoppingCart
                         className="icon-cart"
-                        onClick={() => saveTheProduct(product)}
+                        onClick={() => addToCart(product)}
                       />
                       <FaEye
                         className="icon-search"

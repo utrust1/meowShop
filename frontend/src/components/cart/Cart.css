@@ -1,0 +1,8 @@
+.CartBox{
+    background-color: aqua;
+}
+
+.CartBox img {
+    height: 45px;
+    width: 45px;
+}
