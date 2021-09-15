@@ -21,13 +21,14 @@
    padding: 5% 5%;
    background: #111010;
    opacity: 0.9;
+   border-radius: 10px;
 
  
 }
 
 .loginChild input button {
     width: 400px;
-    border-radius: 10px;
+    border-radius: 15px;
     font-family: Palatino, serif;
     background: #f2f2f2;
     box-sizing: border-box;
@@ -35,5 +36,5 @@
 
 button:hover ,
 button:active {
-    background-color: hotpink;
+    background-color: rgb(177, 250, 205);
 }
