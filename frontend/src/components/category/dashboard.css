@@ -45,11 +45,10 @@
 }
 
 .viewProduct {
-    border: 2px solid #eeee;
-    padding: 10px;
-    margin: 25px;
+    border: 1px solid red;
 }
 
 .content {
     text-align: center;
+    margin: 25px;
 }

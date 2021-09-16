@@ -37,7 +37,7 @@ const ProductCategory=(props)=> {
                    <div className='content'>
                    <img src={elm.img}/>
                     <h4>{elm.title}</h4>
-                    <button className='btn-shwo-cart'onClick={()=>{getbyid(elm._id)}}>Show</button>
+                    <button className='btn-shwo-cart'onClick={()=>{getbyid(elm._id)}}>More details</button>
                   
                    </div>
                 </div>)
