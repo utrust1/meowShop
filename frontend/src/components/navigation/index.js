@@ -1,4 +1,4 @@
-import React  , { useContext , useState  }from "react";
+import React  , { useContext , useState ,useEffect}from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import "./navigation.css";
@@ -19,12 +19,26 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setSearchBar
   let cartNumber = useContext(cartNumberContext)
   let wishlistNumber = useContext(wishListNumberContext)
   const [search, setSearch] = useState()
+  const [getCategory, setGetCategory] = useState();
 
 const Logout = () => {
   setCheckLogout(false)
   setToken("")
   setCheckRegister(false)
 
+}
+
+useEffect(() => {
+  axios.get(`http://localhost:5000/category`).then((res)=>{
+  ///console.log(res.data.result);  
+  setGetCategory(res.data.result);
+  }).catch((error)=>{
+    console.log(error);
+  })
+})
+
+const showcategory = (id)=>{
+  history.push(`category/Homes/${id}`);
 }
 
 const searchByTitle = ()=>{
@@ -88,7 +102,12 @@ const addToWish = ()=>{
           )}
         </div>
       </div>
-      <div>show all category Here </div>
+      <div className='showcategoryundernavbar'>{getCategory&&
+      getCategory.map((get)=>{
+        return(
+          <p onClick={()=>{showcategory(get._id)}}>{get.title}</p>
+        )
+      })} </div>
     </div>
   );
 };

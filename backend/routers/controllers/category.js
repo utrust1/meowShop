@@ -68,7 +68,7 @@ const updateCategoryById = (req, res) => {
 }
 const getallCategory = (req, res) => {
 
-    const { page = 1, limit = 2 } = req.query
+    const { page = 1, limit = 4 } = req.query
     categoryModel.find({}).limit(limit * 1).skip((page - 1) * limit).then((result) => {
         res.json({
             success: true,
