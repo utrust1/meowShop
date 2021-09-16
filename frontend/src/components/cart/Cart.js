@@ -49,18 +49,18 @@ const Cart =  () => {
   return (
     <div className="container">
     <div className="CartPerant">
-      <h2>SHOPPING CART</h2>
+      <h4>SHOPPING CART</h4>
       {insideCart&&insideCart.map((elem )=>{
           return( <>
           <div className="CartBox">
             <div>
             <img  src={elem.purchase[0].img }/>
             </div>
-            <div>
+            <div className="CartDes">
             <h3>{elem.purchase[0].title}</h3>
-            <p>{elem.purchase[0].description}</p></div>
+            <p className="cartPrice">{elem.purchase[0].newprice} JD</p></div>
+        
             <div>
-            <p>{elem.purchase[0].newprice} JD</p>
             <button className='btnCart'onClick={()=>{deleteCart(elem._id)}} >Delete</button>
             </div>
           </div>
@@ -68,7 +68,7 @@ const Cart =  () => {
             </>)       
       })
     }
-    {(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}
+    <div className="checkout-btn">{(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}</div>
     </div>
     </div>
   );
