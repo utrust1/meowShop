@@ -1,0 +1,44 @@
+:root {
+    --MainColor: #182e49;
+    --SecColor: #528ec1;
+}
+
+.PurshacePerant {
+    position: relative;
+}
+
+.PurshacePerant .PurshaceChild {
+    /* position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%); */
+}
+
+.PurshaceChild input {
+    display: block;
+    padding: 25px;
+    margin: 10px 0px;
+    border: 1px solid #0000;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    width: 50%;
+}
+
+button[type=submit] {
+    background-color: var(--MainColor);
+    color: #ffff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}

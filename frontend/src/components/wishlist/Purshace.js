@@ -1,12 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import './Purshace.css';
 
 export const Purshace = () => {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [country, setCountry] = useState("");
+
+  
 
   const eventOnButton = () => {
     axios
@@ -25,7 +28,8 @@ export const Purshace = () => {
   };
 
   return (
-    <div>
+    <div className="PurshacePerant">
+      <div className="PurshaceChild">
       <input
         type="text"
         placeholder=" Your Country "
@@ -61,6 +65,7 @@ export const Purshace = () => {
       >
         Check out
       </button>
+    </div>
     </div>
   );
 };
