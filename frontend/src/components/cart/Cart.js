@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Cart.css"
 import { useContext, useState, useEffect } from "react";
 import {tokenContext} from '../../App'
+import { checkout } from "../../../../backend/routers/routes/wishlist";
 
 
 const Cart =  () => {
@@ -38,6 +39,9 @@ const Cart =  () => {
         console.log(err)
       })
   }
+  const checkout = ()=>{
+    history.push('/')
+  }
 
   
   return (
@@ -55,7 +59,7 @@ console.log("ememememe" , elem._id);
             </>)       
       })
     }
-    {(insideCart && insideCart)?(<button> check out </button>):(<p>""</p>)}
+    {(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}
     </>
   );
 };
