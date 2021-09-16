@@ -1,4 +1,4 @@
-import React  , { useContext , useState ,useEffect}from "react";
+import React  , { useContext , useState ,useEffect ,useParams}from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import "./navigation.css";
@@ -20,7 +20,6 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setSearchBar
   let wishlistNumber = useContext(wishListNumberContext)
   const [search, setSearch] = useState()
   const [getCategory, setGetCategory] = useState();
-
 const Logout = () => {
   setCheckLogout(false)
   setToken("")
@@ -29,16 +28,15 @@ const Logout = () => {
 }
 
 useEffect(() => {
-  axios.get(`http://localhost:5000/category`).then((res)=>{
-  ///console.log(res.data.result);  
+  axios.get(`http://localhost:5000/category`).then((res)=>{  
   setGetCategory(res.data.result);
   }).catch((error)=>{
     console.log(error);
   })
-})
+},[]);
 
-const showcategory = (id)=>{
-  history.push(`category/Homes/${id}`);
+const showcategory = (title,id)=>{
+  history.push(`/category/${title}/${id}`);
 }
 
 const searchByTitle = ()=>{
@@ -98,6 +96,8 @@ const addToWish = ()=>{
               <Link to="/Register" className="navRegister">
                 Create an Account
               </Link>
+
+              <Link to='/category/:title/:id'> </Link> 
             </div>
           )}
         </div>
@@ -105,7 +105,7 @@ const addToWish = ()=>{
       <div className='showcategoryundernavbar'>{getCategory&&
       getCategory.map((get)=>{
         return(
-          <p onClick={()=>{showcategory(get._id)}}>{get.title}</p>
+          <p onClick={()=>{showcategory(get.title,get._id)}}>{get.title}</p>
         )
       })} </div>
     </div>
