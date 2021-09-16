@@ -4,21 +4,9 @@ import './header.css';
 const Header = () => {
 	return <div className="App">
 	   <header>
-           <div class='main-header'>
-                     <h1 data-text="summer sale">summer sale </h1>
-           </div>
+         <img src='https://cdn.shopify.com/s/files/1/0301/4295/5565/files/Banner_1_1080x.jpg?v=1580761788'/>
     </header>
-	
-	
 	</div>;
-/*
-   <div class='overlay'>
-            <div class='details-header'>
-                <h1>summer sale </h1>
-                <p>don't comppomise on style get falt 30% off for new arrivals</p>
-				<button> Shop Now </button>
-            </div>
-        </div> */
 };
 
 export default Header;

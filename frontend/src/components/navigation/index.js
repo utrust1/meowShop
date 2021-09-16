@@ -88,6 +88,7 @@ const addToWish = ()=>{
           )}
         </div>
       </div>
+      <div>show all category Here </div>
     </div>
   );
 };
