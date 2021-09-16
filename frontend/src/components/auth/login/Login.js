@@ -4,6 +4,7 @@ import axios from "axios";
 import "./Login.css";
 import { useHistory } from 'react-router';
 import { Link } from "react-router-dom";
+import Footer from '../../Footer/Footer';
 
 
 
@@ -36,6 +37,7 @@ return (
             <p className='ret'>or <Link to="/Home" className='returnstore'> Return to store</Link></p>
             </div>
             {/* <div> {messege}</div> */}
+            <Footer/>
         </div>
     )
 }

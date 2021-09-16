@@ -58,7 +58,7 @@ const addToWish = ()=>{
 };
   return (
 
-    <div className="container">
+    <div className="container main-Cont">
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
          <img src='https://cdn.shopify.com/s/files/1/0301/4295/5565/files/logo_ong_180x.png?v=1580764148'/>
