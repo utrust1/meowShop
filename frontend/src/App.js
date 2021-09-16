@@ -15,7 +15,8 @@ import Cart from "./components/cart/Cart"
 // import Contactus from "./components/Footer/Contactus";
 // import Ourpolicy from "./components/Footer/Ourpolicy";
 import { Search } from "./components/header/Search";
-import WishList from "./components/Wishlist/Wishlist"
+import WishList from "./components/Wishlist/Wishlist";
+import {Purshace} from './components/Purshace'
 
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
@@ -57,6 +58,7 @@ const App = () => {
       <Route exact path="/OurPolicy" component={Ourpolicy} /> */}
       <Route exact path="/search" component={Search} />
       <Route exact path="/wishlist" component={WishList} />
+      <Route exact path="/shipping" component={Purshace} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
       </wishListNumberContext.Provider>

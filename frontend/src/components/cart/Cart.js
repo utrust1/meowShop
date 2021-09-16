@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Cart.css"
 import { useContext, useState, useEffect } from "react";
 import {tokenContext} from '../../App'
-import { checkout } from "../../../../backend/routers/routes/wishlist";
+
 
 
 const Cart =  () => {
@@ -40,7 +40,7 @@ const Cart =  () => {
       })
   }
   const checkout = ()=>{
-    history.push('/')
+    history.push('/shipping')
   }
 
   
