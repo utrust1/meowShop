@@ -2,13 +2,16 @@ import React from "react";
 import axios from "axios";
 import "./Cart.css"
 import { useContext, useState, useEffect } from "react";
+import { useHistory } from "react-router";
 import {tokenContext} from '../../App'
+
 
 
 const Cart =  () => {
     let token = useContext(tokenContext)
     const [insideCart, setInsideCart] = useState([]);
     const [price , setPrice] = useState(0)
+    const history = useHistory()
     
     useEffect(()=>{getAllCart()},[])
     
@@ -38,6 +41,9 @@ const Cart =  () => {
         console.log(err)
       })
   }
+  const checkout = ()=>{
+    history.push('/shipping')
+  }
 
   
   return (
@@ -55,7 +61,7 @@ console.log("ememememe" , elem._id);
             </>)       
       })
     }
-    {(insideCart && insideCart)?(<button> check out </button>):(<p>""</p>)}
+    {(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}
     </>
   );
 };

@@ -15,7 +15,8 @@ import Cart from "./components/cart/Cart"
 // import Contactus from "./components/Footer/Contactus";
 // import Ourpolicy from "./components/Footer/Ourpolicy";
 import { Search } from "./components/header/Search";
-import WishList from "./components/Wishlist/Wishlist"
+import WishList from "./components/Wishlist/Wishlist";
+import {Purshace} from './components/Purshace'
 
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
@@ -49,7 +50,7 @@ const App = () => {
       <Route exact path="/Home"  render={() => <Main  cartNumber={cartNumber} setCartNumber={setCartNumber}  wishListNumber={wishListNumber} setWishListNumber={setWishListNumber}/>}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} setCheckLogout={setCheckLogout}/>} />
-      <Route exact path="/product/:id" component={GetAllProduct} />
+      <Route exact path="/product/:id" render={()=> <GetAllProduct  setCartNumber ={setCartNumber}  setWishListNumber={setWishListNumber} />} />
       <Route exact path="/login" render={() => <Login  setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/cart" component={Cart}/>
       {/* <Route exact path="/AboutUs" component={Aboutus} />
@@ -57,6 +58,7 @@ const App = () => {
       <Route exact path="/OurPolicy" component={Ourpolicy} /> */}
       <Route exact path="/search" component={Search} />
       <Route exact path="/wishlist" component={WishList} />
+      <Route exact path="/shipping" component={Purshace} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
       </wishListNumberContext.Provider>

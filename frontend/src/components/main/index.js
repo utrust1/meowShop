@@ -14,7 +14,7 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
   const [getCategory, setGetCategory] = useState();
-  const [getProduct, setGetProduct] = useState();
+  const [getProduct, setGetProduct] = useState("");
   const history = useHistory();
 
   useEffect(() => {
@@ -102,8 +102,8 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
 
   ///when you click button it's will get product using id
 
-  const getallProducts = (id) => {
-    history.push(`product/${id}`);
+  const getallProducts = async (id) => {
+   await history.push(`product/${id}`);
   };
 
   ///Get All Category
