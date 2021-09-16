@@ -9,7 +9,6 @@ import Register from "./components/auth/Register/Register";
 import GetAllProduct from "./components/product/index";
 import Login from "./components/auth/Login/Login";
 import { Switch , useHistory  } from "react-router";
-import Footer from "./components/Footer/Footer";
 import Cart from "./components/cart/Cart"
 // import Aboutus from "./components/Footer/Aboutus";
 // import Contactus from "./components/Footer/Contactus";
@@ -46,12 +45,11 @@ const App = () => {
        <wishListNumberContext.Provider value={wishListNumber}>
       <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
 <Switch>
-
-      <Route exact path="/Home"  render={() => <Main  cartNumber={cartNumber} setCartNumber={setCartNumber}  wishListNumber={wishListNumber} setWishListNumber={setWishListNumber}/>}  />
+      <Route exact path="/Home"  render={() => <Main   setCartNumber={setCartNumber}    setWishListNumber={setWishListNumber}/>}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
-      <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} setCheckLogout={setCheckLogout}/>} />
+      <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/product/:id" render={()=> <GetAllProduct  setCartNumber ={setCartNumber}  setWishListNumber={setWishListNumber} />} />
-      <Route exact path="/login" render={() => <Login  setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
+      <Route exact path="/login" render={() => <Login   setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/cart" component={Cart}/>
       {/* <Route exact path="/AboutUs" component={Aboutus} />
       <Route exact path="/ContactUs" component={Contactus} />

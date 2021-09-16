@@ -8,9 +8,12 @@ import { FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
 import { useContext } from "react";
 import { tokenContext } from "../../App";
 import { checkRegisterContext } from "../../App";
+import { cartNumberContext } from "../../App"
+import { wishListNumberContext } from "../../App"
 
-const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber, }) => {
-
+const Main = ({  setCartNumber,    setWishListNumber, }) => {
+  let cartNumber = useContext(cartNumberContext)
+  let wishlistNumber = useContext(wishListNumberContext)
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
   const [getCategory, setGetCategory] = useState();
@@ -79,20 +82,19 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
        console.log("meow 22");
        console.log("3oo",res.data)
        if (token || checkRegister) {
-        if (wishListNumber) {
-          setWishListNumber(wishListNumber + 1);
-          localStorage.setItem("wishList", wishListNumber + 1);
+        if (wishlistNumber) {
+          setWishListNumber(wishlistNumber + 1);
+          localStorage.setItem("wishList",wishlistNumber + 1);
         } else {
           setWishListNumber(1);
-          localStorage.setItem("wishList", wishListNumber + 1);
+          localStorage.setItem("wishList", wishlistNumber + 1);
         }
       } else {
         console.log("you have to log in first ");
       }
      }).catch((err)=>{
        console.error(err);
-     })
-    
+     }) 
   };
 
   // event on the shopnow butthon inside the category
@@ -108,8 +110,9 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
 
   ///Get All Category
   return (
+    <>
     <div className="container">
-     <Header />
+      <Header />
      <div className="morecategory">
       <h2>SHOP FOR </h2>
       <p>More categories ..</p>
@@ -172,8 +175,10 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
           })}
       </div>
     </div>
-    <Footer/>
+   
     </div>
+      <Footer/>
+      </>
   );
 };
 

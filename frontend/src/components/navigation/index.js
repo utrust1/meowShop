@@ -24,7 +24,6 @@ const Logout = () => {
   setCheckLogout(false)
   setToken("")
   setCheckRegister(false)
-
 }
 
 const searchByTitle = ()=>{
