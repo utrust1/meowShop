@@ -43,7 +43,7 @@ const App = () => {
        <searchContext.Provider value= {searchBar}>
        <cartNumberContext.Provider value={cartNumber}>
        <wishListNumberContext.Provider value={wishListNumber}>
-      <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
+      <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken}  setCartNumber={setCartNumber}    setWishListNumber={setWishListNumber} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
 <Switch>
       <Route exact path="/Home"  render={() => <Main   setCartNumber={setCartNumber}    setWishListNumber={setWishListNumber}/>}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />

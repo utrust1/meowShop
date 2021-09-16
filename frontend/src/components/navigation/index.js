@@ -11,7 +11,7 @@ import { wishListNumberContext } from "../../App"
 import {FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 
-const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setSearchBar } ) => {
+const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumber ,  setWishListNumber ,setSearchBar } ) => {
 	const history = useHistory()
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
@@ -24,6 +24,8 @@ const Logout = () => {
   setCheckLogout(false)
   setToken("")
   setCheckRegister(false)
+  setCartNumber(0)
+  setWishListNumber(0)
 }
 
 useEffect(() => {
@@ -96,7 +98,7 @@ const addToWish = ()=>{
                 Create an Account
               </Link>
 
-              <Link to='/category/:title/:id'> </Link> 
+              <Link to='/category/:title/:id'> m m</Link> 
             </div>
           )}
         </div>
