@@ -5,6 +5,7 @@ import { useContext, useState, useEffect } from "react";
 import {tokenContext} from '../../App'
 
 
+
 const Cart =  () => {
     let token = useContext(tokenContext)
     const [insideCart, setInsideCart] = useState([]);
@@ -38,6 +39,9 @@ const Cart =  () => {
         console.log(err)
       })
   }
+  const checkout = ()=>{
+    history.push('/shipping')
+  }
 
   
   return (
@@ -55,7 +59,7 @@ console.log("ememememe" , elem._id);
             </>)       
       })
     }
-    {(insideCart && insideCart)?(<button> check out </button>):(<p>""</p>)}
+    {(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}
     </>
   );
 };
