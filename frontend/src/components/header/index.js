@@ -2,11 +2,11 @@ import React from 'react';
 import './header.css';
 
 const Header = () => {
-	return <div className="App">
+	return <div className="container">
 	   <header>
-         <img src='https://cdn.shopify.com/s/files/1/0301/4295/5565/files/Banner_1_1080x.jpg?v=1580761788'/>
+         <img src='https://images.ctfassets.net/e43mbx7oxv8s/dTeQVZbR72uiYkEAYKyUS/bd3825a93aace2c7b368a7a742b1000f/000122_ZV_SCSW_HeroImages_1900x1024_D1.jpg'/>
     </header>
-    <hr></hr>
+    
 	</div>;
 };
 

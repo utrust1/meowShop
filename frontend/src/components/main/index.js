@@ -111,6 +111,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
   ///Get All Category
   return (
     <section>
+      
     <div className="container">
       <Header />
      <div className="morecategory">
