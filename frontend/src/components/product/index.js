@@ -9,6 +9,7 @@ import { tokenContext } from "../../App";
 import {cartNumberContext} from "../../App"
 import  {wishListNumberContext} from "../../App"
 import {checkRegisterContext} from "../../App"
+import Footer from "../Footer/Footer";
 
 const GetAllProduct=({setCartNumber ,setWishListNumber})=> {
   
@@ -113,6 +114,8 @@ axios.post(`http://localhost:5000/cart`, {purchase} , {
            })}             
         </div>
         <button onClick={()=>{goBackButton()}}> Back</button>
+        
+        <Footer/>
         </>
     )
 }

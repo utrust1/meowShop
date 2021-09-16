@@ -1,8 +1,26 @@
-.CartBox{
-    background-color: aqua;
+:root {
+    --MainColor: #182e49;
+}
+
+.CartBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .CartBox img {
-    height: 45px;
-    width: 45px;
+    width: 350px;
+    height: 350px;
+}
+
+.btnCart {
+    padding: 10px;
+    background-color: var(--MainColor);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
