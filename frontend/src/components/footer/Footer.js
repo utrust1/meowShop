@@ -4,7 +4,7 @@ import { FaFacebookSquare ,FaInstagram } from "react-icons/fa";
 
 
 const Footer = () => {
-return <div className="footer-perant"> 
+return <div className="container"> 
 
 	<footer>
 

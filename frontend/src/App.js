@@ -15,7 +15,7 @@ import Cart from "./components/cart/Cart"
 // import Ourpolicy from "./components/Footer/Ourpolicy";
 import { Search } from "./components/header/Search";
 import WishList from "./components/Wishlist/Wishlist";
-import {Purshace} from './components/Purshace'
+import {Purshace} from './components/Wishlist/Purshace'
 
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();

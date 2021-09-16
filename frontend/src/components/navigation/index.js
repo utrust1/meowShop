@@ -57,13 +57,12 @@ const addToWish = ()=>{
   history.push('/wishlist')
 };
   return (
-    
-    <div className="Maincontainer">
+
+    <div className="container">
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
          <img src='https://cdn.shopify.com/s/files/1/0301/4295/5565/files/logo_ong_180x.png?v=1580764148'/>
         </Link>
-
         <div className="Searchbar">
           <input
             type="text"
@@ -103,12 +102,12 @@ const addToWish = ()=>{
           )}
         </div>
       </div>
-      <div className='showcategoryundernavbar'>{getCategory&&
+      {/* <div className='showcategoryundernavbar'>{getCategory&&
       getCategory.map((get)=>{
         return(
           <p onClick={()=>{showcategory(get.title,get._id)}}>{get.title}</p>
         )
-      })} </div>
+      })} </div> */}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { Route  , useParams} from 'react-router-dom';
 import { useHistory  } from "react-router";
 import axios from 'axios';
 import './dashboard.css';
+import Footer from '../Footer/Footer';
 const ProductCategory=(props)=> {
     const [product , setProduct] = useState()
     const {id} = useParams()
@@ -27,6 +28,7 @@ const ProductCategory=(props)=> {
     }
 
     return (
+        <div className="container">
         <div className="MainSectionForViewProduct">
             <div className='Contect-Main-Section'>
             {product && product.map((elm)=>{
@@ -34,14 +36,16 @@ const ProductCategory=(props)=> {
                     <div className='viewProduct'>
                    <div className='content'>
                    <img src={elm.img}/>
-                    <h1>{elm.title}</h1>
-                    <button onClick={()=>{getbyid(elm._id)}}>Show</button>
+                    <h4>{elm.title}</h4>
+                    <button className='btn-shwo-cart'onClick={()=>{getbyid(elm._id)}}>Show</button>
                   
                    </div>
                 </div>)
             })}
         </div>
         <button onClick={()=>{ goBackHome()}}> Back </button>
+        </div>
+        <Footer/>
         </div>
     )
 }

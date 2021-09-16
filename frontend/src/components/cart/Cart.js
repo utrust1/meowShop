@@ -47,22 +47,30 @@ const Cart =  () => {
 
   
   return (
-    <>
+    <div className="container">
+    <div className="CartPerant">
+      <h4>SHOPPING CART</h4>
       {insideCart&&insideCart.map((elem )=>{
-      console.log("elmmmmm",elem.purchase[0].title);
-console.log("ememememe" , elem._id);
           return( <>
           <div className="CartBox">
+            <div>
             <img  src={elem.purchase[0].img }/>
-            {elem.purchase[0].title}
-            <button onClick={()=>{deleteCart(elem._id)}} >delete</button>
             </div>
-            <br />
+            <div className="CartDes">
+            <h3>{elem.purchase[0].title}</h3>
+            <p className="cartPrice">{elem.purchase[0].newprice} JD</p></div>
+        
+            <div>
+            <button className='btnCart'onClick={()=>{deleteCart(elem._id)}} >Delete</button>
+            </div>
+          </div>
+          <hr></hr>
             </>)       
       })
     }
-    {(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}
-    </>
+    <div className="checkout-btn">{(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}</div>
+    </div>
+    </div>
   );
 };
 

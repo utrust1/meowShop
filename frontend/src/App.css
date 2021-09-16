@@ -3,12 +3,12 @@ body {
     margin: 0px;
     box-sizing: border-box;
     background-color: #ffff;
-    font-family: Montserrat, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .container {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 80px;
+    padding-right: 80px;
     margin-left: auto;
     margin-right: auto;
 }
