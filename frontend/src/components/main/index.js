@@ -138,7 +138,11 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
             );
           })}
       </div>
+      <hr></hr>
+      <div>
+      <h3>TOP SELLERS</h3>
       <div className="product-section">
+        
         {getProduct &&
           getProduct.map((product) => {
             return (
@@ -166,6 +170,7 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
             );
           })}
       </div>
+    </div>
     </div>
   );
 };
