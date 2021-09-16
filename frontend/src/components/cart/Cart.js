@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./Cart.css"
 import { useContext, useState, useEffect } from "react";
+import { useHistory } from "react-router";
 import {tokenContext} from '../../App'
 
 
@@ -10,6 +11,7 @@ const Cart =  () => {
     let token = useContext(tokenContext)
     const [insideCart, setInsideCart] = useState([]);
     const [price , setPrice] = useState(0)
+    const history = useHistory()
     
     useEffect(()=>{getAllCart()},[])
     
