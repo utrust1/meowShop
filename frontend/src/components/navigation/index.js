@@ -11,7 +11,7 @@ import { wishListNumberContext } from "../../App"
 import {FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 
-const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setSearchBar } ) => {
+const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumber ,  setWishListNumber ,setSearchBar } ) => {
 	const history = useHistory()
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
@@ -24,6 +24,8 @@ const Logout = () => {
   setCheckLogout(false)
   setToken("")
   setCheckRegister(false)
+  setCartNumber(0)
+  setWishListNumber(0)
 }
 
 useEffect(() => {
@@ -55,13 +57,12 @@ const addToWish = ()=>{
   history.push('/wishlist')
 };
   return (
-    
-    <div className="Maincontainer">
+
+    <div className="container">
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
          <img src='https://cdn.shopify.com/s/files/1/0301/4295/5565/files/logo_ong_180x.png?v=1580764148'/>
         </Link>
-
         <div className="Searchbar">
           <input
             type="text"
@@ -96,17 +97,17 @@ const addToWish = ()=>{
                 Create an Account
               </Link>
 
-              <Link to='/category/:title/:id'> </Link> 
+              <Link to='/category/:title/:id'> m m</Link> 
             </div>
           )}
         </div>
       </div>
-      <div className='showcategoryundernavbar'>{getCategory&&
+      {/* <div className='showcategoryundernavbar'>{getCategory&&
       getCategory.map((get)=>{
         return(
           <p onClick={()=>{showcategory(get.title,get._id)}}>{get.title}</p>
         )
-      })} </div>
+      })} </div> */}
     </div>
   );
 };

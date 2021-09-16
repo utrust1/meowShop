@@ -45,79 +45,30 @@ const Cart =  () => {
   }
  
   return (
-    <>
-      {/* {insideCart&&insideCart.map((elem )=>{
-  for(let index = 0 ; index < carts.length ; index++ ){
-    console.log("tit1 " , elem.purchase[0].title);
-    console.log("tit2" , carts[index]);
-        if(elem.purchase[0].title !== carts[index]){
-            carts.push(elem.purchase[0].title)
+    <div className="container">
+    <div className="CartPerant">
+      <h4>SHOPPING CART</h4>
+      {insideCart&&insideCart.map((elem )=>{
           return( <>
-            <div className="CartBox">
-              <img  src={elem.purchase[0].img }/>
-               {elem.purchase[0].title} <span>     </span>  
-               {elem.purchase[0].newprice}  <span>     </span> 
-              <button onClick={()=>{deleteCart(elem._id)}} >delete</button>
-              </div>
-              <br />
-              </>)       
-          }else{
-           continue
-          }
-        }
-        console.log("patata");
-     })
-  } */}
-
-
-
-{insideCart&&insideCart.map((elem )=>{
-       total+= elem.purchase[0].newprice
-        console.log("iddddd" , elem.purchase[0]._id);
-       if(carts[elem.purchase[0]._id]){
-      carts[elem.purchase[0]._id]+=1 
-        return  ( <div>  {carts[elem.purchase[0]._id]} </div>  )            
-      }else{
-            carts[elem.purchase[0]._id]=1         
-          }
-          return( <>
-            <div className="CartBox">
-              <img  src={elem.purchase[0].img }/>
-               {elem.purchase[0].title} <span>     </span>  
-               {elem.purchase[0].newprice}  <span>     </span> 
-               {carts[elem.purchase[0]._id]} 
-              <button onClick={()=>{deleteCart(elem._id)}} >delete</button>
-              </div>
-              <br />
-              </>)              
-     })
-  }
-  
-  
-{/* 
-{insideCart&&insideCart.map((elem )=>{
-       total+= elem.purchase[0].newprice
-       if(){
-         
-      return( <>
-            <div className="CartBox">
-              <img  src={elem.purchase[0].img }/>
-               {elem.purchase[0].title} <span>     </span>  
-               {elem.purchase[0].newprice}  <span>     </span> 
-              <button onClick={()=>{deleteCart(elem._id)}} >delete</button>
-              </div>
-              <br />
-              </>)       
-          }else{
-           console.log("mmmm");
-          }
-     })
-  } */}
-      
-      <div className="CartBox">
-        <p> Total: {total}  </p>      </div>
-    {(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}
-    </>
+          <div className="CartBox">
+            <div>
+            <img  src={elem.purchase[0].img }/>
+            </div>
+            <div className="CartDes">
+            <h3>{elem.purchase[0].title}</h3>
+            <p className="cartPrice">{elem.purchase[0].newprice} JD</p></div>
+        
+            <div>
+            <button className='btnCart'onClick={()=>{deleteCart(elem._id)}} >Delete</button>
+            </div>
+          </div>
+          <hr></hr>
+            </>)       
+      })
+    }
+    <div className="checkout-btn">{(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}</div>
+    </div>
+    </div>
   );
 };
 

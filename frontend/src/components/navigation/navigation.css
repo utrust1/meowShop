@@ -8,6 +8,7 @@
     align-items: center;
     padding: 15px 0px;
     background-color: var(--mainColor);
+    height: 70px;
 }
 
 .SearchBarInput::placeholder {
@@ -116,12 +117,14 @@
     display: none;
 }
 
+
+/* 
 @media only screen and (max-width: 600px) {
     .Navigation {
         flex-direction: column;
         gap: 20px;
     }
-}
+} */
 
 
 /**style all category*/

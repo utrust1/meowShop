@@ -15,7 +15,7 @@ import Cart from "./components/cart/Cart"
 // import Ourpolicy from "./components/Footer/Ourpolicy";
 import { Search } from "./components/header/Search";
 import WishList from "./components/Wishlist/Wishlist";
-import {Purshace} from './components/Purshace'
+import {Purshace} from './components/Wishlist/Purshace'
 
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
@@ -43,7 +43,7 @@ const App = () => {
        <searchContext.Provider value= {searchBar}>
        <cartNumberContext.Provider value={cartNumber}>
        <wishListNumberContext.Provider value={wishListNumber}>
-      <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
+      <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken}  setCartNumber={setCartNumber}    setWishListNumber={setWishListNumber} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
 <Switch>
       <Route exact path="/Home"  render={() => <Main   setCartNumber={setCartNumber}    setWishListNumber={setWishListNumber}/>}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
