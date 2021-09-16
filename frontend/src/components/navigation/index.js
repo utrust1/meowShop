@@ -44,7 +44,8 @@ const addToWish = ()=>{
   history.push('/wishlist')
 };
   return (
-    <div className="container">
+    
+    <div className="Maincontainer">
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
          <img src='https://cdn.shopify.com/s/files/1/0301/4295/5565/files/logo_ong_180x.png?v=1580764148'/>
@@ -53,7 +54,7 @@ const addToWish = ()=>{
         <div className="Searchbar">
           <input
             type="text"
-            placeholder=" Search ..."
+            placeholder=" Search all products..."
             className="SearchBarInput"
 			onChange={(e)=>{
 				setSearch(e.target.value)
@@ -61,7 +62,7 @@ const addToWish = ()=>{
           ></input>
           <FaSearch className="searchIcon" onClick={searchByTitle} />
         </div>
-        <FaBars className='fabars'/>
+        {/* <FaBars className='fabars'/> */}
         <div className="navbar">
           { ((token || checkRegister) && checkLogout ) ? (
             <div>
@@ -78,15 +79,16 @@ const addToWish = ()=>{
           ) : (
             <div>
               <Link to="/login" className="navLogin">
-                Login
+                Sign in or
               </Link>
               <Link to="/Register" className="navRegister">
-                Register
+                Create an Account
               </Link>
             </div>
           )}
         </div>
       </div>
+      <div>show all category Here </div>
     </div>
   );
 };

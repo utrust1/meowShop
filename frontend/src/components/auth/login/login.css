@@ -1,13 +1,17 @@
 .LoginMain {
     position: relative;
-   margin: 25vh;
-   height: 40vh;
+    margin: 15vh;
+    height: 30vh;
+}
+
+.LoginMain h3 {
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .loginChild {
     position: absolute;
     left: 50%;
-   /* border: 3px solid red; */
     top: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
@@ -15,26 +19,39 @@
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     display: grid;
-   gap: 30px;
-   width: 500px;
-   height: 90%;
-   padding: 5% 5%;
-   background: #111010;
-   opacity: 0.9;
-   border-radius: 10px;
-
- 
+    gap: 10px;
 }
 
-.loginChild input button {
-    width: 400px;
-    border-radius: 15px;
-    font-family: Palatino, serif;
-    background: #f2f2f2;
-    box-sizing: border-box;
+::placeholder {
+    font-size: 13px;
 }
 
-button:hover ,
-button:active {
-    background-color: rgb(177, 250, 205);
+.loginChild input {
+    background-color: #eeee;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+
+.loginChild input:focus {
+    border: 1px solid black;
+}
+
+.sumbitLogin {
+    background-color: #528ec1;
+    color: white;
+    padding: 5px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.ret {
+    text-align: center;
+    font-size: 15px;
+}
+
+.returnstore {
+    text-decoration: none;
+    color: #528ec1;
 }

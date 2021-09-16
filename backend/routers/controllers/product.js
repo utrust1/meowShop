@@ -33,7 +33,7 @@ const createNewProduct = (req, res) => {
 };
 
 const getAllProduct = async(req, res) => {
-    const { page = 1, limit = 10 } = req.query
+    const { page = 1, limit = 4 } = req.query
     productModel
         .find({}).limit(limit * 1).skip((page - 1) * limit)
         .then((products) => {
@@ -160,31 +160,30 @@ const getProductByCategory = (req, res) => {
     })
 }
 
-const search = (req , res )=>{
+const search = (req, res) => {
     const title = req.query.title
-    
+
     productModel.find({
-        $or:[
-            {
-                title:{
-                    $regex:title,
-                    $options:"i"
+        $or: [{
+                title: {
+                    $regex: title,
+                    $options: "i"
                 }
             },
             {
-                description:{
-                    $regex:title,
-                    $options:"i"
+                description: {
+                    $regex: title,
+                    $options: "i"
                 }
             }
         ]
-    }).then((result)=>{
-        if(!result){
+    }).then((result) => {
+        if (!result) {
             res.status(400).json('product not available')
         }
-        res.status(200).json({success:true , messsage:"found",result:result })
-    }).catch((err)=>{
-        res.status(409).json({success:false , message:'server error'})
+        res.status(200).json({ success: true, messsage: "found", result: result })
+    }).catch((err) => {
+        res.status(409).json({ success: false, message: 'server error' })
     })
 }
 

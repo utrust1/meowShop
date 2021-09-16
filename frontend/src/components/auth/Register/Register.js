@@ -2,6 +2,7 @@ import "./Register.css";
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Register = ({setCheckRegister , setCheckLogout}) => {
   const [firstName, setFirstName] = useState("");
@@ -32,7 +33,9 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
 
   return (
     <div className="Register">
+      <h3>CREATE ACCOUNT</h3>
       <div className="childRegister">
+        <div className="childRegisterTwo">
         <input
           placeholder="firstName"
           type="text"
@@ -68,7 +71,7 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
             setPassword(e.target.value);
           }}
         ></input>
-        <button
+        <button className='createAcc'
           type="submit"
           onClick={() => {
             registerationEventButton();
@@ -78,6 +81,8 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
           Sign Up{" "}
         </button>
         <div className="messgeDiv">{messege}</div>
+        <p className='ret'>or <Link to="/Home" className='returnstore'> Return to store</Link></p>
+      </div>
       </div>
     </div>
   );

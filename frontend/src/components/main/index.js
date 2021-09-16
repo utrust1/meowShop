@@ -108,9 +108,11 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
   ///Get All Category
   return (
     <div className="container">
-      <Header />
-      <h2>What We Have Collections </h2>
-
+     <Header />
+     <div className="morecategory">
+      <h2>SHOP FOR </h2>
+      <p>More categories ..</p>
+     </div>
       <div className="category-section">
         {getCategory &&
           getCategory.map((cate) => {
@@ -136,7 +138,11 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
             );
           })}
       </div>
+      <hr></hr>
+      <div>
+      <h3>TOP SELLERS</h3>
       <div className="product-section">
+        
         {getProduct &&
           getProduct.map((product) => {
             return (
@@ -164,6 +170,7 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
             );
           })}
       </div>
+    </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 :root {
-    --mainColor: #003047;
+    --mainColor: #182e49;
 }
 
 .Navigation {
@@ -11,8 +11,14 @@
     width: 100%;
 }
 
+.SearchBarInput::placeholder {
+    color: white;
+    opacity: 1;
+    /* Firefox */
+}
+
 .Navigation img {
-    width: 50%;
+    width: 60%;
 }
 
 .Searchbar {
@@ -20,12 +26,23 @@
 }
 
 .SearchBarInput {
-    border: none;
     width: 300px;
-    padding: 5px;
+    padding: 6px;
     outline: none;
-    background-color: #000000;
+    background-color: var(--mainColor);
     color: white;
+    border: none;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    border-bottom: 2px solid white;
+}
+
+.SearchBarInput:hover {
+    background-color: #11052C;
+    border: none;
 }
 
 .searchIcon {
@@ -61,18 +78,17 @@
 }
 
 .LogoutIcon {
-    border-left: 2px solid red;
+    border-left: 2px solid white;
     font-size: 18px;
     padding: 5px;
 }
 
 .navLogin,
 .navRegister {
-    border-left: 2px solid red;
     padding: 5px;
     text-decoration: none;
-    color: #09111b;
-    margin-left: 5px;
+    color: white;
+    font-size: 11px
 }
 
 .CartShop,
