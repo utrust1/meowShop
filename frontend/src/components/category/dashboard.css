@@ -1,20 +1,6 @@
-.MainSectionForViewProduct {
-    padding: 15px;
-    background-color: #f7f7f7;
-}
-
 .Contect-Main-Section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-}
-
-.viewProduct {
-    padding: 10px;
-    max-width: 100%;
-}
-
-.viewProduct img {
-    max-width: 100%
 }
 
 @media only screen and (max-width: 992px) {
