@@ -132,3 +132,17 @@
         cursor: pointer;
     }
 }
+
+
+/**style all category*/
+
+.showcategoryundernavbar {
+    background-color: var(--mainColor);
+    color: white;
+    display: flex;
+}
+
+.showcategoryundernavbar p {
+    padding: 10px;
+    cursor: pointer;
+}

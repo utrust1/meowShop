@@ -37,6 +37,10 @@ useEffect(() => {
   })
 })
 
+const showcategory = (id)=>{
+  history.push(`category/Homes/${id}`);
+}
+
 const searchByTitle = ()=>{
 	axios.post(`http://localhost:5000/product/search?title=${search}`).then((result)=>{
 		setSearchBar(result.data.result)
@@ -98,10 +102,10 @@ const addToWish = ()=>{
           )}
         </div>
       </div>
-      <div>{getCategory&&
+      <div className='showcategoryundernavbar'>{getCategory&&
       getCategory.map((get)=>{
         return(
-          <p>{get.title}</p>
+          <p onClick={()=>{showcategory(get._id)}}>{get.title}</p>
         )
       })} </div>
     </div>
