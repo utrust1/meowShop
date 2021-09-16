@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 
-const Purshace = () => {
+export const Purshace = () => {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -65,4 +65,3 @@ const Purshace = () => {
   );
 };
 
-export default Purshace;
