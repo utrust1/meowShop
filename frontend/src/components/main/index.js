@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import axios from "axios";
 import "./main.css";
 import Header from "../header";
+import Footer from "../Footer/Footer";
 import { FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
 import { useContext } from "react";
 import { tokenContext } from "../../App";
@@ -171,6 +172,7 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
           })}
       </div>
     </div>
+    <Footer/>
     </div>
   );
 };
