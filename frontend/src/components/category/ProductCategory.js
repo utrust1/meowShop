@@ -17,16 +17,15 @@ const ProductCategory=(props)=> {
     }, []);
 
 
+    
+
+    const goBackHome =()=>{
+        history.push("/Home")
+    }
     const getbyid = (id) => {
         history.push(`/product/${id}`)
-
-
     }
 
-
-    const goBackButton =()=>{
-        history.goBack()
-    }
     return (
         <div className="MainSectionForViewProduct">
             <div className='Contect-Main-Section'>
@@ -42,7 +41,7 @@ const ProductCategory=(props)=> {
                 </div>)
             })}
         </div>
-        <button onClick={()=>{ goBackButton()}}> Back</button>
+        <button onClick={()=>{ goBackHome()}}> Back </button>
         </div>
     )
 }

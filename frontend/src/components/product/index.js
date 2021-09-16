@@ -11,12 +11,16 @@ import  {wishListNumberContext} from "../../App"
 import {checkRegisterContext} from "../../App"
 
 const GetAllProduct=({setCartNumber ,setWishListNumber})=> {
+  
+  const goBackButton =()=>{
+    history.goBack()
+}
+
     let token = useContext(tokenContext);
     let cartNumber = useContext(cartNumberContext);
     let wishListNumber = useContext(wishListNumberContext);
     let checkRegister =  useContext(checkRegisterContext);
 
-    const history = useHistory()
     const [getproduct , setGetproduct] = useState()
     const {id} = useParams()
     useEffect(() => {
@@ -26,12 +30,13 @@ const GetAllProduct=({setCartNumber ,setWishListNumber})=> {
             console.log(err);
         })
     }, []);
+    
+    const history = useHistory();
+    const getallProducts = (id) => {
+      history.push(`product/${id}`);
+    };
 
-    const goBackButton =()=>{
-        history.goBack()
-    }
-
-const addToCart = (product)=>{
+const cartAdd = (product)=>{
  let purchase = product._id
 axios.post(`http://localhost:5000/cart`, {purchase} , {
             headers: { Authorization: `Bearer ${token}` },
@@ -48,6 +53,7 @@ axios.post(`http://localhost:5000/cart`, {purchase} , {
                 console.log("first time : ", cartNumber);
                 localStorage.setItem("productcartNumber", cartNumber + 1);
               }
+              getallProducts(purchase)
             } else {
               console.log("you have to log in first ");
             }
@@ -56,9 +62,7 @@ axios.post(`http://localhost:5000/cart`, {purchase} , {
             console.log(err);
           });
       };
-
-
-      const addToWishList = (products) => {
+      const wishlistAdd = (products) => {
         let  product = products._id
         axios.post(`http://localhost:5000/wishlist` , {product},{ 
           headers: { Authorization: `Bearer ${token}`} },
@@ -76,6 +80,7 @@ axios.post(`http://localhost:5000/cart`, {purchase} , {
           } else {
             console.log("you have to log in first ");
           }
+          getallProducts(product)
          }).catch((err)=>{
            console.error(err);
          })
@@ -90,8 +95,7 @@ axios.post(`http://localhost:5000/cart`, {purchase} , {
                return(
                    <div class='ProductMain' key={i}>
                        <div>
-                           <img src={product.img}/>
-                           
+                           <img src={product.img}/>          
                        </div>
                        <div className='contactProduct'>
                            <h1>{product.title}</h1>
@@ -99,16 +103,14 @@ axios.post(`http://localhost:5000/cart`, {purchase} , {
                            <p className='old-price'> old price <del> {product.oldPrice}</del></p>
                            <p> new price {product.newprice}</p>
                            <p className="Saving">Saving: {product.oldPrice - product.newprice}</p>
-                           <button onClick={()=>{addToCart(product)}}>add to cart</button>
-                           <button  onClick={()=>{addToWishList(product)}}>add to wishlist</button> 
-                         
+                           {/* <FaShoppingCart onClick={cartAdd(product)}/> */}
+                           <butthon onClick={()=>{cartAdd(product)}} ><FaShoppingCart/></butthon>
+                           <butthon  onClick={()=>{wishlistAdd(product)}} > <FaHeart/>    </butthon>                     
                        </div>
                      
                    </div>
                )
-           })}
-           
-           
+           })}             
         </div>
         <button onClick={()=>{goBackButton()}}> Back</button>
         </>

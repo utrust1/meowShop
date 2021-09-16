@@ -1,4 +1,4 @@
-import React  , { useContext , useState  }from "react";
+import React  , { useContext , useState ,useEffect ,useParams}from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import "./navigation.css";
@@ -11,7 +11,7 @@ import { wishListNumberContext } from "../../App"
 import {FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 
-const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setSearchBar } ) => {
+const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumber ,  setWishListNumber ,setSearchBar } ) => {
 	const history = useHistory()
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
@@ -19,12 +19,25 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setSearchBar
   let cartNumber = useContext(cartNumberContext)
   let wishlistNumber = useContext(wishListNumberContext)
   const [search, setSearch] = useState()
-
+  const [getCategory, setGetCategory] = useState();
 const Logout = () => {
   setCheckLogout(false)
   setToken("")
   setCheckRegister(false)
+  setCartNumber(0)
+  setWishListNumber(0)
+}
 
+useEffect(() => {
+  axios.get(`http://localhost:5000/category`).then((res)=>{  
+  setGetCategory(res.data.result);
+  }).catch((error)=>{
+    console.log(error);
+  })
+},[]);
+
+const showcategory = (title,id)=>{
+  history.push(`/category/${title}/${id}`);
 }
 
 const searchByTitle = ()=>{
@@ -84,11 +97,18 @@ const addToWish = ()=>{
               <Link to="/Register" className="navRegister">
                 Create an Account
               </Link>
+
+              <Link to='/category/:title/:id'> m m</Link> 
             </div>
           )}
         </div>
       </div>
-      <div>show all category Here </div>
+      <div className='showcategoryundernavbar'>{getCategory&&
+      getCategory.map((get)=>{
+        return(
+          <p onClick={()=>{showcategory(get.title,get._id)}}>{get.title}</p>
+        )
+      })} </div>
     </div>
   );
 };

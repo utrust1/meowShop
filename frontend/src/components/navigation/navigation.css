@@ -8,7 +8,6 @@
     align-items: center;
     padding: 15px 0px;
     background-color: var(--mainColor);
-    width: 100%;
 }
 
 .SearchBarInput::placeholder {
@@ -62,13 +61,9 @@
     text-transform: uppercase;
 }
 
-.logoName span {
-    color: #345B63;
-}
-
 .navbar {
     font-size: 18px;
-    color: green;
+    color: white;
 }
 
 .HeartIcon,
@@ -122,13 +117,22 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .Searchbar,
-    .navbar {
-        display: none;
+    .Navigation {
+        flex-direction: column;
+        gap: 20px;
     }
-    .fabars {
-        display: block;
-        font-size: 20px;
-        cursor: pointer;
-    }
+}
+
+
+/**style all category*/
+
+.showcategoryundernavbar {
+    background-color: var(--mainColor);
+    color: white;
+    display: flex;
+}
+
+.showcategoryundernavbar p {
+    padding: 10px;
+    cursor: pointer;
 }
