@@ -8,33 +8,42 @@
 }
 
 .PurshacePerant .PurshaceChild {
-    /* position: fixed;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%); */
+    -o-transform: translate(-50%, -50%);
+    padding: 25px;
+}
+
+::placeholder {
+    font-size: 20px;
+    text-align: center;
+}
+
+.PurshacePerant h4 {
+    padding-left: 20px;
 }
 
 .PurshaceChild input {
     display: block;
-    padding: 25px;
+    padding: 18px;
     margin: 10px 0px;
-    border: 1px solid #0000;
+    border: 2px solid brown;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
-    width: 50%;
 }
 
-button[type=submit] {
+.PurshaceChild button[type=submit] {
     background-color: var(--MainColor);
     color: #ffff;
-    padding: 10px 25px;
+    padding: 18px;
     border: none;
     border-radius: 3px;
     -webkit-border-radius: 3px;

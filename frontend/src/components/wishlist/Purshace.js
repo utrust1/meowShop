@@ -29,6 +29,7 @@ export const Purshace = () => {
 
   return (
     <div className="PurshacePerant">
+      <h4>Contact information</h4>
       <div className="PurshaceChild">
       <input
         type="text"
