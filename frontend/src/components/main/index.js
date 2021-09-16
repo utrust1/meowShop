@@ -110,11 +110,11 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
 
   ///Get All Category
   return (
-    <>
+    <section>
     <div className="container">
       <Header />
      <div className="morecategory">
-      <h2>SHOP FOR </h2>
+      <h4>SHOP FOR </h4>
       <p>More categories ..</p>
      </div>
       <div className="category-section">
@@ -129,13 +129,13 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
                 ></img>
                 <div className="titleforCategory">
                   <div className="categorycontact">
-                    <h2>{cate.title}</h2>
-                    <button
+                    
+                    <h2
                       className="buttonCategory"
                       onClick={() => eventOnButton(cate.title, cate._id)}
                     >
-                      Shop Now
-                    </button>
+                      {cate.title}
+                    </h2>
                   </div>
                 </div>
               </div>
@@ -144,7 +144,10 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       </div>
       <hr></hr>
       <div>
-      <h3>TOP SELLERS</h3>
+        <div className="moreproduct">
+        <h4>TOP SELLERS </h4>
+      <p>More Products ..</p>
+      </div>
       <div className="product-section">
         
         {getProduct &&
@@ -178,7 +181,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
    
     </div>
       <Footer/>
-      </>
+      </section>
   );
 };
 
