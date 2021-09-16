@@ -19,6 +19,8 @@ const ProductCategory=(props)=> {
 
     const getbyid = (id) => {
         history.push(`/product/${id}`)
+
+        
     }
     return (
         <div className="MainSectionForViewProduct">
@@ -30,6 +32,7 @@ const ProductCategory=(props)=> {
                    <img src={elm.img}/>
                     <h1>{elm.title}</h1>
                     <button onClick={()=>{getbyid(elm._id)}}>Show</button>
+                    <button onClick={()=>{}}></button>
                    </div>
                 </div>)
             })}
