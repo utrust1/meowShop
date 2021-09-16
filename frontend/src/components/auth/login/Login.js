@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import "./Login.css";
 import { useHistory } from 'react-router';
+import { Link } from "react-router-dom";
+
 
 
 const  Login =({setToken , setCheckLogout})=> {
@@ -26,10 +28,12 @@ axios.post(`http://localhost:5000/login/`, {email,password}).then((result)=>{
     
 return (
         <div className="LoginMain">
+            <h3>Login</h3>
             <div className="loginChild">
             <input placeholder=" Your Mail" type="text" className='email'onChange={(e)=>{setEmail(e.target.value)}}></input>
             <input placeholder="Your Password" type="text" onChange={(e)=>{setPassword(e.target.value)}}></input>
-            <button type="submit" onClick={()=>{buttonEvent()}}>Login </button>
+            <button className='sumbitLogin' type="submit" onClick={()=>{buttonEvent()}}>Login </button>
+            <p className='ret'>or <Link to="/Home" className='returnstore'> Return to store</Link></p>
             </div>
             {/* <div> {messege}</div> */}
         </div>
