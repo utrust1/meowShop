@@ -20,7 +20,12 @@ const ProductCategory=(props)=> {
     const getbyid = (id) => {
         history.push(`/product/${id}`)
 
-        
+
+    }
+
+
+    const goBackButton =()=>{
+        history.goBack()
     }
     return (
         <div className="MainSectionForViewProduct">
@@ -32,11 +37,12 @@ const ProductCategory=(props)=> {
                    <img src={elm.img}/>
                     <h1>{elm.title}</h1>
                     <button onClick={()=>{getbyid(elm._id)}}>Show</button>
-                    <button onClick={()=>{}}></button>
+                  
                    </div>
                 </div>)
             })}
         </div>
+        <button onClick={()=>{ goBackButton()}}> Back</button>
         </div>
     )
 }

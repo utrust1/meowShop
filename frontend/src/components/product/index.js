@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
+import { useHistory } from 'react-router';
 import axios from 'axios';
 import './product.css'
 const GetAllProduct=(props)=> {
+    const history = useHistory()
     const [getproduct , setGetproduct] = useState()
     const {id} = useParams()
     useEffect(() => {
@@ -12,6 +14,10 @@ const GetAllProduct=(props)=> {
             console.log(err);
         })
     }, []);
+
+    const goBackButton =()=>{
+        history.goBack()
+    }
     return (
         <div className='showProduct'>
             {getproduct&&
@@ -28,11 +34,11 @@ const GetAllProduct=(props)=> {
                            <p> new price {product.newprice}</p>
                            <p className="Saving">Saving: {product.oldPrice - product.newprice}</p>
                        </div>
-                       
+                     
                    </div>
                )
            })}
-            
+              <button onClick={()=>{goBackButton()}}> Back</button>
         </div>
     )
 }
