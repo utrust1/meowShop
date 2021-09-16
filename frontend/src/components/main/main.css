@@ -160,3 +160,7 @@
         cursor: pointer;
         text-decoration: none;
     }
+    
+    .morecategory h2 {
+        font-size: 1.733em;
+    }
