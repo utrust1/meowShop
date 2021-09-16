@@ -108,7 +108,7 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
   ///Get All Category
   return (
     <div className="container">
-      <Header />
+      {/* <Header /> */}
       <h2>What We Have Collections </h2>
 
       <div className="category-section">
