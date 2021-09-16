@@ -50,7 +50,7 @@ const App = () => {
       <Route exact path="/Home"  render={() => <Main  cartNumber={cartNumber} setCartNumber={setCartNumber}  wishListNumber={wishListNumber} setWishListNumber={setWishListNumber}/>}  />
       <Route exact path="/category/:title/:id" component={ProductCategory} />
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister} setCheckLogout={setCheckLogout}/>} />
-      <Route exact path="/product/:id" component={GetAllProduct} />
+      <Route exact path="/product/:id" render={()=> <GetAllProduct  setCartNumber ={setCartNumber}  setWishListNumber={setWishListNumber} />} />
       <Route exact path="/login" render={() => <Login  setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/cart" component={Cart}/>
       {/* <Route exact path="/AboutUs" component={Aboutus} />
