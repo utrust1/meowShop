@@ -25,7 +25,6 @@ const Logout = () => {
   setCheckLogout(false)
   setToken("")
   setCheckRegister(false)
-
 }
 
 useEffect(() => {
