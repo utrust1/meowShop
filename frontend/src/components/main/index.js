@@ -109,8 +109,10 @@ const Main = ({  cartNumber,  setCartNumber,  wishListNumber,  setWishListNumber
   return (
     <div className="container">
      <Header />
-      <h2>What We Have Collections </h2>
-
+     <div className="morecategory">
+      <h2>SHOP FOR </h2>
+      <p>More categories ..</p>
+     </div>
       <div className="category-section">
         {getCategory &&
           getCategory.map((cate) => {
