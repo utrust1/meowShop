@@ -1,34 +1,35 @@
 import React from 'react';
-import {FaEnvelope} from  "react-icons/fa"
 import "./Footer.css";
-import { useHistory } from 'react-router';
-import "./Aboutus"
-import "./Contactus"
-import "./Ourpolicy"
-
+import { FaFacebookSquare ,FaInstagram } from "react-icons/fa";
 
 
 const Footer = () => {
+return <div className="footer-perant"> 
 
-const history =useHistory() 
+	<footer>
 
-const aboutUsEvent = ()=>{
-        history.push("/AboutUs")
-	}
-const ourPolicyEvent = ()=>{
-		history.push("/OurPolicy")
-	}
-const contactUsEvent = ()=>{
-		history.push("/ContactUs")
-    }
-return <div className="FooterPerant"> 
-<div className="between">
-<div className="footerChild">
-	{/* <p onClick={()=>{aboutUsEvent()}}>About us </p>
-	<p onClick={()=>{ourPolicyEvent()}}>Our Policy</p>
-	<span onClick={()=>{contactUsEvent()}} >Contact us <FaEnvelope  className="emailIcon" /></span> */}
-</div>
-</div>
+		
+		<div className="footerMain">
+		<div>
+			<h3>GET IN TOUCH</h3>
+			<p>Please call 079 600 2115 and we will be happy to assist you.</p>
+		</div>
+
+
+		<div>
+			<h3>NEWSLETTER</h3>
+			<p>Join the Lucky newsletter.</p>
+		</div>
+
+		</div>
+
+		<hr></hr>
+		<div className='iconFooter'>
+			<FaFacebookSquare/>
+			<FaInstagram/>
+		</div>
+	</footer>
+
 
 </div>;
 };
