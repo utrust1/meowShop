@@ -32,7 +32,7 @@ return (
             <div className="loginChild">
             <input placeholder=" Your Mail" type="text" className='email'onChange={(e)=>{setEmail(e.target.value)}}></input>
             <input placeholder="Your Password" type="text" onChange={(e)=>{setPassword(e.target.value)}}></input>
-            <button className='sumbitLogin' type="submit" onClick={()=>{buttonEvent()}}>Login </button>
+            <button className='sumbitLogin' type="submit" onClick={()=>{buttonEvent()}}>Sgin in </button>
             <p className='ret'>or <Link to="/Home" className='returnstore'> Return to store</Link></p>
             </div>
             {/* <div> {messege}</div> */}
