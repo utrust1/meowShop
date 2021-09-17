@@ -1,3 +1,8 @@
+:root {
+    --MainColor: #182e49;
+    --SecColor: #528ec1;
+}
+
 .Contect-Main-Section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -25,4 +30,25 @@
         grid-template-columns: repeat(1, 1fr);
         text-align: center;
     }
+}
+
+.btn-shwo-cart {
+    background-color: var(--MainColor);
+    color: #ffff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.viewProduct {
+    border: 1px solid red;
+}
+
+.content {
+    text-align: center;
+    margin: 25px;
 }

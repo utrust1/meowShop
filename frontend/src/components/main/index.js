@@ -17,7 +17,12 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
   const [getCategory, setGetCategory] = useState();
+<<<<<<< HEAD
   const [getProduct, setGetProduct] = useState("");
+=======
+  const [getProduct, setGetProduct] = useState();
+  const [allcategory, setAllcategory] = useState()
+>>>>>>> 2406c756052ec04c31c270abe2aa0ddf899a8fbf
   const history = useHistory();
 
   useEffect(() => {
@@ -108,14 +113,24 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
    await history.push(`product/${id}`);
   };
 
+
+  const getAllcategorys =()=>{
+    history.push(`/Categorys`);
+  }
+
+  const getallTheProducts = ()=>{
+    history.push(`/Products`);
+  }
+
   ///Get All Category
   return (
-    <>
+    <section>
+      
     <div className="container">
       <Header />
      <div className="morecategory">
-      <h2>SHOP FOR </h2>
-      <p>More categories ..</p>
+      <h4>SHOP FOR </h4>
+      <p onClick={() =>{getAllcategorys()}}>More categories ..</p>
      </div>
       <div className="category-section">
         {getCategory &&
@@ -129,13 +144,13 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
                 ></img>
                 <div className="titleforCategory">
                   <div className="categorycontact">
-                    <h2>{cate.title}</h2>
-                    <button
+                    
+                    <h2
                       className="buttonCategory"
                       onClick={() => eventOnButton(cate.title, cate._id)}
                     >
-                      Shop Now
-                    </button>
+                      {cate.title}
+                    </h2>
                   </div>
                 </div>
               </div>
@@ -144,7 +159,10 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       </div>
       <hr></hr>
       <div>
-      <h3>TOP SELLERS</h3>
+        <div className="moreproduct">
+        <h4>TOP SELLERS </h4>
+      <p onClick={() => getallTheProducts()}>More Products ..</p>
+      </div>
       <div className="product-section">
         
         {getProduct &&
@@ -178,7 +196,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
    
     </div>
       <Footer/>
-      </>
+      </section>
   );
 };
 

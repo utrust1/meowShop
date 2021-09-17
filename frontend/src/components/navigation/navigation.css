@@ -2,22 +2,26 @@
     --mainColor: #182e49;
 }
 
+.main-Cont {
+    background-color: var(--mainColor);
+}
+
 .Navigation {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 0px;
-    background-color: var(--mainColor);
+    height: 50px;
 }
 
 .SearchBarInput::placeholder {
     color: white;
     opacity: 1;
-    /* Firefox */
 }
 
 .Navigation img {
-    width: 60%;
+    width: 40%;
 }
 
 .Searchbar {
@@ -116,12 +120,14 @@
     display: none;
 }
 
+
+/* 
 @media only screen and (max-width: 600px) {
     .Navigation {
         flex-direction: column;
         gap: 20px;
     }
-}
+} */
 
 
 /**style all category*/

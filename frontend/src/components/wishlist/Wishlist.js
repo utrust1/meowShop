@@ -35,19 +35,19 @@ const WishList = () => {
       }
 
     return(
-        <div>
-            <h1> mmm </h1>
+        <div className="container">
+            <div className="WishlistPerant">
             {insideWishlist&&
             insideWishlist.map((elem , i )=>{
-             console.log("whooooooooooooooooo",elem.product[0]);
-                return( <>
-                <div className="wishlistBox"> {elem.product[0].title}
+                return( <div className="wishlistBox">
                 <img src={elem.product[0].img} />
+                <div className="wishlistBox"> {elem.product[0].title}
                 <button onClick={()=>{deleteWishlist(elem._id)}}> delete  </button>
                 </div>
                 <br />
-                </> );
+                </div> );
             })}
+        </div>
         </div>
     )
 

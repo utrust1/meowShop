@@ -1,8 +1,60 @@
-.CartBox{
-    background-color: aqua;
+:root {
+    --MainColor: #182e49;
+}
+
+.CartBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    flex-wrap: wrap;
 }
 
 .CartBox img {
-    height: 45px;
-    width: 45px;
+    max-width: 400px;
+    max-height: 350px;
 }
+
+.btnCart {
+    padding: 10px;
+    background-color: var(--MainColor);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.btnCart:hover {
+    background-color: red;
+}
+
+.cartPrice {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.CartDes {
+    max-width: 100%;
+}
+
+.checkout-btn button {
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: var(--MainColor);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.carthidden {}

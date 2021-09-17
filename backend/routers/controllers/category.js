@@ -84,9 +84,28 @@ const getallCategory = (req, res) => {
         });
     })
 }
+
+
+const getallCategorys = (req, res) => {
+    categoryModel.find({}).then((result) => {
+        res.json({
+            success: true,
+            message: `All Category found `,
+            result: result
+        });
+        res.status(200);
+    }).catch((err) => {
+        res.status(500);
+        res.json({
+            success: false,
+            message: `Server Error`
+        });
+    })
+}
 module.exports = {
     createNewCategory,
     deleteCategoryById,
     updateCategoryById,
-    getallCategory
+    getallCategory,
+    getallCategorys
 };

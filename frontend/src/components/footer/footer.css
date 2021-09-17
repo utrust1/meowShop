@@ -1,14 +1,11 @@
-.footer-perant {}
-
 footer {
-    background-color: #f2f2f2;
-    color: #636363;
-    padding: 25px;
+    background-color: #182e49;
+    color: white;
 }
 
 .footerMain {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .iconFooter {

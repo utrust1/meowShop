@@ -1,0 +1,53 @@
+:root {
+    --MainColor: #182e49;
+    --SecColor: #528ec1;
+}
+
+.PurshacePerant {
+    position: relative;
+}
+
+.PurshacePerant .PurshaceChild {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    padding: 25px;
+}
+
+::placeholder {
+    font-size: 20px;
+    text-align: center;
+}
+
+.PurshacePerant h4 {
+    padding-left: 20px;
+}
+
+.PurshaceChild input {
+    display: block;
+    padding: 18px;
+    margin: 10px 0px;
+    border: 2px solid brown;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.PurshaceChild button[type=submit] {
+    background-color: var(--MainColor);
+    color: #ffff;
+    padding: 18px;
+    border: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
