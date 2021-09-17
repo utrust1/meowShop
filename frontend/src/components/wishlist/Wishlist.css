@@ -1,8 +1,9 @@
-.wishlistBox{
-    background-color: aqua;
-}
-
-.wishlistBox img {
-    width: 45px;
-    height: 60px;
+.wishlistBox {
+    /* max-width: 400px;
+    max-height: 350px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    flex-wrap: wrap;
 }
