@@ -11,32 +11,38 @@ const Products = () => {
         axios
           .get(`http://localhost:5000/product/ddd/products`)
           .then((res) => {
-            setAllProducts(res.data.result);
+            setAllProducts(res.data.products);
           })
           .catch((err) => {
             console.log(err);
           });
       }, []);
 
-    //   const ShowCategorys = ( title,id ) => {
-    //       history.push(`/category/${title}/${id}`);
-    //   }
+      const getbyid = (id) => {
+        history.push(`/product/${id}`)
+    }
 
-	return <div className="container">
-        <h4>Product Categories</h4>
-        <div className="">
-           {allProducts&&
-          allProducts.map((ele)=>{
-            return (
-                <div>
-                    <img src={ele.img}/>
-                    <h2>{ele.title}</h2>
-                </div>
-            )
-          }) }
-	</div>
-    <Footer/>
-    </div>
+return      (
+        <div className="container">
+        <div className="MainSectionForViewProduct">
+           
+            <div className='Contect-Main-Section'>
+            {allProducts && allProducts.map((elm)=>{
+                return (
+                    <div className='viewProduct'>
+                   <div className='content'>
+                   <img src={elm.img}/>
+                    <h4>{elm.title}</h4>
+                    <button className='btn-shwo-cart' onClick={()=>getbyid(elm._id)}>More details</button>
+                  
+                   </div>
+                </div>)
+            })}
+        </div>
+        </div>
+        <Footer/>
+        </div>
+    )
 };
 
 export default Products;
