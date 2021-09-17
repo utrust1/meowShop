@@ -65,8 +65,8 @@
 .info-seller {
     background-color: #eee;
     border-radius: 3px;
-    max-width: 400px;
-    max-height: 150px;
+    min-width: 300px;
+    min-height: 150px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
@@ -81,4 +81,14 @@
 .subtotal p span {
     font-style: italic;
     font-size: 25px;
+}
+
+.subtotal button {
+    padding: 8px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }

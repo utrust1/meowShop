@@ -4,7 +4,7 @@ import "./Cart.css"
 import { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import {tokenContext} from '../../App'
-
+import { FaShoppingBag } from 'react-icons/fa';
 
 
 const Cart =  () => {
@@ -88,16 +88,12 @@ const Cart =  () => {
  
 
       <div>
-        <h5>Special instructions for seller</h5>
-        <textarea className='info-seller'>
-
-
-        </textarea>
+      
       </div>
       <div className='subtotal'>
         
       <p> Subtotal  : <span>{total} JD</span></p>
-      {(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}</div>     
+      {(insideCart && insideCart)?(<button onClick={checkout}> <FaShoppingBag/> check out </button>):(<p>""</p>)}</div>     
       
       </div>
     </div>
