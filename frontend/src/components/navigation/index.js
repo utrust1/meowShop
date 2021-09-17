@@ -8,7 +8,7 @@ import { checkRegisterContext } from "../../App"
 import { checkLogoutContext } from "../../App"
 import { cartNumberContext } from "../../App"
 import { wishListNumberContext } from "../../App"
-import {FaShoppingCart, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
+import {FaShoppingBasket, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumber ,  setWishListNumber ,setSearchBar } ) => {
@@ -80,9 +80,9 @@ const addToWish = ()=>{
             <div>
               <span className="shopCartMain">
               <FaHeart onClick={addToWish} className="HeartIcon"/>
-              <span className='wishNumberSpan' >{wishlistNumber}</span>
+              {/* <span className='wishNumberSpan' >{wishlistNumber}</span> */}
 
-              <FaShoppingCart className='CartShop'onClick={addToCart} />
+              <FaShoppingBasket className='CartShop'onClick={addToCart} />
               <span className='valueShop'>{cartNumber}</span>
               </span>         
               <span onClick={Logout} className='LogoutIcon'>Logout</span>
@@ -96,8 +96,6 @@ const addToWish = ()=>{
               <Link to="/Register" className="navRegister">
                 Create an Account
               </Link>
-
-              <Link to='/category/:title/:id'> m m</Link> 
             </div>
           )}
         </div>

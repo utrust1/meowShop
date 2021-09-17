@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+
 const Register = ({setCheckRegister , setCheckLogout}) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
@@ -26,15 +27,15 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
         setCheckRegister(true)
         setCheckLogout(true)
       }).catch((error)=>{
-          console.log(error.response);
+        
           setMessege(" The Email is already exist Please enter another Email ");
       })
   };
 
   return (
     <div className="Register">
-      <h3>CREATE ACCOUNT</h3>
       <div className="childRegister">
+      <h3>CREATE ACCOUNT</h3>
         <div className="childRegisterTwo">
         <input
           placeholder="firstName"
@@ -71,6 +72,7 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
             setPassword(e.target.value);
           }}
         ></input>
+        <p className="ErrorMsg">{messege}</p>
         <button className='createAcc'
           type="submit"
           onClick={() => {
@@ -80,10 +82,10 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
           {" "}
           Sign Up{" "}
         </button>
-        <div className="messgeDiv">{messege}</div>
         <p className='ret'>or <Link to="/Home" className='returnstore'> Return to store</Link></p>
       </div>
       </div>
+
     </div>
   );
 };

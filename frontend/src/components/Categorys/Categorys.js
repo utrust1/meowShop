@@ -1,7 +1,6 @@
 import React ,{ useState, useEffect }from 'react';
 import axios from 'axios';
 import './Categorys.css';
-import Footer from '../Footer/Footer';
 import { useHistory  } from "react-router";
 const Categorys = () => {
 
@@ -36,7 +35,6 @@ const Categorys = () => {
             )
           }) }
 	</div>
-    <Footer/>
     </div>
 };
 

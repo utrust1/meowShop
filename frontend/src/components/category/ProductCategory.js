@@ -3,7 +3,6 @@ import { Route  , useParams} from 'react-router-dom';
 import { useHistory  } from "react-router";
 import axios from 'axios';
 import './dashboard.css';
-import Footer from '../Footer/Footer';
 const ProductCategory=(props)=> {
     const [product , setProduct] = useState()
     const {id} = useParams()
@@ -48,7 +47,6 @@ const ProductCategory=(props)=> {
             })}
         </div>
         </div>
-        <Footer/>
         </div>
     )
 }
