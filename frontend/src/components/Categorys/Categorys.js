@@ -28,7 +28,6 @@ const Categorys = () => {
         <div className="categorysection">
            {allcategory&&
           allcategory.map((ele)=>{
-
             return (
                 <div onClick={()=>ShowCategorys(ele.title , ele._id)} className="categoryMain">
                     <img src={ele.img}/>
