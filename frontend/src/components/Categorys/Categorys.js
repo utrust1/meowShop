@@ -17,23 +17,23 @@ const Categorys = () => {
       }, []);
 
 	return <div className="container">
-	   <header>
+        <h4>Collections</h4>
+        <div className="categorysection">
            {allcategory&&
           allcategory.map((ele)=>{
 
             return (
-                <div>
+                <div className="categoryMain">
+                    <img src={ele.img}/>
                     <p>{ele.title}</p>
                     <p>{ele.description}</p>
-                    <img src={ele.img}/>
+                   
                 </div>
             )
           }) }
-           
-        
-    </header>
-    <Footer/>
 	</div>
+    <Footer/>
+    </div>
 };
 
 export default Categorys;
