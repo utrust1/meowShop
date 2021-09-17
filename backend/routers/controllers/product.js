@@ -145,7 +145,7 @@ const getProductByCategory = (req, res) => {
 
     const category = req.params.category
 
-    productModel.find({ category: category }).then((result) => {
+    productModel.find({ category: category }).populate('category').then((result) => {
         res.status(200).json({
             success: true,
             massage: " All The Products ",

@@ -18,6 +18,7 @@ const ProductCategory=(props)=> {
     }, []);
 
 
+
     
 
     const goBackHome =()=>{
@@ -43,7 +44,6 @@ const ProductCategory=(props)=> {
                 </div>)
             })}
         </div>
-        <button onClick={()=>{ goBackHome()}}> Back </button>
         </div>
         <Footer/>
         </div>

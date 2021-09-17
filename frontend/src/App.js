@@ -10,6 +10,7 @@ import GetAllProduct from "./components/product/index";
 import Login from "./components/auth/Login/Login";
 import { Switch , useHistory  } from "react-router";
 import Cart from "./components/cart/Cart"
+import Categorys from "./components/Categorys/Categorys";
 // import Aboutus from "./components/Footer/Aboutus";
 // import Contactus from "./components/Footer/Contactus";
 // import Ourpolicy from "./components/Footer/Ourpolicy";
@@ -57,6 +58,7 @@ const App = () => {
       <Route exact path="/search" component={Search} />
       <Route exact path="/wishlist" component={WishList} />
       <Route exact path="/shipping" component={Purshace} />
+      <Route exact path="/Categorys" component={Categorys}/>
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
       </wishListNumberContext.Provider>

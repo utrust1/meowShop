@@ -56,7 +56,7 @@ const Cart =  () => {
          total+= elem.purchase[0].newprice
          if(carts[elem.purchase[0]._id]){
           carts[elem.purchase[0]._id]+=1 
-            return  ( <div>  {carts[elem.purchase[0]._id]} </div>  )            
+            return  ( <div className="carthidden">   {carts[elem.purchase[0]._id]} </div>  )            
           }else{
                 carts[elem.purchase[0]._id]=1         
               }
