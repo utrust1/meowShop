@@ -36,19 +36,28 @@ const WishList = () => {
 
     return(
         <div className="container">
+            <h4>Wishlist CART</h4>
             <div className="WishlistPerant">
             {insideWishlist&&
             insideWishlist.map((elem , i )=>{
                 return( <div className="wishlistBox">
                 <img src={elem.product[0].img} />
-                <div className="wishlistBox"> {elem.product[0].title}
-                <button onClick={()=>{deleteWishlist(elem._id)}}> delete  </button>
+                <div className="titelWishlist"> 
+                <h3>{elem.product[0].title}</h3>
+                <p>{elem.product[0].newprice} JD</p>
                 </div>
-                <br />
-                </div> );
+                
+                <button onClick={()=>{deleteWishlist(elem._id)}}> delete  </button>
+                
+                </div> 
+                
+                );
             })}
+              <hr></hr>
         </div>
+      
         </div>
+        
     )
 
 }
