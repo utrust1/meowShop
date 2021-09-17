@@ -53,6 +53,25 @@ const getAllProduct = async(req, res) => {
         });
 };
 
+const getAllProducts = async(req, res) => {
+    productModel
+        .find({})
+        .then((products) => {
+            res.status(200);
+            res.json({
+                success: true,
+                massage: ` All the products`,
+                products: products,
+            });
+        })
+        .catch((err) => {
+            res.status(500);
+            res.json({
+                success: false,
+                massage: ` Server Error `,
+            });
+        });
+};
 const getProductById = (req, res) => {
     id = req.params.id;
     productModel
@@ -145,7 +164,7 @@ const getProductByCategory = (req, res) => {
 
     const category = req.params.category
 
-    productModel.find({ category: category }).then((result) => {
+    productModel.find({ category: category }).populate('category').then((result) => {
         res.status(200).json({
             success: true,
             massage: " All The Products ",
@@ -195,5 +214,6 @@ module.exports = {
     deleteProductById,
     getProductByCategory,
     getAllProduct,
-    search
+    search,
+    getAllProducts
 };

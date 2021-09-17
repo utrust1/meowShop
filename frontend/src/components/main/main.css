@@ -7,17 +7,17 @@
 }
 
 @media only screen and (max-width: 992px) {
-    /* .category-section {
+    .category-section {
         display: grid;
         grid-template-columns: repeat(2, 2fr);
-    } */
+    }
 }
 
 @media only screen and (max-width: 600px) {
-    /* .category-section {
+    .category-section {
         display: grid;
         grid-template-columns: repeat(1, 2fr);
-    } */
+    }
 }
 
 .categoryMain button {
