@@ -2,7 +2,10 @@ import React ,{ useState, useEffect }from 'react';
 import axios from 'axios';
 import './Categorys.css';
 import Footer from '../Footer/Footer';
+import { useHistory  } from "react-router";
 const Categorys = () => {
+
+    const history = useHistory();
 
     const [allcategory, setAllcategory] = useState()
     useEffect(() => {
@@ -16,6 +19,10 @@ const Categorys = () => {
           });
       }, []);
 
+      const ShowCategorys = ( title,id ) => {
+          history.push(`/category/${title}/${id}`);
+      }
+
 	return <div className="container">
         <h4>Collections</h4>
         <div className="categorysection">
@@ -23,11 +30,9 @@ const Categorys = () => {
           allcategory.map((ele)=>{
 
             return (
-                <div className="categoryMain">
+                <div onClick={()=>ShowCategorys(ele.title , ele._id)} className="categoryMain">
                     <img src={ele.img}/>
-                    <p>{ele.title}</p>
-                    <p>{ele.description}</p>
-                   
+                    <h2>{ele.title}</h2>
                 </div>
             )
           }) }
