@@ -1,5 +1,7 @@
 import React ,{ useState, useEffect }from 'react';
 import axios from 'axios';
+import './Categorys.css';
+import Footer from '../Footer/Footer';
 const Categorys = () => {
 
     const [allcategory, setAllcategory] = useState()
@@ -21,14 +23,16 @@ const Categorys = () => {
 
             return (
                 <div>
-                    {ele.title}
+                    <p>{ele.title}</p>
+                    <p>{ele.description}</p>
+                    <img src={ele.img}/>
                 </div>
             )
           }) }
            
         
     </header>
-    
+    <Footer/>
 	</div>
 };
 
