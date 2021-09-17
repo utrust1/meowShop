@@ -40,7 +40,7 @@ const ProductCategory=(props)=> {
                     <div className='viewProduct'>
                    <div className='content'>
                    <img src={elm.img}/>
-                    <h4>{elm.title}</h4>
+                    <h5>{elm.title}</h5>
                     <button className='btn-shwo-cart'onClick={()=>{getbyid(elm._id)}}>More details</button>
                   
                    </div>
