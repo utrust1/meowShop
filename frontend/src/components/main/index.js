@@ -18,6 +18,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
   let checkRegister = useContext(checkRegisterContext);
   const [getCategory, setGetCategory] = useState();
   const [getProduct, setGetProduct] = useState();
+  const [allcategory, setAllcategory] = useState()
   const history = useHistory();
 
   useEffect(() => {
@@ -108,6 +109,15 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
     history.push(`product/${id}`);
   };
 
+
+  const getAllcategorys =()=>{
+    history.push(`/Categorys`);
+  }
+
+  const getallTheProducts = ()=>{
+    history.push(`/Products`);
+  }
+
   ///Get All Category
   return (
     <section>
@@ -116,7 +126,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       <Header />
      <div className="morecategory">
       <h4>SHOP FOR </h4>
-      <p>More categories ..</p>
+      <p onClick={() =>{getAllcategorys()}}>More categories ..</p>
      </div>
       <div className="category-section">
         {getCategory &&
@@ -147,7 +157,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       <div>
         <div className="moreproduct">
         <h4>TOP SELLERS </h4>
-      <p>More Products ..</p>
+      <p onClick={() => getallTheProducts()}>More Products ..</p>
       </div>
       <div className="product-section">
         

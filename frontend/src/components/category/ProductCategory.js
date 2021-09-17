@@ -18,6 +18,7 @@ const ProductCategory=(props)=> {
     }, []);
 
 
+
     
 
     const goBackHome =()=>{
@@ -30,6 +31,9 @@ const ProductCategory=(props)=> {
     return (
         <div className="container">
         <div className="MainSectionForViewProduct">
+            <div>
+                shop now
+            </div>
             <div className='Contect-Main-Section'>
             {product && product.map((elm)=>{
                 return (
@@ -43,7 +47,6 @@ const ProductCategory=(props)=> {
                 </div>)
             })}
         </div>
-        <button onClick={()=>{ goBackHome()}}> Back </button>
         </div>
         <Footer/>
         </div>
