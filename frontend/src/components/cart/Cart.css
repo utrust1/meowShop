@@ -45,11 +45,16 @@
     max-width: 100%;
 }
 
+.checkout-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .checkout-btn button {
     color: white;
     border: none;
     border-radius: 3px;
-    padding: 10px;
     background-color: var(--MainColor);
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -57,4 +62,23 @@
     -o-border-radius: 3px;
 }
 
-.carthidden {}
+.info-seller {
+    background-color: #eee;
+    border-radius: 3px;
+    max-width: 400px;
+    max-height: 150px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.subtotal p {
+    font-size: 20px;
+    color: #585858;
+}
+
+.subtotal p span {
+    font-style: italic;
+    font-size: 25px;
+}

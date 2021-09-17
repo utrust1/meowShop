@@ -56,7 +56,7 @@ const Cart =  () => {
          total+= elem.purchase[0].newprice
          if(carts[elem.purchase[0]._id]){
           carts[elem.purchase[0]._id]+=1 
-            return  ( <div className="carthidden">   {carts[elem.purchase[0]._id]} </div>  )            
+            return  ( <div className="carthidden"> quantity :  {carts[elem.purchase[0]._id]} </div>  )            
           }else{
                 carts[elem.purchase[0]._id]=1         
               }
@@ -85,8 +85,21 @@ const Cart =  () => {
       })
     }
     <div className="checkout-btn">
-      <p> total : {total}</p>
-      {(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}</div>
+ 
+
+      <div>
+        <h5>Special instructions for seller</h5>
+        <textarea className='info-seller'>
+
+
+        </textarea>
+      </div>
+      <div className='subtotal'>
+        
+      <p> Subtotal  : <span>{total} JD</span></p>
+      {(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}</div>     
+      
+      </div>
     </div>
     </div>
   );
