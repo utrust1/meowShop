@@ -43,6 +43,8 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       });
   }, []);
 
+  
+
   const addToCart = (product) => {
     console.log("pp" , product);
    let purchase = product._id
@@ -105,8 +107,8 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
 
   ///when you click button it's will get product using id
 
-  const getallProducts = (id) => {
-    history.push(`product/${id}`);
+  const getallProducts = async (id) => {
+   await history.push(`product/${id}`);
   };
 
 

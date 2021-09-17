@@ -92,9 +92,9 @@ axios.post(`http://localhost:5000/cart`, {purchase} , {
         <>
         <div className='showProduct'>
             {getproduct&&
-           getproduct.map((product) => {
+           getproduct.map((product,i) => {
                return(
-                   <div class='ProductMain'>
+                   <div class='ProductMain' key={i}>
                        <div>
                            <img src={product.img}/>          
                        </div>
