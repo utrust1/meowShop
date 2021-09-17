@@ -25,6 +25,7 @@ const Categorys = () => {
 	return <div className="container">
         <h4>Collections</h4>
         <div className="categorysection">
+          
            {allcategory&&
           allcategory.map((ele)=>{
             return (
@@ -32,6 +33,7 @@ const Categorys = () => {
                     <img src={ele.img}/>
                     <h2>{ele.title}</h2>
                 </div>
+              
             )
           }) }
 	</div>
