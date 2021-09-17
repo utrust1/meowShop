@@ -4,7 +4,7 @@ import "./Cart.css"
 import { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import {tokenContext} from '../../App'
-
+import { FaShoppingBag } from 'react-icons/fa';
 
 
 const Cart =  () => {
@@ -56,7 +56,7 @@ const Cart =  () => {
          total+= elem.purchase[0].newprice
          if(carts[elem.purchase[0]._id]){
           carts[elem.purchase[0]._id]+=1 
-            return  ( <div className="carthidden">   {carts[elem.purchase[0]._id]} </div>  )            
+            return  ( <div className="carthidden"> quantity :  {carts[elem.purchase[0]._id]} </div>  )            
           }else{
                 carts[elem.purchase[0]._id]=1         
               }
@@ -69,6 +69,7 @@ const Cart =  () => {
     
             <div className="CartDes">
             <h3>{elem.purchase[0].title}</h3>
+            <p>{elem.purchase[0].description}</p>
             <p className="cartPrice">{elem.purchase[0].newprice} JD</p>
             </div>
     
@@ -85,8 +86,17 @@ const Cart =  () => {
       })
     }
     <div className="checkout-btn">
-      <p> total : {total}</p>
-      {(insideCart && insideCart)?(<button onClick={checkout}> check out </button>):(<p>""</p>)}</div>
+ 
+
+      <div>
+      
+      </div>
+      <div className='subtotal'>
+        
+      <p> Subtotal  : <span>{total} JD</span></p>
+      {(insideCart && insideCart)?(<button onClick={checkout}> <FaShoppingBag/> CHECKOUT </button>):(<p>""</p>)}</div>     
+      
+      </div>
     </div>
     </div>
   );
