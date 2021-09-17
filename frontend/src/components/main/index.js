@@ -43,6 +43,8 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       });
   }, []);
 
+  
+
   const addToCart = (product) => {
     console.log("pp" , product);
    let purchase = product._id

@@ -5,15 +5,24 @@ import axios from "axios";
 
 export const Search = () => {
   let searchBar = useContext(searchContext);
+  const history = useHistory()
+  const getbyid = (id) => {
+    history.push(`/product/${id}`)
+}
+
 
   return (
     <div className="container">
         <div className='Contect-Main-Section'>
-      {searchBar.map((elm) => {
+      {searchBar&&searchBar.map((elm) => {
         return (
           <div className="viewProduct">
-            <div className="content">{elm.title} <img src={elm.img} />
+            <div className="content">
+                <img src={elm.img}/>
+                <h5>{elm.title}</h5>
+                <button className='btn-shwo-cart' onClick={()=>getbyid(elm._id)}>More details</button>
             </div>
+
           </div>
         );
       })}
