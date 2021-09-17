@@ -8,14 +8,16 @@ export const Search = () => {
 
   return (
     <div className="container">
-        <div cla></div>
+        <div className='Contect-Main-Section'>
       {searchBar.map((elm) => {
         return (
-          <div className="searchProduct">
-            {elm.title} <img src={elm.img} />
+          <div className="viewProduct">
+            <div className="content">{elm.title} <img src={elm.img} />
+            </div>
           </div>
         );
       })}
+      </div>
     </div>
   );
 };
