@@ -22,7 +22,7 @@ const Cart =  () => {
         .then( (result) => {
           console.log("res222" , result.data.products );
           setInsideCart(result.data.products )
-          setPrice(result.data.products.purchase[0]._id)
+          setPrice(price+result.data.products.purchase[0].newPrice)
         })
         .catch((err) => {
           console.log(err);
@@ -56,6 +56,7 @@ console.log("ememememe" , elem._id);
             <img  src={elem.purchase[0].img }/>
             {elem.purchase[0].title}
             <button onClick={()=>{deleteCart(elem._id)}} >delete</button>
+            
             </div>
             <br />
             </>)       
