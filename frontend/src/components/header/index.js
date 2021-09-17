@@ -1,13 +1,43 @@
-import React from 'react';
+import React , {useState} from 'react';
+import SliderImg from './SliderImg';
 import './header.css';
+import { FaArrowLeft ,FaArrowRight} from "react-icons/fa";
+
 
 const Header = () => {
-	return <div className="container">
-	   <header>
-         <img src='https://images.ctfassets.net/e43mbx7oxv8s/dTeQVZbR72uiYkEAYKyUS/bd3825a93aace2c7b368a7a742b1000f/000122_ZV_SCSW_HeroImages_1900x1024_D1.jpg'/>
-    </header>
-    
-	</div>;
+
+	const [sliders, setSliders] = useState(0);
+	const length = SliderImg.length;
+
+	if (!Array.isArray(SliderImg) || SliderImg.length <= 0) {
+		return null;
+	  }
+
+	  const nextSlide = () => {
+		setSliders(sliders === length - 1 ? 0 : sliders + 1);
+	  };
+	
+	  const prevSlide = () => {
+		setSliders(sliders === 0 ? length - 1 : sliders - 1);
+	  };
+	return <section className="sliderr">
+		<FaArrowLeft className="left-arrow" onClick={() =>{nextSlide()}}/>
+		<FaArrowRight className="right-arrow" onClick={() =>{prevSlide()}}/>
+		 {SliderImg.map((slider , index) => {
+			 return(
+				    <div
+            className={index === sliders ? 'slide active' : 'slide'}
+            key={index}
+          >
+            {index === sliders && (
+              <img src={slider.image}  className='imgslider' />
+            )}
+          </div>
+			 )
+
+		 })}
+	
+	</section>;
 };
 
 export default Header;
