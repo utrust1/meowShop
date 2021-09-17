@@ -92,8 +92,8 @@
 }
 
 .CartShop,
-.Logout {
-    font-size: 25px;
+.LogoutIcon {
+    font-size: 20px;
     margin-left: 5px;
     cursor: pointer;
 }
