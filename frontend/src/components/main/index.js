@@ -114,6 +114,10 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
     history.push(`/Categorys`);
   }
 
+  const getallTheProducts = ()=>{
+    history.push(`/Products`);
+  }
+
   ///Get All Category
   return (
     <section>
@@ -153,7 +157,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       <div>
         <div className="moreproduct">
         <h4>TOP SELLERS </h4>
-      <p>More Products ..</p>
+      <p onClick={() => getallTheProducts()}>More Products ..</p>
       </div>
       <div className="product-section">
         
