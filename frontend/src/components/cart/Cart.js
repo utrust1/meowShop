@@ -4,8 +4,6 @@ import "./Cart.css"
 import { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import {tokenContext} from '../../App'
- 
-
 const Cart =  () => { 
   let b 
     let total  = 0; 
@@ -15,7 +13,6 @@ const Cart =  () => {
     let carts = {}
     const history = useHistory()
     useEffect(()=>{getAllCart()},[])
-  
     console.log(" caaaaa " ,carts);
     const getAllCart = () => {
           console.log("memmmw");
@@ -28,10 +25,8 @@ const Cart =  () => {
             })
             .catch((err) => {
               console.log(err);
-              
             });            
           }   
-
   const deleteCart = (id) =>{
     axios
       .delete(`http://localhost:5000/cart/${id}`).then((result)=>{
