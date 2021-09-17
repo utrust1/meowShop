@@ -16,4 +16,4 @@ const SliderImg = [
     }
 ]
 
-export default SliderImg;
+export default SliderImg
