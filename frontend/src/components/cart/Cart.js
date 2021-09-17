@@ -69,6 +69,7 @@ const Cart =  () => {
     
             <div className="CartDes">
             <h3>{elem.purchase[0].title}</h3>
+            <p>{elem.purchase[0].description}</p>
             <p className="cartPrice">{elem.purchase[0].newprice} JD</p>
             </div>
     
@@ -93,7 +94,7 @@ const Cart =  () => {
       <div className='subtotal'>
         
       <p> Subtotal  : <span>{total} JD</span></p>
-      {(insideCart && insideCart)?(<button onClick={checkout}> <FaShoppingBag/> check out </button>):(<p>""</p>)}</div>     
+      {(insideCart && insideCart)?(<button onClick={checkout}> <FaShoppingBag/> CHECKOUT </button>):(<p>""</p>)}</div>     
       
       </div>
     </div>

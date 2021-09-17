@@ -26,3 +26,12 @@
 .wishlistBox button:hover {
     background-color: red;
 }
+
+@media only screen and (max-width: 600px) {
+    .titelWishlist {
+        text-align: center;
+    }
+    .container h4 {
+        text-align: center;
+    }
+}

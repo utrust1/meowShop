@@ -42,9 +42,9 @@ const WishList = () => {
             insideWishlist.map((elem , i )=>{
                 return( <div className="wishlistBox">
                 <img src={elem.product[0].img} />
-                <div className=""> 
+                <div className="titelWishlist"> 
                 <h3>{elem.product[0].title}</h3>
-                <p>{elem.product[0].newprice} : JD</p>
+                <p>{elem.product[0].newprice} JD</p>
                 </div>
                 
                 <button onClick={()=>{deleteWishlist(elem._id)}}> delete  </button>
