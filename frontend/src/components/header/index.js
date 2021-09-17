@@ -9,9 +9,6 @@ const Header = () => {
 	const [sliders, setSliders] = useState(0);
 	const length = SliderImg.length;
 
-
-
-
 	if (!Array.isArray(SliderImg) || SliderImg.length <= 0) {
 		return null;
 	  }
@@ -23,7 +20,7 @@ const Header = () => {
 	  const prevSlide = () => {
 		setSliders(sliders === 0 ? length - 1 : sliders - 1);
 	  };
-	return <section className="slider">
+	return <section className="sliderr">
 		<FaArrowLeft className="left-arrow" onClick={() =>{nextSlide()}}/>
 		<FaArrowRight className="right-arrow" onClick={() =>{prevSlide()}}/>
 		 {SliderImg.map((slider , index) => {
@@ -33,7 +30,7 @@ const Header = () => {
             key={index}
           >
             {index === sliders && (
-              <img src={slider.image} alt='travel image' className='image' />
+              <img src={slider.image}  className='imgslider' />
             )}
           </div>
 			 )
