@@ -67,7 +67,7 @@ axios.post(`http://localhost:5000/cart`, {purchase} , {
       const wishlistAdd = (products) => {
         let  product = products._id
         axios.post(`http://localhost:5000/wishlist` , {product},{ 
-          headers: { Authorization: `Bearer ${token}`} },
+          headers: { Authorization: `Bearer ${saveToken}`} },
          ).then((res)=>{
            console.log("meow 22");
            console.log("3oo",res.data)
