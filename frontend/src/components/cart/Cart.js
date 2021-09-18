@@ -64,6 +64,7 @@ const Cart =  ({setCartNumber}) => {
   }
  
   return (
+    <>
     <div className="container">
     <div className="CartPerant">
       <h4>SHOPPING CART</h4>
@@ -111,6 +112,7 @@ const Cart =  ({setCartNumber}) => {
       </div>
     </div>
     </div>
+    </>
   );
 };
 
