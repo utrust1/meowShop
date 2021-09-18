@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const Register = ({setCheckRegister , setCheckLogout}) => {
+  let saveCheckRegister ;
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [age, setAge] = useState("");
@@ -24,6 +25,8 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
       })
       .then((result) => {
         console.log(result);
+        saveCheckRegister = true
+        localStorage.setItem("saveCheckRegister" , saveCheckRegister )
         setCheckRegister(true)
         setCheckLogout(true)
       }).catch((error)=>{
