@@ -1,7 +1,5 @@
 .LoginMain {
     position: relative;
-    margin: 15vh;
-    height: 30vh;
 }
 
 .LoginMain h3 {
@@ -10,7 +8,7 @@
 }
 
 .loginChild {
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -54,4 +52,9 @@
 .returnstore {
     text-decoration: none;
     color: #528ec1;
+}
+
+.ErrorMsg {
+    color: red;
+    font-size: 18px;
 }

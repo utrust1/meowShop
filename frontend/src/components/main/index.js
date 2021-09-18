@@ -3,13 +3,15 @@ import { useHistory } from "react-router";
 import axios from "axios";
 import "./main.css";
 import Header from "../header";
-import Footer from "../Footer/Footer";
 import { FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
 import { useContext } from "react";
 import { tokenContext } from "../../App";
 import { checkRegisterContext } from "../../App";
 import { cartNumberContext } from "../../App"
 import { wishListNumberContext } from "../../App"
+import omar from "../.././ourimg/eaea1cea-d8c9-4972-b9dc-a4f32cf12f23.jpg";
+import maamoun from "../.././ourimg/49135455_2282326952036505_6271144683045388288_n.jpg";
+import obada from "../.././ourimg/T0270UF1MS6-U026UMA6LSJ-c5787195b78a-512.jpg";
 
 const Main = ({  setCartNumber,    setWishListNumber, }) => {
   let cartNumber = useContext(cartNumberContext)
@@ -19,6 +21,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
   const [getCategory, setGetCategory] = useState();
   const [getProduct, setGetProduct] = useState();
   const [allcategory, setAllcategory] = useState()
+  const [byprice, setByprice] = useState()
   const history = useHistory();
 
   useEffect(() => {
@@ -32,6 +35,19 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/product/byprice`)
+      .then((res) => {
+        setByprice(res.data.result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+
+  
   useEffect(() => {
     axios
       .get(`http://localhost:5000/product`)
@@ -191,9 +207,121 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
           })}
       </div>
     </div>
-   
+    <hr></hr>
     </div>
-      <Footer/>
+    {/* Start Section About us  */}
+
+    <div className="about-us">
+      <div className='overlay-about-us'>
+        <div className='about-us-details'>
+          <h1>Meow E-commerce</h1>
+              <p>Meow E-commerce
+              Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+    </div>
+
+    {/* show product by price*/ }
+
+    <div className="container"> 
+          <div>
+        <div className="moreproduct">
+        <h4>Discount Products </h4>
+      
+      </div>
+      <div className="product-section">
+        
+        {byprice &&
+          byprice.map((product) => {
+            return (
+              <div className="productMain">
+                <img src={product.img}></img>
+                <div class="showdetails">
+                  <div className="show-icon">
+                    <div className="icon">
+                      <FaShoppingCart
+                        className="icon-cart"
+                        onClick={() => addToCart(product)}
+                      />
+                      <FaEye
+                        className="icon-search"
+                        onClick={() => getallProducts(product._id)}
+                      />
+                      <FaHeart
+                        className="icon-heart"
+                        onClick={() => addToWishList(product)}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+      </div>
+    </div>
+    <hr></hr>
+    </div>
+
+    {/* our team start*/ }
+
+    <div className='container ourTeam'>
+      <h2>Our Team </h2>
+
+      <div className='ourTeamImg'>
+
+          <div className='imgtitle'>
+            <img src={maamoun} alt='ssss'/>
+            <div className='titleourteam'>
+              <h2>Maamoun Alkiswani</h2>
+              <p>Ut wisi enim ad minim veniam,</p>
+              <button>Contact us</button>
+            </div>
+            
+          </div>
+
+
+          <div className='imgtitle'>
+            <img src={omar} alt='ssss'/>
+            <div className='titleourteam'>
+              <h2>Omar Hushki</h2>
+              <p>Ut wisi enim ad minim veniam,</p>
+              <a href='https://www.facebook.com/omar.hushki/'><button> Contact us</button></a>
+            </div>
+            
+          </div>
+
+          
+          <div className='imgtitle'>
+            <img src={obada} alt='ssss'/>
+            <div className='titleourteam'>
+              <h2>Obada Obada </h2>
+              <p>Ut wisi enim ad minim veniam,</p>
+              <button>Contact us</button>
+            </div>
+            
+          </div>
+
+
+          
+          <div className='imgtitle'>
+            <img src='sdasdasds' alt='Ruiqa'/>
+            <div className='titleourteam'>
+              <h2>Ruiqa Ruiqa </h2>
+              <p>Ut wisi enim ad minim veniam,</p>
+              <button>Contact us</button>
+            </div>
+            
+          </div>
+
+
+
+        
+      </div>
+
+    </div>
+    <hr></hr>
+
+
       </section>
   );
 };

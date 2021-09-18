@@ -13,6 +13,11 @@ const Cart =  () => {
     let token = useContext(tokenContext)
     const [insideCart, setInsideCart] = useState([]);
     const [price , setPrice] = useState([])
+
+    const [empty , setEmpty] = useState()
+    
+
+
     let carts = {}
     const history = useHistory()
     useEffect(()=>{getAllCart()},[])
@@ -24,8 +29,14 @@ const Cart =  () => {
       .get(`http://localhost:5000/cart`,{ 
         headers: { Authorization: `Bearer ${token}`}})
         .then( (result) => {         
-          setInsideCart(result.data.products)
-          setPrice(result.data.products)
+          if(result.data.products.length > 0){
+            setInsideCart(result.data.products)
+            setPrice(result.data.products)
+          }else{
+            setEmpty('YOUR CART IS CURRENTLY EMPTY.');
+            setInsideCart(result.data.products)
+            setPrice(result.data.products)
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -52,6 +63,7 @@ const Cart =  () => {
     <div className="container">
     <div className="CartPerant">
       <h4>SHOPPING CART</h4>
+      <h5>{empty}</h5>
       {insideCart&&insideCart.map((elem )=>{
          total+= elem.purchase[0].newprice
          if(carts[elem.purchase[0]._id]){
