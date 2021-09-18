@@ -17,12 +17,8 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext);
   const [getCategory, setGetCategory] = useState();
-<<<<<<< HEAD
-  const [getProduct, setGetProduct] = useState("");
-=======
   const [getProduct, setGetProduct] = useState();
   const [allcategory, setAllcategory] = useState()
->>>>>>> 2406c756052ec04c31c270abe2aa0ddf899a8fbf
   const history = useHistory();
 
   useEffect(() => {
