@@ -24,6 +24,7 @@ const WishList = () => {
 
 
     const deleteWishlist = (id) =>{
+        console.log("id" , id);
         axios
           .delete(`http://localhost:5000/wishlist/${id}`).then((result)=>{
             getWishlist()
