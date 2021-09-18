@@ -20,7 +20,8 @@ const Header = () => {
 	  const prevSlide = () => {
 		setSliders(sliders === 0 ? length - 1 : sliders - 1);
 	  };
-	return <section className="sliderr">
+	return (	
+	<div className="sliderr">
 		<FaArrowLeft className="left-arrow" onClick={() =>{nextSlide()}}/>
 		<FaArrowRight className="right-arrow" onClick={() =>{prevSlide()}}/>
 		 {SliderImg.map((slider , index) => {
@@ -30,14 +31,14 @@ const Header = () => {
             key={index}
           >
             {index === sliders && (
-              <img src={slider.image}  className='imgslider' />
+              <img src={slider.image} width="400px" height="400px"  className='imgslider' />
             )}
           </div>
 			 )
 
 		 })}
-	
-	</section>;
+	</div>
+	);
 };
 
 export default Header;

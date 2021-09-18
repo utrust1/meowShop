@@ -99,8 +99,8 @@ const getProductByPrice = (req, res) => {
     productModel
         .find({})
         .where("newprice")
-        .gt(1220)
-        .lt(2000)
+        .gt(4)
+        .lt(10)
         .exec()
         .then((result) => {
             console.log("sdfsdfsdf");

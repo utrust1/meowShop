@@ -9,7 +9,7 @@ import { tokenContext } from "../../App";
 import {cartNumberContext} from "../../App"
 import  {wishListNumberContext} from "../../App"
 import {checkRegisterContext} from "../../App"
-import Footer from "../Footer/Footer"
+
 
 const GetAllProduct=({setCartNumber ,setWishListNumber})=> {
   
@@ -105,15 +105,13 @@ axios.post(`http://localhost:5000/cart`, {purchase} , {
                            <p> new price {product.newprice}</p>
                            <p className="Saving">Saving: {product.oldPrice - product.newprice}</p>
                            {/* <FaShoppingCart onClick={cartAdd(product)}/> */}
-                           <butthon onClick={()=>{cartAdd(product)}} ><FaShoppingCart/></butthon>
-                           <butthon  onClick={()=>{wishlistAdd(product)}} > <FaHeart/>    </butthon>                     
+                           <butthon className="cartbtnshow" onClick={()=>{cartAdd(product)}} ><FaShoppingCart/> Cart</butthon>
+                           <butthon className="wishlist-btn-show" onClick={()=>{wishlistAdd(product)}} > <FaHeart/>   Wishlist </butthon>                     
                        </div>
-                     <Footer/>
                    </div>
                )
            })}             
         </div>
-        <button onClick={()=>{goBackButton()}}> Back</button>
         </>
     )
 }
