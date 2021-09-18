@@ -71,7 +71,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
    console.log("pp22" ,purchase);
     axios
       .post(`http://localhost:5000/cart`, {purchase} , {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: `Bearer ${saveToken}` },
       })
       .then((res) => {
         console.log("whooo");
@@ -100,7 +100,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
   const addToWishList = (products) => {
     let  product = products._id
     axios.post(`http://localhost:5000/wishlist` , {product},{ 
-      headers: { Authorization: `Bearer ${token}`} },
+      headers: { Authorization: `Bearer ${saveToken}`} },
      ).then((res)=>{
        console.log("meow 22");
        console.log("3oo",res.data)

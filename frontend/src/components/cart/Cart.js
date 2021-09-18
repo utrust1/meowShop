@@ -8,7 +8,8 @@ import { FaShoppingBag } from 'react-icons/fa';
 
 
 const Cart =  () => {
-  let b 
+    let saveToken = localStorage.getItem("saveToken")
+    let b 
     let total  = 0; 
     let token = useContext(tokenContext)
     const [insideCart, setInsideCart] = useState([]);
@@ -26,7 +27,7 @@ const Cart =  () => {
       console.log("memmmw");
       axios
       .get(`http://localhost:5000/cart`,{ 
-        headers: { Authorization: `Bearer ${token}`}})
+        headers: { Authorization: `Bearer ${saveToken}`}})
         .then( (result) => {         
           if(result.data.products.length > 0){
             setInsideCart(result.data.products)
