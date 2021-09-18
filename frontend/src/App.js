@@ -29,15 +29,17 @@ export const wishListNumberContext = createContext();
 
 
 const App = () => {
+  let carProductNumber = (localStorage.getItem("carProductNumber"))
+  carProductNumber = parseInt(carProductNumber) 
   const [token, setToken] = useState("");
   const [checkRegister, setCheckRegister] = useState(false);
   const [checkLogout, setCheckLogout] = useState(true);
   const [searchBar , setSearchBar] = useState()
-  const [cartNumber,  setCartNumber ] = useState(0);
+  const [cartNumber,  setCartNumber ] = useState(carProductNumber);
   const [wishListNumber, setWishListNumber] = useState(0);
-
   const history = useHistory()
   history.push("/Home")
+
   return (
     <div className="App">
        <checkRegisterContext.Provider value={checkRegister}>
@@ -52,8 +54,9 @@ const App = () => {
       <Route exact path="/category/:title/:id" component={ProductCategory} />
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/product/:id" render={()=> <GetAllProduct  setCartNumber ={setCartNumber}  setWishListNumber={setWishListNumber} />} />
-      <Route exact path="/login" render={() => <Login   setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
-      <Route exact path="/cart" component={Cart}/>
+      <Route exact path="/login" render={() => <Login  token={token}  setToken={setToken}  setCheckLogout={setCheckLogout} />} />
+      setCartNumber 
+      <Route exact path="/cart"  render={() => <Cart setCartNumber={setCartNumber} /> }/>
       {/* <Route exact path="/AboutUs" component={Aboutus} />
       <Route exact path="/ContactUs" component={Contactus} />
       <Route exact path="/OurPolicy" component={Ourpolicy} /> */}

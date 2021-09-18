@@ -5,10 +5,13 @@ import { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import {tokenContext} from '../../App'
 import { FaShoppingBag } from 'react-icons/fa';
+import { cartNumberContext } from "../../App"
 
 
-const Cart =  () => {
-  let b 
+const Cart =  ({setCartNumber}) => {
+    let cartNumber = useContext(cartNumberContext)
+    let saveToken = localStorage.getItem("saveToken")
+    let b 
     let total  = 0; 
     let token = useContext(tokenContext)
     const [insideCart, setInsideCart] = useState([]);
@@ -22,12 +25,11 @@ const Cart =  () => {
     const history = useHistory()
     useEffect(()=>{getAllCart()},[])
     console.log(" caaaaa " ,carts);
-    
     const getAllCart = () => {
       console.log("memmmw");
       axios
       .get(`http://localhost:5000/cart`,{ 
-        headers: { Authorization: `Bearer ${token}`}})
+        headers: { Authorization: `Bearer ${saveToken}`}})
         .then( (result) => {         
           if(result.data.products.length > 0){
             setInsideCart(result.data.products)
@@ -48,8 +50,11 @@ const Cart =  () => {
     axios
       .delete(`http://localhost:5000/cart/${id}`).then((result)=>{
         getAllCart()
-
-
+        if (cartNumber) {
+          setCartNumber(cartNumber - 1);
+          history.push("/cart")
+          console.log("second time  2222 : ", cartNumber);
+        }
       }).catch((err)=>{
         console.log(err)
       })
@@ -57,9 +62,9 @@ const Cart =  () => {
   const checkout = ()=>{
     history.push('/shipping')
   }
-
-  
+ 
   return (
+    <>
     <div className="container">
     <div className="CartPerant">
       <h4>SHOPPING CART</h4>
@@ -77,8 +82,6 @@ const Cart =  () => {
             <div>
             <img  src={elem.purchase[0].img }/>
             </div>
-    
-    
             <div className="CartDes">
             <h3>{elem.purchase[0].title}</h3>
             <p>{elem.purchase[0].description}</p>
@@ -92,9 +95,7 @@ const Cart =  () => {
             </div>
           </div>
           <hr></hr>
-
-            </>)   
-
+            </>)       
       })
     }
     <div className="checkout-btn">
@@ -111,10 +112,10 @@ const Cart =  () => {
       </div>
     </div>
     </div>
+    </>
   );
 };
 
 
 
 export default Cart;
-

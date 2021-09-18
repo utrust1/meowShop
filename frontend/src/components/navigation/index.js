@@ -13,6 +13,8 @@ import {FaShoppingBasket, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumber ,  setWishListNumber ,setSearchBar } ) => {
 	const history = useHistory()
+  let saveToken = localStorage.getItem("saveToken")
+  let saveCheckRegister  = localStorage.getItem("saveCheckRegister")
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
@@ -20,14 +22,19 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumbe
   let wishlistNumber = useContext(wishListNumberContext)
   const [search, setSearch] = useState()
   const [getCategory, setGetCategory] = useState();
-const Logout = () => {
+  
+  let carProductNumber  =  cartNumber 
+  localStorage.setItem("carProductNumber" , carProductNumber  )
+  const Logout = () => {
   setCheckLogout(false)
   setToken("")
-  setCheckRegister(false)
-  setCartNumber(0)
+  setCheckRegister(false) 
   setWishListNumber(0)
+  localStorage.clear("saveToken")
+  localStorage.clear("saveCheckRegister")
 }
 
+console.log("vv" , checkLogout);
 useEffect(() => {
   axios.get(`http://localhost:5000/category`).then((res)=>{  
   setGetCategory(res.data.result);
@@ -76,14 +83,14 @@ const addToWish = ()=>{
         </div>
         {/* <FaBars className='fabars'/> */}
         <div className="navbar">
-          { ((token || checkRegister) && checkLogout ) ? (
+          { ((token|| saveToken || checkRegister || saveCheckRegister ) && checkLogout ) ? (
             <div>
               <span className="shopCartMain">
               <FaHeart onClick={addToWish} className="HeartIcon"/>
               {/* <span className='wishNumberSpan' >{wishlistNumber}</span> */}
 
               <FaShoppingBasket className='CartShop'onClick={addToCart} />
-              <span className='valueShop'>{cartNumber}</span>
+              <span className='valueShop'>{carProductNumber}</span>
               </span>         
               <span onClick={Logout} className='LogoutIcon'>Logout</span>
             </div>

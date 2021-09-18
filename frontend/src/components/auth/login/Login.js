@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 
 
-const  Login =({setToken , setCheckLogout})=> {
-
+const  Login =({ token ,setToken , setCheckLogout})=> {
+    let saveToken ;
 const  [email , setEmail] = useState("")
 const  [password , setPassword] = useState("")
  const  [messege , setMessege] = useState("") 
@@ -19,8 +19,9 @@ const buttonEvent = ()=>{
 axios.post(`http://localhost:5000/login/`, {email,password}).then((result)=>{
     console.log(result);
     setToken(result.data.token)
+    saveToken = result.data.token
     setCheckLogout(true)
-    console.log(result.data.token);
+    localStorage.setItem("saveToken" , saveToken )
 }).catch((error)=>{
     setMessege("your email or password is not correct");
 })
