@@ -41,7 +41,8 @@ const App = () => {
   history.push("/Home")
 
   return (
-    <div className="App">
+    <>
+    <div className="App MainApp">
        <checkRegisterContext.Provider value={checkRegister}>
        <tokenContext.Provider value={token} >
        <checkLogoutContext.Provider value={checkLogout}>
@@ -67,15 +68,18 @@ const App = () => {
       <Route exact path="/products" component={Products} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
-      <Footer/>
       </wishListNumberContext.Provider>
        </cartNumberContext.Provider>
       </searchContext.Provider>
       </checkLogoutContext.Provider>
       </tokenContext.Provider>
       </checkRegisterContext.Provider>
-      
+    
     </div>
+    <div> 
+    <Footer/>
+    </div>
+    </>
   );
 };
 export default App;
