@@ -6,12 +6,13 @@ import "./Wishlist.css"
 /////////// hehehe 
 
 const WishList = () => {
+    let saveToken = localStorage.getItem("saveToken")
     let token = useContext(tokenContext);
     const [insideWishlist, setInsideWishlist] = useState([])
 
     const getWishlist = () => {
         axios.get(`http://localhost:5000/wishlist`, {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${saveToken}` }
         }).then((res) => {
             console.log("roooooooooo 1" , res.data.products[0].product);
             console.log("rooooooooooooorooo 2" , res.data);
