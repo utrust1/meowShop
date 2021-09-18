@@ -29,12 +29,13 @@ export const wishListNumberContext = createContext();
 
 
 const App = () => {
-  
+  let carProductNumber = (localStorage.getItem("carProductNumber"))
+  carProductNumber = parseInt(carProductNumber) 
   const [token, setToken] = useState("");
   const [checkRegister, setCheckRegister] = useState(false);
   const [checkLogout, setCheckLogout] = useState(true);
   const [searchBar , setSearchBar] = useState()
-  const [cartNumber,  setCartNumber ] = useState(0);
+  const [cartNumber,  setCartNumber ] = useState(carProductNumber);
   const [wishListNumber, setWishListNumber] = useState(0);
   const history = useHistory()
   history.push("/Home")

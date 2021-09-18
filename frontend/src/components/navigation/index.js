@@ -22,15 +22,18 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumbe
   let wishlistNumber = useContext(wishListNumberContext)
   const [search, setSearch] = useState()
   const [getCategory, setGetCategory] = useState();
-
+  
+  let carProductNumber  =  cartNumber 
+  localStorage.setItem("carProductNumber" , carProductNumber  )
   const Logout = () => {
   setCheckLogout(false)
   setToken("")
   setCheckRegister(false)
-  setCartNumber(0)
+  
   setWishListNumber(0)
   localStorage.clear("saveToken")
   localStorage.clear("saveCheckRegister")
+  carProductNumber = 0
 }
 
 console.log("vv" , checkLogout);
@@ -89,7 +92,7 @@ const addToWish = ()=>{
               {/* <span className='wishNumberSpan' >{wishlistNumber}</span> */}
 
               <FaShoppingBasket className='CartShop'onClick={addToCart} />
-              <span className='valueShop'>{cartNumber}</span>
+              <span className='valueShop'>{carProductNumber}</span>
               </span>         
               <span onClick={Logout} className='LogoutIcon'>Logout</span>
             </div>

@@ -79,11 +79,9 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
           if (cartNumber) {
             setCartNumber(cartNumber + 1);
             console.log("second time : ", cartNumber);
-            localStorage.setItem("productcartNumber", cartNumber + 1);
           } else {
             setCartNumber(1);
             console.log("first time : ", cartNumber);
-            localStorage.setItem("productcartNumber", cartNumber + 1);
           }
         } else {
           console.log("you have to log in first ");
