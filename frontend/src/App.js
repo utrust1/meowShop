@@ -29,6 +29,7 @@ export const wishListNumberContext = createContext();
 
 
 const App = () => {
+  
   const [token, setToken] = useState("");
   const [checkRegister, setCheckRegister] = useState(false);
   const [checkLogout, setCheckLogout] = useState(true);
@@ -52,7 +53,7 @@ const App = () => {
       <Route exact path="/category/:title/:id" component={ProductCategory} />
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/product/:id" render={()=> <GetAllProduct  setCartNumber ={setCartNumber}  setWishListNumber={setWishListNumber} />} />
-      <Route exact path="/login" render={() => <Login  token={token}  setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
+      <Route exact path="/login" render={() => <Login  token={token}  setToken={setToken}  setCheckLogout={setCheckLogout} />} />
       <Route exact path="/cart" component={Cart}/>
       {/* <Route exact path="/AboutUs" component={Aboutus} />
       <Route exact path="/ContactUs" component={Contactus} />

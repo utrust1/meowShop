@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 
 const  Login =({ token ,setToken , setCheckLogout})=> {
-
+    let a ;
 const  [email , setEmail] = useState("")
 const  [password , setPassword] = useState("")
  const  [messege , setMessege] = useState("") 
@@ -19,6 +19,9 @@ const buttonEvent = ()=>{
 axios.post(`http://localhost:5000/login/`, {email,password}).then((result)=>{
     console.log(result);
     setToken(result.data.token)
+    a = result.data.token
+    setCheckLogout(true)
+    localStorage.setItem("tokenA" , a )
     localStorage.setItem("tokenSave",token)
     console.log("--> connectd <--");
 }).catch((error)=>{

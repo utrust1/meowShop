@@ -13,26 +13,30 @@ import {FaShoppingBasket, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumber ,  setWishListNumber ,setSearchBar } ) => {
 	const history = useHistory()
+  let b = localStorage.getItem("tokenA")
+  console.log("bbb" , b);
   let token = useContext(tokenContext);
- let tokenSaver = localStorage.setItem("tokenSaver" , token)
-  let tokenSave = localStorage.getItem("tokenSave")
+  localStorage.setItem("tokenSaver" , token)
+  let tokenSaver = localStorage.getItem("tokenSaver")
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
   let cartNumber = useContext(cartNumberContext)
   let wishlistNumber = useContext(wishListNumberContext)
   const [search, setSearch] = useState()
   const [getCategory, setGetCategory] = useState();
-  console.log("tokenSave" , tokenSave);
+  
   console.log("tokenSaver" , tokenSaver);
   console.log("tokken nav " , token);
-const Logout = () => {
+  const Logout = () => {
   setCheckLogout(false)
   setToken("")
   setCheckRegister(false)
   setCartNumber(0)
   setWishListNumber(0)
+  localStorage.clear("tokenA")
 }
 
+console.log("vv" , checkLogout);
 useEffect(() => {
   axios.get(`http://localhost:5000/category`).then((res)=>{  
   setGetCategory(res.data.result);
@@ -81,7 +85,7 @@ const addToWish = ()=>{
         </div>
         {/* <FaBars className='fabars'/> */}
         <div className="navbar">
-          { ((token||tokenSave || tokenSaver ||  checkRegister) && checkLogout ) ? (
+          { ((token||  b || checkRegister) && checkLogout ) ? (
             <div>
               <span className="shopCartMain">
               <FaHeart onClick={addToWish} className="HeartIcon"/>
