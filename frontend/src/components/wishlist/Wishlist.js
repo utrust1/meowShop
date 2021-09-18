@@ -7,7 +7,7 @@ import "./Wishlist.css"
 
 const WishList = () => {
     let token = useContext(tokenContext);
-    const [insideWishlist, setInsideWishlist] = useState([])
+    const [insideWishlist, setInsideWishlist] = useState([]);
 
     const getWishlist = () => {
         axios.get(`http://localhost:5000/wishlist`, {
@@ -44,6 +44,7 @@ const WishList = () => {
                 <img src={elem.product[0].img} />
                 <div className="titelWishlist"> 
                 <h3>{elem.product[0].title}</h3>
+                <p>{elem.product[0].description}</p>
                 <p>{elem.product[0].newprice} JD</p>
                 </div>
                 
