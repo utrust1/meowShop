@@ -14,14 +14,17 @@ import {FaShoppingBasket, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumber ,  setWishListNumber ,setSearchBar } ) => {
 	const history = useHistory()
   let token = useContext(tokenContext);
-  let tokenSave = localStorage.getItem("tockenSave")
+ let tokenSaver = localStorage.setItem("tokenSaver" , token)
+  let tokenSave = localStorage.getItem("tokenSave")
   let checkRegister = useContext(checkRegisterContext)
   let checkLogout = useContext(checkLogoutContext)
   let cartNumber = useContext(cartNumberContext)
   let wishlistNumber = useContext(wishListNumberContext)
   const [search, setSearch] = useState()
   const [getCategory, setGetCategory] = useState();
-  console.log("to nav" , tokenSave);
+  console.log("tokenSave" , tokenSave);
+  console.log("tokenSaver" , tokenSaver);
+  console.log("tokken nav " , token);
 const Logout = () => {
   setCheckLogout(false)
   setToken("")
@@ -78,7 +81,7 @@ const addToWish = ()=>{
         </div>
         {/* <FaBars className='fabars'/> */}
         <div className="navbar">
-          { ((token||tokenSave || checkRegister) && checkLogout ) ? (
+          { ((token||tokenSave || tokenSaver ||  checkRegister) && checkLogout ) ? (
             <div>
               <span className="shopCartMain">
               <FaHeart onClick={addToWish} className="HeartIcon"/>

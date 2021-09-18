@@ -35,15 +35,9 @@ const App = () => {
   const [searchBar , setSearchBar] = useState()
   const [cartNumber,  setCartNumber ] = useState(0);
   const [wishListNumber, setWishListNumber] = useState(0);
-
   const history = useHistory()
   history.push("/Home")
-  let b =  localStorage.getItem("tokenSave")
-  console.log("bb",b);
-  if(b){
-    console.log("tooo" , token);
-    <Navigation/>
-  }
+
   return (
     <div className="App">
        <checkRegisterContext.Provider value={checkRegister}>
@@ -58,7 +52,7 @@ const App = () => {
       <Route exact path="/category/:title/:id" component={ProductCategory} />
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/product/:id" render={()=> <GetAllProduct  setCartNumber ={setCartNumber}  setWishListNumber={setWishListNumber} />} />
-      <Route exact path="/login" render={() => <Login   setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
+      <Route exact path="/login" render={() => <Login  token={token}  setToken={setToken}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/cart" component={Cart}/>
       {/* <Route exact path="/AboutUs" component={Aboutus} />
       <Route exact path="/ContactUs" component={Contactus} />
