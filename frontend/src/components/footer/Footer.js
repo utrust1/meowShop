@@ -20,6 +20,7 @@ return <div className="container main-Cont">
 		</div>
 
 		</div>
+		<hr></hr>
 
 
 		<div className='iconFooter'>

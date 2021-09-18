@@ -63,9 +63,3 @@
     -ms-transform: scale(1.08);
     -o-transform: scale(1.08);
 }
-
-@media only screen and (max-width: 772px) {
-    .sliderr {
-        display: none;
-    }
-}
