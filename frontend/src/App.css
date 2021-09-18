@@ -6,6 +6,12 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+
+/* 
+.MainApp {
+    height: calc(100vh - 150px);
+} */
+
 .container {
     padding-left: 80px;
     padding-right: 80px;
