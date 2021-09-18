@@ -17,8 +17,9 @@ import Categorys from "./components/Categorys/Categorys";
 import { Search } from "./components/header/Search";
 import WishList from "./components/Wishlist/Wishlist";
 import {Purshace} from './components/Wishlist/Purshace'
-import Products from "./components/products/products"
-
+import Products from "./components/products/products";
+import Header from "./components/header/index";
+import Footer from "./components/Footer/Footer";
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
 export const checkLogoutContext  = createContext();
@@ -63,12 +64,14 @@ const App = () => {
       <Route exact path="/products" component={Products} />
       <Route path= "*" component={()=>"404 NOT FOUND"} />
 </Switch> 
+      <Footer/>
       </wishListNumberContext.Provider>
        </cartNumberContext.Provider>
       </searchContext.Provider>
       </checkLogoutContext.Provider>
       </tokenContext.Provider>
       </checkRegisterContext.Provider>
+      
     </div>
   );
 };

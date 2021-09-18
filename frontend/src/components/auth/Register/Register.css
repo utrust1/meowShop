@@ -1,23 +1,14 @@
+.Register {
+    position: relative;
+}
+
 .Register h3 {
     text-align: center;
 }
 
 .childRegister {
-    background: #fff;
-    position: relative;
+    position: fixed;
     text-align: center;
-    background: #fff;
-    box-sizing: border-box;
-    padding: 25px;
-    margin: 8% auto 0;
-    position: relative;
-    z-index: 1;
-}
-
-.childRegisterTwo {
-    position: absolute;
-    text-align: center;
-    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -26,6 +17,8 @@
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
 }
+
+.childRegisterTwo {}
 
 .childRegisterTwo input {
     background-color: #eeee;

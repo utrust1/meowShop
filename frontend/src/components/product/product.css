@@ -6,8 +6,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 50px;
     flex-wrap: wrap;
+}
+
+.ProductMain img {
+    width: 350px;
+    height: 350px;
 }
 
 .viewProduct {
@@ -29,4 +33,18 @@
 
 .Saving {
     color: green;
+}
+
+.cartbtnshow,
+.wishlist-btn-show {
+    background-color: var(--MainColor);
+    color: #ffff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    margin: 5px;
 }

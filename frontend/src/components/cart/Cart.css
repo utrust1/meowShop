@@ -99,3 +99,11 @@
         text-align: center;
     }
 }
+
+.carthidden {
+    display: inline-block;
+    padding: 15px;
+    position: absolute;
+    left: 44%;
+    top: 45%;
+}

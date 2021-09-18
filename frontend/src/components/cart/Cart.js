@@ -13,23 +13,36 @@ const Cart =  () => {
     let token = useContext(tokenContext)
     const [insideCart, setInsideCart] = useState([]);
     const [price , setPrice] = useState([])
+
+    const [empty , setEmpty] = useState()
+    
+
+
     let carts = {}
     const history = useHistory()
     useEffect(()=>{getAllCart()},[])
     console.log(" caaaaa " ,carts);
     const getAllCart = () => {
-          console.log("memmmw");
-          axios
-          .get(`http://localhost:5000/cart`,{ 
-            headers: { Authorization: `Bearer ${token}`}})
-            .then( (result) => {         
-              setInsideCart(result.data.products)
-              setPrice(result.data.products)
-            })
-            .catch((err) => {
-              console.log(err);
-            });            
-          }   
+      console.log("memmmw");
+      axios
+      .get(`http://localhost:5000/cart`,{ 
+        headers: { Authorization: `Bearer ${token}`}})
+        .then( (result) => {         
+          if(result.data.products.length > 0){
+            setInsideCart(result.data.products)
+            setPrice(result.data.products)
+          }else{
+            setEmpty('YOUR CART IS CURRENTLY EMPTY.');
+            setInsideCart(result.data.products)
+            setPrice(result.data.products)
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });   
+      }
+      
+      
   const deleteCart = (id) =>{
     axios
       .delete(`http://localhost:5000/cart/${id}`).then((result)=>{
@@ -46,6 +59,7 @@ const Cart =  () => {
     <div className="container">
     <div className="CartPerant">
       <h4>SHOPPING CART</h4>
+      <h5>{empty}</h5>
       {insideCart&&insideCart.map((elem )=>{
          total+= elem.purchase[0].newprice
          if(carts[elem.purchase[0]._id]){

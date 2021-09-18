@@ -1,19 +1,32 @@
-import React, { useState, useEffect , useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router";
 import { searchContext } from "../../App";
 import axios from "axios";
 
-
-export const Search = () =>{
-    let searchBar = useContext(searchContext)
-    console.log("sosososooss",searchBar)
-    return <div>{searchBar.map((elm)=>{
-       console.log(elm.img)
-        return (
-            
-        <div>{elm.title}  <img src={elm.img}/></div> )
-      
-       
-       
-    })}</div>
+export const Search = () => {
+  let searchBar = useContext(searchContext);
+  const history = useHistory()
+  const getbyid = (id) => {
+    history.push(`/product/${id}`)
 }
+
+
+  return (
+    <div className="container">
+        <div className='Contect-Main-Section'>
+      {searchBar&&searchBar.map((elm) => {
+        return (
+          <div className="viewProduct">
+            <div className="content">
+                <img src={elm.img}/>
+                <h5>{elm.title}</h5>
+                <button className='btn-shwo-cart' onClick={()=>getbyid(elm._id)}>More details</button>
+            </div>
+
+          </div>
+        );
+      })}
+      </div>
+    </div>
+  );
+};

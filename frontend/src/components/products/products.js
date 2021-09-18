@@ -1,6 +1,5 @@
 import React ,{ useState, useEffect }from 'react';
 import axios from 'axios';
-import Footer from '../Footer/Footer';
 import { useHistory  } from "react-router";
 const Products = () => {
 
@@ -40,8 +39,7 @@ return      (
             })}
         </div>
         </div>
-       
-        <Footer/>
+      
         </div>
     )
 };
