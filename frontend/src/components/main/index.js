@@ -12,6 +12,7 @@ import { wishListNumberContext } from "../../App"
 import omar from "../.././ourimg/eaea1cea-d8c9-4972-b9dc-a4f32cf12f23.jpg";
 import maamoun from "../.././ourimg/49135455_2282326952036505_6271144683045388288_n.jpg";
 import obada from "../.././ourimg/T0270UF1MS6-U026UMA6LSJ-c5787195b78a-512.jpg";
+import Ruqia from "../.././ourimg/T0270UF1MS6-U026Y34FR61-b175be512ad3-512.jpg";
 
 const Main = ({  setCartNumber,    setWishListNumber, }) => {
   let cartNumber = useContext(cartNumberContext)
@@ -304,7 +305,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
 
           
           <div className='imgtitle'>
-            <img src='sdasdasds' alt='Ruiqa'/>
+            <img src={Ruqia} alt='Ruiqa'/>
             <div className='titleourteam'>
               <h2>Ruiqa Ruiqa </h2>
               <p>Ut wisi enim ad minim veniam,</p>
@@ -319,7 +320,6 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       </div>
 
     </div>
-    <hr></hr>
 
 
       </section>
