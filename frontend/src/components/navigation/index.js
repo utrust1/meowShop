@@ -28,12 +28,10 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumbe
   const Logout = () => {
   setCheckLogout(false)
   setToken("")
-  setCheckRegister(false)
-  
+  setCheckRegister(false) 
   setWishListNumber(0)
   localStorage.clear("saveToken")
   localStorage.clear("saveCheckRegister")
-  carProductNumber = 0
 }
 
 console.log("vv" , checkLogout);

@@ -5,9 +5,11 @@ import { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import {tokenContext} from '../../App'
 import { FaShoppingBag } from 'react-icons/fa';
+import { cartNumberContext } from "../../App"
 
 
-const Cart =  () => {
+const Cart =  ({setCartNumber}) => {
+    let cartNumber = useContext(cartNumberContext)
     let saveToken = localStorage.getItem("saveToken")
     let b 
     let total  = 0; 
@@ -48,6 +50,11 @@ const Cart =  () => {
     axios
       .delete(`http://localhost:5000/cart/${id}`).then((result)=>{
         getAllCart()
+        if (cartNumber) {
+          setCartNumber(cartNumber - 1);
+          history.push("/cart")
+          console.log("second time  2222 : ", cartNumber);
+        }
       }).catch((err)=>{
         console.log(err)
       })

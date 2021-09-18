@@ -55,7 +55,8 @@ const App = () => {
       <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister}  setCheckLogout={setCheckLogout}/>} />
       <Route exact path="/product/:id" render={()=> <GetAllProduct  setCartNumber ={setCartNumber}  setWishListNumber={setWishListNumber} />} />
       <Route exact path="/login" render={() => <Login  token={token}  setToken={setToken}  setCheckLogout={setCheckLogout} />} />
-      <Route exact path="/cart" component={Cart}/>
+      setCartNumber 
+      <Route exact path="/cart"  render={() => <Cart setCartNumber={setCartNumber} /> }/>
       {/* <Route exact path="/AboutUs" component={Aboutus} />
       <Route exact path="/ContactUs" component={Contactus} />
       <Route exact path="/OurPolicy" component={Ourpolicy} /> */}
