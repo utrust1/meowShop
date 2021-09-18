@@ -38,6 +38,12 @@ const App = () => {
 
   const history = useHistory()
   history.push("/Home")
+  let b =  localStorage.getItem("tokenSave")
+  console.log("bb",b);
+  if(b){
+    console.log("tooo" , token);
+    <Navigation/>
+  }
   return (
     <div className="App">
        <checkRegisterContext.Provider value={checkRegister}>
