@@ -9,6 +9,7 @@ const WishList = () => {
     let saveToken = localStorage.getItem("saveToken")
     let token = useContext(tokenContext);
     const [insideWishlist, setInsideWishlist] = useState([])
+    let wishlist = {}
     useEffect(()=>{getWishlist()},[])
 
     const getWishlist = () => {
@@ -26,19 +27,22 @@ const WishList = () => {
         axios
           .delete(`http://localhost:5000/wishlist/${id}`).then((result)=>{
             getWishlist()
-    
-    
           }).catch((err)=>{
             console.log(err)
           })
       }
 
+       
     return(
         <div className="container">
             <h4>Wishlist CART</h4>
             <div className="WishlistPerant">
             {insideWishlist&&
             insideWishlist.map((elem , i )=>{
+                if(wishlist[elem.product[0]._id]){
+                    wishlist[elem.product[0]._id]+=1 
+                }else{
+                    wishlist[elem.product[0]._id]=1 
                 return( <div className="wishlistBox">
                 <img src={elem.product[0].img} />
                 <div className="titelWishlist"> 
@@ -51,6 +55,7 @@ const WishList = () => {
                 </div> 
                 
                 );
+                }
             })}
               <hr></hr>
         </div>
