@@ -14,6 +14,10 @@ import maamoun from "../.././ourimg/49135455_2282326952036505_627114468304538828
 import obada from "../.././ourimg/T0270UF1MS6-U026UMA6LSJ-c5787195b78a-512.jpg";
 
 const Main = ({  setCartNumber,    setWishListNumber, }) => {
+  let saveToken = localStorage.getItem("saveToken")
+  let saveCheckRegister  = localStorage.getItem("saveCheckRegister")
+  console.log("st" , saveToken) ;
+  console.log("sR" , saveCheckRegister );
   let cartNumber = useContext(cartNumberContext)
   let wishlistNumber = useContext(wishListNumberContext)
   let token = useContext(tokenContext);
@@ -71,7 +75,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       })
       .then((res) => {
         console.log("whooo");
-        if (token || checkRegister) {
+        if ( token|| saveToken || checkRegister || saveCheckRegister) {
           if (cartNumber) {
             setCartNumber(cartNumber + 1);
             console.log("second time : ", cartNumber);
@@ -100,7 +104,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
      ).then((res)=>{
        console.log("meow 22");
        console.log("3oo",res.data)
-       if (token || checkRegister) {
+       if (token|| saveToken || checkRegister || saveCheckRegister) {
         if (wishlistNumber) {
           setWishListNumber(wishlistNumber + 1);
           localStorage.setItem("wishList",wishlistNumber + 1);
