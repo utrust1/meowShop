@@ -21,6 +21,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
   const [getCategory, setGetCategory] = useState();
   const [getProduct, setGetProduct] = useState();
   const [allcategory, setAllcategory] = useState()
+  const [byprice, setByprice] = useState()
   const history = useHistory();
 
   useEffect(() => {
@@ -34,6 +35,19 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/product/byprice`)
+      .then((res) => {
+        setByprice(res.data.result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+
+  
   useEffect(() => {
     axios
       .get(`http://localhost:5000/product`)
@@ -201,12 +215,52 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       <div className='overlay-about-us'>
         <div className='about-us-details'>
           <h1>Meow E-commerce</h1>
-              <p>Panda E-commerce
+              <p>Meow E-commerce
               Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
         </div>
       </div>
     </div>
 
+    {/* show product by price*/ }
+
+    <div className="container"> 
+          <div>
+        <div className="moreproduct">
+        <h4>Discount Products </h4>
+      
+      </div>
+      <div className="product-section">
+        
+        {byprice &&
+          byprice.map((product) => {
+            return (
+              <div className="productMain">
+                <img src={product.img}></img>
+                <div class="showdetails">
+                  <div className="show-icon">
+                    <div className="icon">
+                      <FaShoppingCart
+                        className="icon-cart"
+                        onClick={() => addToCart(product)}
+                      />
+                      <FaEye
+                        className="icon-search"
+                        onClick={() => getallProducts(product._id)}
+                      />
+                      <FaHeart
+                        className="icon-heart"
+                        onClick={() => addToWishList(product)}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+      </div>
+    </div>
+    <hr></hr>
+    </div>
 
     {/* our team start*/ }
 
@@ -265,6 +319,9 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       </div>
 
     </div>
+    <hr></hr>
+
+
       </section>
   );
 };

@@ -164,7 +164,8 @@
 }
 
 .ourTeamImg {
-    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -199,6 +200,7 @@
     cursor: pointer;
     padding: 10px 25px;
     border: none;
+    border-radius: 3px;
     background-color: var(--MainColor);
     color: #ffff;
     transition: 1s;
@@ -206,6 +208,10 @@
     -moz-transition: 1s;
     -ms-transition: 1s;
     -o-transition: 1s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
 
 .ourTeam button:hover {
