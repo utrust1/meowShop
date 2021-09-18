@@ -5,6 +5,7 @@
 .LoginMain h3 {
     text-transform: uppercase;
     color: #528ec1;
+    text-align: center;
 }
 
 .loginChild {
