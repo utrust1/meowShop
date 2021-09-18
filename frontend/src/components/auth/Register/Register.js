@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const Register = ({setCheckRegister , setCheckLogout}) => {
+  let saveCheckRegister ;
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [age, setAge] = useState("");
@@ -24,6 +25,8 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
       })
       .then((result) => {
         console.log(result);
+        saveCheckRegister = true
+        localStorage.setItem("saveCheckRegister" , saveCheckRegister )
         setCheckRegister(true)
         setCheckLogout(true)
       }).catch((error)=>{
@@ -38,14 +41,14 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
       <h3>CREATE ACCOUNT</h3>
         <div className="childRegisterTwo">
         <input
-          placeholder="firstName"
+          placeholder="First Name"
           type="text"
           onChange={(e) => {
             setFirstName(e.target.value);
           }}
         ></input>
         <input
-          placeholder="lastName"
+          placeholder="Last Name"
           type="text"
           onChange={(e) => {
             setlastName(e.target.value);
@@ -53,7 +56,7 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
         ></input>
         <input
           placeholder="age"
-          type="number"
+          type="Number"
           onChange={(e) => {
             setAge(e.target.value);
           }}
@@ -67,7 +70,7 @@ const Register = ({setCheckRegister , setCheckLogout}) => {
         ></input>
         <input
           placeholder="password"
-          type="password"
+          type="Password"
           onChange={(e) => {
             setPassword(e.target.value);
           }}

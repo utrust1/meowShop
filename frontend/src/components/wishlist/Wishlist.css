@@ -6,6 +6,15 @@
     flex-wrap: wrap;
 }
 
+.wishlistBox img {
+    max-width: 100%;
+    height: 350px;
+}
+
+.titelWishlist {
+    max-width: 500px;
+}
+
 .wishlistBox button {
     padding: 10px;
     background-color: var(--MainColor);

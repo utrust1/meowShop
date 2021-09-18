@@ -6,44 +6,50 @@ import "./Wishlist.css"
 /////////// hehehe 
 
 const WishList = () => {
+    let saveToken = localStorage.getItem("saveToken")
     let token = useContext(tokenContext);
+
     const [insideWishlist, setInsideWishlist] = useState([])
+    let wishlist = {}
+    useEffect(()=>{getWishlist()},[])
 
     const getWishlist = () => {
         axios.get(`http://localhost:5000/wishlist`, {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${saveToken}` }
         }).then((res) => {
-            console.log("roooooooooo 1" , res.data.products[0].product);
-            console.log("rooooooooooooorooo 2" , res.data);
             setInsideWishlist(res.data.products)
         }).catch((err) => {
             console.log(err);
         })
     }
 
-    useEffect(()=>{getWishlist()},[])
 
     const deleteWishlist = (id) =>{
+        console.log("id" , id);
         axios
           .delete(`http://localhost:5000/wishlist/${id}`).then((result)=>{
             getWishlist()
-    
-    
           }).catch((err)=>{
             console.log(err)
           })
       }
 
+       
     return(
         <div className="container">
             <h4>Wishlist CART</h4>
             <div className="WishlistPerant">
             {insideWishlist&&
             insideWishlist.map((elem , i )=>{
+                if(wishlist[elem.product[0]._id]){
+                    wishlist[elem.product[0]._id]+=1 
+                }else{
+                    wishlist[elem.product[0]._id]=1 
                 return( <div className="wishlistBox">
                 <img src={elem.product[0].img} />
                 <div className="titelWishlist"> 
                 <h3>{elem.product[0].title}</h3>
+                <p>{elem.product[0].description}</p>
                 <p>{elem.product[0].newprice} JD</p>
                 </div>
                 
@@ -52,6 +58,7 @@ const WishList = () => {
                 </div> 
                 
                 );
+                }
             })}
               <hr></hr>
         </div>

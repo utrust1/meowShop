@@ -20,11 +20,12 @@ return <div className="container main-Cont">
 		</div>
 
 		</div>
+		<hr></hr>
 
 
 		<div className='iconFooter'>
-			<FaFacebookSquare/>
-			<FaInstagram/>
+			<FaFacebookSquare className='Facebook'/>
+			<FaInstagram className='Instagram'/>
 		</div>
 	</footer>
 

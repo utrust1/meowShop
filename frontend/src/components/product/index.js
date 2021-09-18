@@ -12,11 +12,12 @@ import {checkRegisterContext} from "../../App"
 
 
 const GetAllProduct=({setCartNumber ,setWishListNumber})=> {
-  
   const goBackButton =()=>{
     history.goBack()
-}
-
+  }
+  
+    let saveToken = localStorage.getItem("saveToken")
+    let saveCheckRegister  = localStorage.getItem("saveCheckRegister")
     let token = useContext(tokenContext);
     let cartNumber = useContext(cartNumberContext);
     let wishListNumber = useContext(wishListNumberContext);
@@ -40,11 +41,11 @@ const GetAllProduct=({setCartNumber ,setWishListNumber})=> {
 const cartAdd = (product)=>{
  let purchase = product._id
 axios.post(`http://localhost:5000/cart`, {purchase} , {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { Authorization: `Bearer ${saveToken}` },
           })
           .then((res) => {
             console.log("whooo");
-            if (token || checkRegister) {
+            if (token|| saveToken || checkRegister || saveCheckRegister ) {
               if (cartNumber) {
                 setCartNumber(cartNumber + 1);
                 console.log("second time : ", cartNumber);
@@ -66,11 +67,11 @@ axios.post(`http://localhost:5000/cart`, {purchase} , {
       const wishlistAdd = (products) => {
         let  product = products._id
         axios.post(`http://localhost:5000/wishlist` , {product},{ 
-          headers: { Authorization: `Bearer ${token}`} },
+          headers: { Authorization: `Bearer ${saveToken}`} },
          ).then((res)=>{
            console.log("meow 22");
            console.log("3oo",res.data)
-           if (token || checkRegister) {
+           if ((token|| saveToken || checkRegister || saveCheckRegister )) {
             if (wishListNumber) {
               setWishListNumber(wishListNumber + 1);
               localStorage.setItem("wishList", wishListNumber + 1);
