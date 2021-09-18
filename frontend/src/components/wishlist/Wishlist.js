@@ -8,6 +8,7 @@ import "./Wishlist.css"
 const WishList = () => {
     let saveToken = localStorage.getItem("saveToken")
     let token = useContext(tokenContext);
+
     const [insideWishlist, setInsideWishlist] = useState([])
     let wishlist = {}
     useEffect(()=>{getWishlist()},[])
@@ -48,6 +49,7 @@ const WishList = () => {
                 <img src={elem.product[0].img} />
                 <div className="titelWishlist"> 
                 <h3>{elem.product[0].title}</h3>
+                <p>{elem.product[0].description}</p>
                 <p>{elem.product[0].newprice} JD</p>
                 </div>
                 
