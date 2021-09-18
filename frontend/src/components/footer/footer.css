@@ -1,11 +1,10 @@
 footer {
     background-color: #182e49;
     color: white;
-    position: relative;
-    bottom: 0px;
 }
 
 .footerMain {
+    padding: 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -13,4 +12,17 @@ footer {
 .iconFooter {
     text-align: center;
     cursor: pointer;
+    padding: 20px;
+}
+
+.Facebook,
+.Instagram {
+    margin: 10px;
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 992px) {
+    .footerMain {
+        flex-direction: column-reverse;
+    }
 }

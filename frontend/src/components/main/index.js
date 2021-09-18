@@ -12,6 +12,7 @@ import { wishListNumberContext } from "../../App"
 import omar from "../.././ourimg/eaea1cea-d8c9-4972-b9dc-a4f32cf12f23.jpg";
 import maamoun from "../.././ourimg/49135455_2282326952036505_6271144683045388288_n.jpg";
 import obada from "../.././ourimg/T0270UF1MS6-U026UMA6LSJ-c5787195b78a-512.jpg";
+import Ruqia from "../.././ourimg/T0270UF1MS6-U026Y34FR61-b175be512ad3-512.jpg";
 
 const Main = ({  setCartNumber,    setWishListNumber, }) => {
   let cartNumber = useContext(cartNumberContext)
@@ -272,8 +273,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
           <div className='imgtitle'>
             <img src={maamoun} alt='ssss'/>
             <div className='titleourteam'>
-              <h2>Maamoun Alkiswani</h2>
-              <p>Ut wisi enim ad minim veniam,</p>
+              <h3>Maamoun Alkiswani</h3>
               <button>Contact us</button>
             </div>
             
@@ -283,8 +283,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
           <div className='imgtitle'>
             <img src={omar} alt='ssss'/>
             <div className='titleourteam'>
-              <h2>Omar Hushki</h2>
-              <p>Ut wisi enim ad minim veniam,</p>
+              <h3>Omar Hushki</h3>
               <a href='https://www.facebook.com/omar.hushki/'><button> Contact us</button></a>
             </div>
             
@@ -294,8 +293,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
           <div className='imgtitle'>
             <img src={obada} alt='ssss'/>
             <div className='titleourteam'>
-              <h2>Obada Obada </h2>
-              <p>Ut wisi enim ad minim veniam,</p>
+              <h3>Obada Amarneh </h3>
               <button>Contact us</button>
             </div>
             
@@ -304,10 +302,9 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
 
           
           <div className='imgtitle'>
-            <img src='sdasdasds' alt='Ruiqa'/>
+            <img src={Ruqia} alt='Ruiqa'/>
             <div className='titleourteam'>
-              <h2>Ruiqa Ruiqa </h2>
-              <p>Ut wisi enim ad minim veniam,</p>
+              <h3>Ruqia Hammouri </h3>
               <button>Contact us</button>
             </div>
             
@@ -319,7 +316,6 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       </div>
 
     </div>
-    <hr></hr>
 
 
       </section>
