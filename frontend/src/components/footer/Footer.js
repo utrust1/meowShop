@@ -6,13 +6,15 @@ import { FaFacebookSquare ,FaInstagram } from "react-icons/fa";
 const Footer = () => {
 return <div className="container footerbottom main-Cont"> 
 
-	<footer>		
+	<footer>
+
+		
 		<div className="footerMain">
-	
 		<div>
 			<h3>GET IN TOUCH</h3>
 			<p>Please call 079 600 2115 and we will be happy to assist you.</p>
 		</div>
+
 
 		<div>
 			<h3>NEWSLETTER</h3>
@@ -22,7 +24,7 @@ return <div className="container footerbottom main-Cont">
 		</div>
 		<hr></hr>
 
-
+		<hr></hr>
 		<div className='iconFooter'>
 			<FaFacebookSquare className='Facebook'/>
 			<FaInstagram className='Instagram'/>
