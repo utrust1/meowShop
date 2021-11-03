@@ -40,6 +40,7 @@ const App = () => {
   history.push("/Home");
 
   return (
+
     <div className="App">
       <checkRegisterContext.Provider value={checkRegister}>
         <tokenContext.Provider value={token}>
@@ -125,7 +126,47 @@ const App = () => {
           </checkLogoutContext.Provider>
         </tokenContext.Provider>
       </checkRegisterContext.Provider>
+=======
+    <>
+    <div className="App MainApp">
+       <checkRegisterContext.Provider value={checkRegister}>
+       <tokenContext.Provider value={token} >
+       <checkLogoutContext.Provider value={checkLogout}>
+       <searchContext.Provider value= {searchBar}>
+       <cartNumberContext.Provider value={cartNumber}>
+       <wishListNumberContext.Provider value={wishListNumber}>
+      <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken}  setCartNumber={setCartNumber}    setWishListNumber={setWishListNumber} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
+<Switch>
+      <Route exact path="/Home"  render={() => <Main   setCartNumber={setCartNumber}    setWishListNumber={setWishListNumber}/>}  />
+      <Route exact path="/category/:title/:id" component={ProductCategory} />
+      <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister}  setCheckLogout={setCheckLogout}/>} />
+      <Route exact path="/product/:id" render={()=> <GetAllProduct  setCartNumber ={setCartNumber}  setWishListNumber={setWishListNumber} />} />
+      <Route exact path="/login" render={() => <Login  token={token}  setToken={setToken}  setCheckLogout={setCheckLogout} />} />
+      setCartNumber 
+      <Route exact path="/cart"  render={() => <Cart setCartNumber={setCartNumber} /> }/>
+      {/* <Route exact path="/AboutUs" component={Aboutus} />
+      <Route exact path="/ContactUs" component={Contactus} />
+      <Route exact path="/OurPolicy" component={Ourpolicy} /> */}
+      <Route exact path="/search" component={Search} />
+      <Route exact path="/wishlist" component={WishList} />
+      <Route exact path="/shipping" component={Purshace} />
+      <Route exact path="/Categorys" component={Categorys}/>
+      <Route exact path="/products" component={Products} />
+      <Route path= "*" component={()=>"404 NOT FOUND"} />
+</Switch> 
+      </wishListNumberContext.Provider>
+       </cartNumberContext.Provider>
+      </searchContext.Provider>
+      </checkLogoutContext.Provider>
+      </tokenContext.Provider>
+      </checkRegisterContext.Provider>
+    
+
     </div>
+    <div> 
+    <Footer/>
+    </div>
+    </>
   );
 };
 export default App;
