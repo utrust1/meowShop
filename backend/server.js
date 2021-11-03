@@ -34,7 +34,4 @@ app.use("/category" , cartegoryRouter)
 app.use("/login", loginRouter)
 app.use("/purchase" , purchaseRouter )
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-	console.log(`Server On ${PORT}`);
-});
+module.exports = app
