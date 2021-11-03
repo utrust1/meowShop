@@ -8,76 +8,126 @@ import ProductCategory from "./components/category/ProductCategory";
 import Register from "./components/auth/Register/Register";
 import GetAllProduct from "./components/product/index";
 import Login from "./components/auth/Login/Login";
-import { Switch , useHistory  } from "react-router";
-import Cart from "./components/cart/Cart"
+import { Switch, useHistory } from "react-router";
+import Cart from "./components/cart/Cart";
 import Categorys from "./components/Categorys/Categorys";
 // import Aboutus from "./components/Footer/Aboutus";
 // import Contactus from "./components/Footer/Contactus";
 // import Ourpolicy from "./components/Footer/Ourpolicy";
 import { Search } from "./components/header/Search";
 import WishList from "./components/Wishlist/Wishlist";
-import {Purshace} from './components/Wishlist/Purshace'
+import { Purshace } from "./components/Wishlist/Purshace";
 import Products from "./components/products/products";
 import Header from "./components/header/index";
 import Footer from "./components/Footer/Footer";
 export const tokenContext = createContext();
 export const checkRegisterContext = createContext();
-export const checkLogoutContext  = createContext();
-export const searchContext  = createContext();
+export const checkLogoutContext = createContext();
+export const searchContext = createContext();
 export const cartNumberContext = createContext();
 export const wishListNumberContext = createContext();
 
-
 const App = () => {
-  let carProductNumber = (localStorage.getItem("carProductNumber"))
-  carProductNumber = parseInt(carProductNumber) 
+  let carProductNumber = localStorage.getItem("carProductNumber");
+  carProductNumber = parseInt(carProductNumber);
   const [token, setToken] = useState("");
   const [checkRegister, setCheckRegister] = useState(false);
   const [checkLogout, setCheckLogout] = useState(true);
-  const [searchBar , setSearchBar] = useState()
-  const [cartNumber,  setCartNumber ] = useState(carProductNumber);
+  const [searchBar, setSearchBar] = useState();
+  const [cartNumber, setCartNumber] = useState(carProductNumber);
   const [wishListNumber, setWishListNumber] = useState(0);
-  const history = useHistory()
-  history.push("/Home")
+  const history = useHistory();
+  history.push("/Home");
 
   return (
     <div className="App">
-       <checkRegisterContext.Provider value={checkRegister}>
-       <tokenContext.Provider value={token} >
-       <checkLogoutContext.Provider value={checkLogout}>
-       <searchContext.Provider value= {searchBar}>
-       <cartNumberContext.Provider value={cartNumber}>
-       <wishListNumberContext.Provider value={wishListNumber}>
-      <Navigation  setCheckLogout={setCheckLogout}  setToken={setToken}  setCartNumber={setCartNumber}    setWishListNumber={setWishListNumber} setCheckRegister={setCheckRegister} setSearchBar={setSearchBar} />
-<Switch>
-      <Route exact path="/Home"  render={() => <Main   setCartNumber={setCartNumber}    setWishListNumber={setWishListNumber}/>}  />
-      <Route exact path="/category/:title/:id" component={ProductCategory} />
-      <Route exact path="/Register" render={() => <Register setCheckRegister={setCheckRegister}  setCheckLogout={setCheckLogout}/>} />
-      <Route exact path="/product/:id" render={()=> <GetAllProduct  setCartNumber ={setCartNumber}  setWishListNumber={setWishListNumber} />} />
-      <Route exact path="/login" render={() => <Login  token={token}  setToken={setToken}  setCheckLogout={setCheckLogout} />} />
-      setCartNumber 
-      <Route exact path="/cart"  render={() => <Cart setCartNumber={setCartNumber} /> }/>
-      {/* <Route exact path="/AboutUs" component={Aboutus} />
+      <checkRegisterContext.Provider value={checkRegister}>
+        <tokenContext.Provider value={token}>
+          <checkLogoutContext.Provider value={checkLogout}>
+            <searchContext.Provider value={searchBar}>
+              <cartNumberContext.Provider value={cartNumber}>
+                <wishListNumberContext.Provider value={wishListNumber}>
+                  <Navigation
+                    setCheckLogout={setCheckLogout}
+                    setToken={setToken}
+                    setCartNumber={setCartNumber}
+                    setWishListNumber={setWishListNumber}
+                    setCheckRegister={setCheckRegister}
+                    setSearchBar={setSearchBar}
+                  />
+                  <Switch>
+                    <Route
+                      exact
+                      path="/Home"
+                      render={() => (
+                        <Main
+                          setCartNumber={setCartNumber}
+                          setWishListNumber={setWishListNumber}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/category/:title/:id"
+                      component={ProductCategory}
+                    />
+                    <Route
+                      exact
+                      path="/Register"
+                      render={() => (
+                        <Register
+                          setCheckRegister={setCheckRegister}
+                          setCheckLogout={setCheckLogout}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/product/:id"
+                      render={() => (
+                        <GetAllProduct
+                          setCartNumber={setCartNumber}
+                          setWishListNumber={setWishListNumber}
+                        />
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/login"
+                      render={() => (
+                        <Login
+                          token={token}
+                          setToken={setToken}
+                          setCheckLogout={setCheckLogout}
+                        />
+                      )}
+                    />
+                    setCartNumber
+                    <Route
+                      exact
+                      path="/cart"
+                      render={() => <Cart setCartNumber={setCartNumber} />}
+                    />
+                    {/* <Route exact path="/AboutUs" component={Aboutus} />
       <Route exact path="/ContactUs" component={Contactus} />
       <Route exact path="/OurPolicy" component={Ourpolicy} /> */}
-      <Route exact path="/search" component={Search} />
-      <Route exact path="/wishlist" component={WishList} />
-      <Route exact path="/shipping" component={Purshace} />
-      <Route exact path="/Categorys" component={Categorys}/>
-      <Route exact path="/products" component={Products} />
-      <Route path= "*" component={()=>"404 NOT FOUND"} />
-</Switch> 
-      <Footer/>
-      </wishListNumberContext.Provider>
-       </cartNumberContext.Provider>
-      </searchContext.Provider>
-      </checkLogoutContext.Provider>
-      </tokenContext.Provider>
+                    <Route exact path="/search" component={Search} />
+                    <Route exact path="/wishlist" component={WishList} />
+                    <Route exact path="/shipping" component={Purshace} />
+                    <Route exact path="/Categorys" component={Categorys} />
+                    <Route exact path="/products" component={Products} />
+                    <Route path="*" component={() => "404 NOT FOUND"} />
+                  </Switch>
+                  <Footer />
+                </wishListNumberContext.Provider>
+              </cartNumberContext.Provider>
+            </searchContext.Provider>
+          </checkLogoutContext.Provider>
+        </tokenContext.Provider>
       </checkRegisterContext.Provider>
-      
     </div>
   );
 };
 export default App;
 
-// helllllllllllo 
+// helllllllllllo
