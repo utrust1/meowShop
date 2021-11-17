@@ -36,11 +36,12 @@ const App = () => {
   const [searchBar, setSearchBar] = useState();
   const [cartNumber, setCartNumber] = useState(carProductNumber);
   const [wishListNumber, setWishListNumber] = useState(0);
+  const [googleToken , setGoogleToken ] = useState("")
   const history = useHistory();
   history.push("/Home");
 
   return (
-
+<>
     <div className="App">
       <checkRegisterContext.Provider value={checkRegister}>
         <tokenContext.Provider value={token}>
@@ -55,6 +56,7 @@ const App = () => {
                     setWishListNumber={setWishListNumber}
                     setCheckRegister={setCheckRegister}
                     setSearchBar={setSearchBar}
+                    googleToken={googleToken}
                   />
                   <Switch>
                     <Route
@@ -100,6 +102,7 @@ const App = () => {
                           token={token}
                           setToken={setToken}
                           setCheckLogout={setCheckLogout}
+                          setGoogleToken={setGoogleToken}
                         />
                       )}
                     />
@@ -126,9 +129,9 @@ const App = () => {
           </checkLogoutContext.Provider>
         </tokenContext.Provider>
       </checkRegisterContext.Provider>
-=======
-    <>
-    <div className="App MainApp">
+
+   
+     {/* <div className="App MainApp">
        <checkRegisterContext.Provider value={checkRegister}>
        <tokenContext.Provider value={token} >
        <checkLogoutContext.Provider value={checkLogout}>
@@ -144,9 +147,7 @@ const App = () => {
       <Route exact path="/login" render={() => <Login  token={token}  setToken={setToken}  setCheckLogout={setCheckLogout} />} />
       setCartNumber 
       <Route exact path="/cart"  render={() => <Cart setCartNumber={setCartNumber} /> }/>
-      {/* <Route exact path="/AboutUs" component={Aboutus} />
-      <Route exact path="/ContactUs" component={Contactus} />
-      <Route exact path="/OurPolicy" component={Ourpolicy} /> */}
+    
       <Route exact path="/search" component={Search} />
       <Route exact path="/wishlist" component={WishList} />
       <Route exact path="/shipping" component={Purshace} />
@@ -161,14 +162,15 @@ const App = () => {
       </tokenContext.Provider>
       </checkRegisterContext.Provider>
     
-
+<Footer/>
     </div>
-    <div> 
-    <Footer/>
-    </div>
-    </>
+     */}
+    
+  
+   </div> 
+   </>
   );
 };
 export default App;
 
-// helllllllllllo
+
