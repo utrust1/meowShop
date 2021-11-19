@@ -40,18 +40,22 @@
     -moz-transition: 1s;
     -ms-transition: 1s;
     -o-transition: 1s;
-    border-bottom: 2px solid white;
 }
 
 .SearchBarInput:hover {
     background-color: #11052C;
     border: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .searchIcon {
     position: absolute;
     right: 5px;
-    top: 7px;
+    top: 12px;
     color: white;
     cursor: pointer;
     font-size: 18px;

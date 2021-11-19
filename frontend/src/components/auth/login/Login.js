@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import "./Login.css";
+import './login.css';
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";

@@ -2,7 +2,7 @@ body {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    background-color: #ffff;
+    background-color: red;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -12,9 +12,11 @@ body {
     height: calc(100vh - 150px);
 } */
 
+
+/* 
 .container {
     padding-left: 80px;
     padding-right: 80px;
     margin-left: auto;
     margin-right: auto;
-}
+} */
