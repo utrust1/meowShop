@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import axios from "axios";
 import "./main.css";
-import Header from "../header";
 import { FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
 import { useContext } from "react";
 import { tokenContext } from "../../App";
@@ -141,22 +140,23 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
 
   ///Get All Category
   return (
-    <section>
+    <section className="main-section">
       
     <div className="container">
-      <Header />
+    
      <div className="morecategory">
       <h4>SHOP FOR </h4>
       <p onClick={() =>{getAllcategorys()}}>More categories ..</p>
      </div>
+     <div className="row">
       <div className="category-section">
         {getCategory &&
           getCategory.map((cate) => {
             return (
-              <div className="categoryMain">
+              <div className="col-lg-3">
+                <div className="shopforimg">
                 <img
                   className="categoryImg"
-                  style={{ height: "500px" }}
                   src={cate.img}
                 ></img>
                 <div className="titleforCategory">
@@ -171,9 +171,11 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
                   </div>
                 </div>
               </div>
+              </div>
             );
           })}
-      </div>
+          </div>
+          </div>
       <hr></hr>
       <div>
         <div className="moreproduct">
@@ -265,59 +267,6 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
     <hr></hr>
     </div>
 
-    {/* our team start*/ }
-
-    <div className='container ourTeam'>
-      <h2>Our Team </h2>
-
-      <div className='ourTeamImg'>
-
-          <div className='imgtitle'>
-            <img src={maamoun} alt='ssss'/>
-            <div className='titleourteam'>
-              <h3>Maamoun Alkiswani</h3>
-              <button>Contact us</button>
-            </div>
-            
-          </div>
-
-
-          <div className='imgtitle'>
-            <img src={omar} alt='ssss'/>
-            <div className='titleourteam'>
-              <h3>Omar Hushki</h3>
-              <a href='https://www.facebook.com/omar.hushki/'><button> Contact us</button></a>
-            </div>
-            
-          </div>
-
-          
-          <div className='imgtitle'>
-            <img src={obada} alt='ssss'/>
-            <div className='titleourteam'>
-              <h3>Obada Amarneh </h3>
-              <button>Contact us</button>
-            </div>
-            
-          </div>
-
-
-          
-          <div className='imgtitle'>
-            <img src={Ruqia} alt='Ruiqa'/>
-            <div className='titleourteam'>
-              <h3>Ruqia Hammouri </h3>
-              <button>Contact us</button>
-            </div>
-            
-          </div>
-
-
-
-        
-      </div>
-
-    </div>
 
 
       </section>

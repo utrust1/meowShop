@@ -1,10 +1,17 @@
+.footerbottom {
+    color: #fff;
+}
+
 footer {
     background-color: #182e49;
-    color: white;
     height: auto;
 }
 
 .main-Cont {}
+
+.footerMain div {
+    color: #fff;
+}
 
 .footerMain {
     padding: 20px;
@@ -22,6 +29,7 @@ footer {
 .Instagram {
     margin: 10px;
     font-size: 25px;
+    color: #fff;
 }
 
 @media only screen and (max-width: 992px) {

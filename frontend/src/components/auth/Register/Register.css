@@ -1,5 +1,6 @@
 .Register {
     position: relative;
+    height: 650px;
 }
 
 .Register h3 {
@@ -9,7 +10,7 @@
 }
 
 .childRegister {
-    position: fixed;
+    position: absolute;
     left: 50%;
     width: 700px;
     top: 50%;

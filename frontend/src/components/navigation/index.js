@@ -9,6 +9,7 @@ import { checkLogoutContext } from "../../App"
 import { cartNumberContext } from "../../App"
 import { wishListNumberContext } from "../../App"
 import {FaShoppingBasket, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumber ,  setWishListNumber ,setSearchBar,googleToken } ) => {
@@ -66,8 +67,8 @@ const addToWish = ()=>{
 };
 //token|| saveToken || checkRegister || saveCheckRegister || tokenGoogle ||
   return (
-
-    <div className="container main-Cont">
+<div className="main-Cont">
+    <div className="container-fluid">
       <div className="Navigation">
         <Link to="/Home" className='logoName'>
          <img src='https://cdn.shopify.com/s/files/1/0301/4295/5565/files/logo_ong_180x.png?v=1580764148'/>
@@ -116,6 +117,7 @@ const addToWish = ()=>{
           <p onClick={()=>{showcategory(get.title,get._id)}}>{get.title}</p>
         )
       })} </div> */}
+    </div>
     </div>
   );
 };

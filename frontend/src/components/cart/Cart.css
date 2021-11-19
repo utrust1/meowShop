@@ -10,6 +10,12 @@
     flex-wrap: wrap;
 }
 
+.CartPerant {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 650px;
+}
+
 .CartBox img {
     max-width: 400px;
     max-height: 350px;

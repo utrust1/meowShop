@@ -6,6 +6,12 @@
     flex-wrap: wrap;
 }
 
+.WishlistPerant {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 650px;
+}
+
 .wishlistBox img {
     max-width: 100%;
     height: 350px;

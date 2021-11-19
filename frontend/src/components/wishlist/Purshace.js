@@ -26,11 +26,13 @@ export const Purshace = ({setCartNumber}) => {
       });
   };
   return (
-    <div className="PurshacePerant">
+    <div className="container">
+         <div className="PurshacePerant">
       <h4>Contact information</h4>
       <div className="PurshaceChild">
       <Stripe total={total} setCartNumber={setCartNumber}/>
     </div>
+    </div>.
     </div>
   );
 };

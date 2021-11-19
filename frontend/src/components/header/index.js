@@ -1,42 +1,32 @@
-import React , {useState} from 'react';
-import SliderImg from './SliderImg';
 import './header.css';
-import { FaArrowLeft ,FaArrowRight} from "react-icons/fa";
-
-
+import Carousel from 'react-bootstrap/Carousel'
 const Header = () => {
-
-	const [sliders, setSliders] = useState(0);
-	const length = SliderImg.length;
-
-	if (!Array.isArray(SliderImg) || SliderImg.length <= 0) {
-		return null;
-	  }
-
-	  const nextSlide = () => {
-		setSliders(sliders === length - 1 ? 0 : sliders + 1);
-	  };
-	
-	  const prevSlide = () => {
-		setSliders(sliders === 0 ? length - 1 : sliders - 1);
-	  };
 	return (	
-	<div className="sliderr">
-		<FaArrowLeft className="left-arrow" onClick={() =>{nextSlide()}}/>
-		<FaArrowRight className="right-arrow" onClick={() =>{prevSlide()}}/>
-		 {SliderImg.map((slider , index) => {
-			 return(
-				    <div
-            className={index === sliders ? 'slide active' : 'slide'}
-            key={index}
-          >
-            {index === sliders && (
-              <img src={slider.image} width="400px" height="400px"  className='imgslider' />
-            )}
-          </div>
-			 )
+	<div className="container-fluid">
+	<Carousel>
+  <Carousel.Item interval={1000}>
+    <img
+      className="d-block w-100"
+      src="https://images.pexels.com/photos/2305947/pexels-photo-2305947.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
 
-		 })}
+    />
+  </Carousel.Item>
+  <Carousel.Item interval={500}>
+    <img className="d-block w-100"
+      src="https://images.pexels.com/photos/2305947/pexels-photo-2305947.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+   
+    />
+  
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://images.pexels.com/photos/2305947/pexels-photo-2305947.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    
+    />
+ 
+  </Carousel.Item>
+</Carousel>
 	</div>
 	);
 };
