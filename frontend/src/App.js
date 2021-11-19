@@ -34,7 +34,7 @@ const App = () => {
   const [checkRegister, setCheckRegister] = useState(false);
   const [checkLogout, setCheckLogout] = useState(true);
   const [searchBar, setSearchBar] = useState();
-  const [cartNumber, setCartNumber] = useState(carProductNumber);
+  const [cartNumber, setCartNumber] = useState(0);
   const [wishListNumber, setWishListNumber] = useState(0);
   const [googleToken , setGoogleToken ] = useState("")
   const history = useHistory();
@@ -106,7 +106,7 @@ const App = () => {
                         />
                       )}
                     />
-                    setCartNumber
+                    {/* setCartNumber */}
                     <Route
                       exact
                       path="/cart"
@@ -117,7 +117,7 @@ const App = () => {
       <Route exact path="/OurPolicy" component={Ourpolicy} /> */}
                     <Route exact path="/search" component={Search} />
                     <Route exact path="/wishlist" component={WishList} />
-                    <Route exact path="/shipping" component={Purshace} />
+                    <Route exact path="/shipping/:total" render={() => <Purshace setCartNumber={setCartNumber} />}/>
                     <Route exact path="/Categorys" component={Categorys} />
                     <Route exact path="/products" component={Products} />
                     <Route path="*" component={() => "404 NOT FOUND"} />

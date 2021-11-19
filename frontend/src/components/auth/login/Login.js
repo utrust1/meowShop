@@ -41,8 +41,9 @@ const Login = ({ token, setToken, setCheckLogout ,setGoogleToken}) => {
       .then((res) => {
         const token = res.data.token;
         setGoogleToken(token)
-        console.log(res.data.role);
-        localStorage.setItem("token", res.data.token);
+        console.log(res.data.token,'res.data.token');
+        setCheckLogout(true)
+        localStorage.setItem("saveToken", res.data.token);
         history.push("/Home")
        
       })

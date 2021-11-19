@@ -60,7 +60,7 @@ const Cart =  ({setCartNumber}) => {
       })
   }
   const checkout = ()=>{
-    history.push('/shipping')
+    history.push(`/shipping/${total}`)
   }
  
   return (

@@ -1,9 +1,7 @@
 const productModel = require("./../../db/models/product");
-
 const createNewProduct = (req, res) => {
     const { title, description, newprice, oldPrice, quantity, img, category } =
     req.body;
-
     const newProduct = new productModel({
         title,
         description,
@@ -13,7 +11,6 @@ const createNewProduct = (req, res) => {
         img,
         category,
     });
-
     newProduct
         .save()
         .then((result) => {
@@ -31,7 +28,6 @@ const createNewProduct = (req, res) => {
             });
         });
 };
-
 const getAllProduct = async(req, res) => {
     const { page = 1, limit = 4 } = req.query
     productModel
@@ -52,16 +48,18 @@ const getAllProduct = async(req, res) => {
             });
         });
 };
-
 const getAllProducts = async(req, res) => {
+    const { page = 1, limit = 12 } = req.params;
+    const total = await productModel.countDocuments({});
     productModel
-        .find({})
+        .find({}).limit(limit * 1).skip((page - 1) * limit)
         .then((products) => {
             res.status(200);
             res.json({
                 success: true,
                 massage: ` All the products`,
                 products: products,
+                totalPages: Math.ceil(total / limit),
             });
         })
         .catch((err) => {
@@ -94,7 +92,6 @@ const getProductById = (req, res) => {
             res.json(idNotFound);
         });
 };
-
 const getProductByPrice = (req, res) => {
     productModel
         .find({})
@@ -116,7 +113,6 @@ const getProductByPrice = (req, res) => {
             throw err;
         });
 };
-
 const updateProductById = (req, res) => {
     const _id = req.params.id;
     productModel
@@ -140,7 +136,6 @@ const updateProductById = (req, res) => {
             });
         });
 };
-
 const deleteProductById = (req, res) => {
     id = req.params.id;
     productModel.findByIdAndRemove({ _id: id }).then((deletebyId) => {
@@ -159,11 +154,8 @@ const deleteProductById = (req, res) => {
         res.json(filedDeleted);
     })
 }
-
 const getProductByCategory = (req, res) => {
-
     const category = req.params.category
-
     productModel.find({ category: category }).populate('category').then((result) => {
         res.status(200).json({
             success: true,
@@ -178,10 +170,8 @@ const getProductByCategory = (req, res) => {
         })
     })
 }
-
 const search = (req, res) => {
     const title = req.query.title
-
     productModel.find({
         $or: [{
                 title: {
@@ -205,7 +195,6 @@ const search = (req, res) => {
         res.status(409).json({ success: false, message: 'server error' })
     })
 }
-
 module.exports = {
     createNewProduct,
     getProductById,
@@ -217,3 +206,8 @@ module.exports = {
     search,
     getAllProducts
 };
+
+
+
+
+

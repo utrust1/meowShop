@@ -19,8 +19,5 @@ productRouter.put("/:id", updateProductById)
 productRouter.delete("/:id", deleteProductById)
 productRouter.get("/cat/:category", getProductByCategory)
 productRouter.post("/search", search)
-productRouter.get("/ddd/products", getAllProducts);
-
-
-
+productRouter.get("/ddd/products/:page", getAllProducts);
 module.exports = productRouter;

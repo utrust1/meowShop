@@ -14,7 +14,7 @@ import {FaShoppingBasket, FaSearch ,FaBars ,FaHeart} from "react-icons/fa";
 const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumber ,  setWishListNumber ,setSearchBar,googleToken } ) => {
 	const history = useHistory()
   let saveToken = localStorage.getItem("saveToken")
-  let tokenGoogle =  localStorage.getItem("token")
+  // let tokenGoogle =  localStorage.getItem("saveToken")
   let saveCheckRegister  = localStorage.getItem("saveCheckRegister")
   let token = useContext(tokenContext);
   let checkRegister = useContext(checkRegisterContext)
@@ -23,7 +23,7 @@ const Navigation = ({setCheckLogout  , setToken ,setCheckRegister , setCartNumbe
   let wishlistNumber = useContext(wishListNumberContext)
   const [search, setSearch] = useState()
   const [getCategory, setGetCategory] = useState();
-  
+  console.log(googleToken, 'googleToken')
   let carProductNumber  =  cartNumber 
   localStorage.setItem("carProductNumber" , carProductNumber  )
   const Logout = () => {
@@ -64,6 +64,7 @@ const addToCart = () => {
 const addToWish = ()=>{
   history.push('/wishlist')
 };
+//token|| saveToken || checkRegister || saveCheckRegister || tokenGoogle ||
   return (
 
     <div className="container main-Cont">
@@ -84,7 +85,8 @@ const addToWish = ()=>{
         </div>
         {/* <FaBars className='fabars'/> */}
         <div className="navbar">
-          { ((token|| saveToken || checkRegister || saveCheckRegister || tokenGoogle || googleToken) && checkLogout ) ? (
+          
+          { (( token|| saveToken || checkRegister || saveCheckRegister ||googleToken) && checkLogout ) ? (
             <div>
               <span className="shopCartMain">
               <FaHeart onClick={addToWish} className="HeartIcon"/>
