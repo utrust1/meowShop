@@ -1,8 +1,5 @@
 const express = require("express");
-const {createNewPurchase} = require("./../controllers/purchase")
+const { stripePayment } = require("./../controllers/purchase")
 const purchaseRouter = express.Router();
-
-purchaseRouter.post("/", createNewPurchase)
-
-
+purchaseRouter.post("/", stripePayment)
 module.exports = purchaseRouter;
