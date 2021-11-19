@@ -20,7 +20,7 @@ const stripePayment = async(req, res) => {
                 from: "muyassarsider@gmail.com", // Change to your verified sender
                 subject: "Sending with SendGrid is Fun",
                 text: `Thank You For Shopping with us have a nice day`,
-                html: `<strong><h1>This is a value for your bill: ${amount/100}Usd </h1></strong>`,
+                html: `<strong><h1>This is a value for your bill: ${amount/100} JD </h1></strong>`,
             };
             sgMail
                 .send(msg)
