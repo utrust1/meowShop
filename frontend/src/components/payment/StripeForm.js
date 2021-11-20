@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { AiOutlineExclamation } from "react-icons/ai";
+
+
 const CARD_OPTIONS = {
   iconStyle: "solid",
   style: {
@@ -81,14 +83,10 @@ export const StripeForm = ({ total,setCartNumber }) => {
   return (
     <>
       {!success ? (
+        <div className="container xxxx">
         <form onSubmit={handleSubmit}>
-          <fieldset>
-            <div>
-              <CardElement options={CARD_OPTIONS} />
-            </div>
-          </fieldset>
           {/** */}
-          <Container className="main-Error">
+          {/* <Container className="main-Error">
             {errmessage && errmessage.length > 0
               ? ["danger"].map((variant, idx) => (
                   <Alert key={idx} variant={variant} className="Alert-login">
@@ -97,8 +95,9 @@ export const StripeForm = ({ total,setCartNumber }) => {
                   </Alert>
                 ))
               : ""}
-          </Container>
+          </Container> */}
           {/** */}
+          <label for="fname"><i className="fa fa-user"></i>  Your Country</label>
           <input
             type="text"
             placeholder=" Your Country "
@@ -106,6 +105,7 @@ export const StripeForm = ({ total,setCartNumber }) => {
               setCountry(e.target.value);
             }}
           ></input>
+                <label for="email"><i className="	fa fa-bank"></i> Your City</label>
           <input
             type="text"
             placeholder=" Your City "
@@ -113,6 +113,7 @@ export const StripeForm = ({ total,setCartNumber }) => {
               setCity(e.target.value);
             }}
           ></input>
+                <label for="adr"><i className="	fa fa-address-card"></i> Address</label>
           <input
             type="text"
             placeholder=" Your Address "
@@ -120,6 +121,7 @@ export const StripeForm = ({ total,setCartNumber }) => {
               setAddress(e.target.value);
             }}
           ></input>
+                <label for="adr"><i className="	fa fa-mobile-phone"></i> Your Phone</label>
           <input
             type="number"
             placeholder=" Your Phone number"
@@ -127,11 +129,17 @@ export const StripeForm = ({ total,setCartNumber }) => {
               setPhoneNumber(e.target.value);
             }}
           ></input>
-          <div>Your Total Amout is : ${total}</div>
+          <fieldset>
+            <div>
+              <CardElement options={CARD_OPTIONS} />
+            </div>
+          </fieldset>
+          <div className="total-amount">Your Total Amout is : ${total}</div>
           <button type="submit" className="donate">
             Pay Now :)
           </button>
         </form>
+        </div>
       ) : (
         <div>
           <h2 className="donate-done">Thank You For Your Donation</h2>

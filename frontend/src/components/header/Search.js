@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router";
 import { searchContext } from "../../App";
 import axios from "axios";
+import './Search.css';
 
 export const Search = () => {
   let searchBar = useContext(searchContext);
@@ -12,6 +13,7 @@ export const Search = () => {
 
 
   return (
+    <div className="search">
     <div className="container">
         <div className='Contect-Main-Section'>
       {searchBar&&searchBar.map((elm) => {
@@ -27,6 +29,7 @@ export const Search = () => {
         );
       })}
       </div>
+    </div>
     </div>
   );
 };

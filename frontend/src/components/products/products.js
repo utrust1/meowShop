@@ -53,13 +53,13 @@ return(
                 )
             })}
             <div className='pageCount'>
-            <AiOutlineArrowLeft/>
+            <AiOutlineArrowLeft className='left-arrow'/>
                {myarr&&myarr.map((ele)=>{
               return(
                 <h2 className='ssss' onClick={()=>(changeCountPage(ele))}>{ele}</h2>
               )
             })}            
-            <AiOutlineArrowRight/>
+            <AiOutlineArrowRight className='right-arrow'/>
             </div>
         </div>
         </div>
