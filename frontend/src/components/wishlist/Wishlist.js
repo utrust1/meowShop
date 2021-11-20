@@ -37,7 +37,7 @@ const WishList = () => {
        
     return(
         <div className="container">
-            <h4>Wishlist CART</h4>
+            <h4>Wishlist</h4>
             <div className="WishlistPerant">
             {insideWishlist&&
             insideWishlist.map((elem , i )=>{

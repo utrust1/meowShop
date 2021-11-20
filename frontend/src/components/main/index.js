@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import axios from "axios";
 import "./main.css";
+
 import { FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
 import { useContext } from "react";
 import { tokenContext } from "../../App";
@@ -12,7 +13,7 @@ import omar from "../.././ourimg/eaea1cea-d8c9-4972-b9dc-a4f32cf12f23.jpg";
 import maamoun from "../.././ourimg/49135455_2282326952036505_6271144683045388288_n.jpg";
 import obada from "../.././ourimg/T0270UF1MS6-U026UMA6LSJ-c5787195b78a-512.jpg";
 import Ruqia from "../.././ourimg/T0270UF1MS6-U026Y34FR61-b175be512ad3-512.jpg";
-
+import Header from "../header/index";
 const Main = ({  setCartNumber,    setWishListNumber, }) => {
   let saveToken = localStorage.getItem("saveToken")
   let saveCheckRegister  = localStorage.getItem("saveCheckRegister")
@@ -141,7 +142,7 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
   ///Get All Category
   return (
     <section className="main-section">
-      
+    <Header/>  
     <div className="container">
     
      <div className="morecategory">
@@ -162,12 +163,12 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
                 <div className="titleforCategory">
                   <div className="categorycontact">
                     
-                    <h2
+                    <h4
                       className="buttonCategory"
                       onClick={() => eventOnButton(cate.title, cate._id)}
                     >
                       {cate.title}
-                    </h2>
+                    </h4>
                   </div>
                 </div>
               </div>
@@ -183,33 +184,64 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       <p onClick={() => getallTheProducts()}>More Products ..</p>
       </div>
       <div className="product-section">
-        
+        <div className="row">
         {getProduct &&
           getProduct.map((product) => {
             return (
-              <div className="productMain">
+              <div className="col-lg-4">
+                <div className="productMain">
+                <div class="cont">
+             
+                <div className="image">
                 <img src={product.img}></img>
-                <div class="showdetails">
+                </div>
+{/*        
                   <div className="show-icon">
                     <div className="icon">
-                      <FaShoppingCart
-                        className="icon-cart"
+                      <i
+                        className="	fa fa-cart-plus"
                         onClick={() => addToCart(product)}
                       />
-                      <FaEye
-                        className="icon-search"
+                      <i
+                        className="	fa fa-eye"
                         onClick={() => getallProducts(product._id)}
-                      />
-                      <FaHeart
-                        className="icon-heart"
+                      ></i>
+                      <i className="fa fa-heart"
                         onClick={() => addToWishList(product)}
-                      />
+                      >
+                      </i>
                     </div>
+                  </div> */}
+                    <div class="middle">
+                      <div class="text">
+                          <div className="icon">
+                              <i
+                              className="	fa fa-cart-plus"
+                              onClick={() => addToCart(product)}
+                              />
+                              <i
+                              className="	fa fa-eye"
+                              onClick={() => getallProducts(product._id)}
+                              ></i>
+                              <i className="fa fa-heart"
+                              onClick={() => addToWishList(product)}
+                              >
+                              </i>
+                          </div>
+                      </div>
+                    </div>
+</div>
+         
+              <div class='info-products'>
+                
+                <p>  {product.title}</p>
+                <p>Price : {product.newprice}$ </p>
                   </div>
-                </div>
+              </div>
               </div>
             );
           })}
+      </div>
       </div>
     </div>
     <hr></hr>
@@ -235,13 +267,17 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
       
       </div>
       <div className="product-section">
-        
+      <div className="row">
         {byprice &&
           byprice.map((product) => {
             return (
+              <div className="col-lg-3">
               <div className="productMain">
+              <div class="cont">
+              <div className="image">
                 <img src={product.img}></img>
-                <div class="showdetails">
+                </div>
+{/*               
                   <div className="show-icon">
                     <div className="icon">
                       <FaShoppingCart
@@ -257,15 +293,41 @@ const Main = ({  setCartNumber,    setWishListNumber, }) => {
                         onClick={() => addToWishList(product)}
                       />
                     </div>
-                  </div>
-                </div>
+                  </div> */}
+                          <div class="middle">
+                      <div class="text">
+                          <div className="icon">
+                              <i
+                              className="	fa fa-cart-plus"
+                              onClick={() => addToCart(product)}
+                              />
+                              <i
+                              className="	fa fa-eye"
+                              onClick={() => getallProducts(product._id)}
+                              ></i>
+                              <i className="fa fa-heart"
+                               onClick={() => addToWishList(product)}
+                              >
+                              </i>
+                          </div>
+                      </div>
+                    </div>
+            
+              </div>
+              <div class='info-products'>
+                
+            <p>  {product.title}</p>
+            <p>Price : {product.newprice}$ </p>
+              </div>
+              </div>
               </div>
             );
           })}
+          </div>
+      </div>
       </div>
     </div>
     <hr></hr>
-    </div>
 
 
 

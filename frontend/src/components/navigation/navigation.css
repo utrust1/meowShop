@@ -4,6 +4,7 @@
 
 .main-Cont {
     background-color: var(--mainColor);
+    font-family: 'Architects Daughter', cursive;
 }
 
 .Navigation {
@@ -75,10 +76,10 @@
 }
 
 .HeartIcon,
-.CartShop,
 .Logout {
     padding-right: 10px;
     cursor: pointer;
+    font-size: 35px;
 }
 
 .LogoutIcon {
@@ -97,7 +98,7 @@
 
 .CartShop,
 .LogoutIcon {
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 5px;
     cursor: pointer;
 }

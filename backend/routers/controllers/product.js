@@ -29,7 +29,7 @@ const createNewProduct = (req, res) => {
         });
 };
 const getAllProduct = async(req, res) => {
-    const { page = 1, limit = 4 } = req.query
+    const { page = 1, limit = 6 } = req.query
     productModel
         .find({}).limit(limit * 1).skip((page - 1) * limit)
         .then((products) => {
@@ -206,8 +206,3 @@ module.exports = {
     search,
     getAllProducts
 };
-
-
-
-
-

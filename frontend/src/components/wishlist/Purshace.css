@@ -5,34 +5,38 @@
 
 .PurshacePerant {
     position: relative;
-    height: 650px;
+    min-height: 750px;
     padding-bottom: 100px;
 }
 
 .PurshacePerant .PurshaceChild {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
+    top: 60%;
+    transform: translate(-50%, -60%);
+    -webkit-transform: translate(-50%, -60%);
+    -moz-transform: translate(-50%, -60%);
+    -ms-transform: translate(-50%, -60%);
+    -o-transform: translate(-50%, -60%);
     padding: 25px;
+    width: 1000px;
 }
 
 ::placeholder {
     font-size: 20px;
-    text-align: center;
 }
 
 .PurshacePerant h4 {
     padding-left: 20px;
 }
 
+.PurshaceChild label {
+    font-size: 25px;
+}
+
 .PurshaceChild input {
     display: block;
-    padding: 18px;
+    outline: none;
     margin: 10px 0px;
     border: 2px solid brown;
     border-radius: 3px;
@@ -45,11 +49,35 @@
 .PurshaceChild button[type=submit] {
     background-color: var(--MainColor);
     color: #ffff;
-    padding: 18px;
+    padding: 10px;
     border: none;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
+    margin-top: 15px;
     -o-border-radius: 3px;
+}
+
+.PurshaceChild .total-amount {
+    font-weight: bold;
+    margin-top: 10px;
+    color: red;
+}
+
+
+/* End of file */
+
+.xxxx input[type=text],
+.xxxx input[type=number] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
 }

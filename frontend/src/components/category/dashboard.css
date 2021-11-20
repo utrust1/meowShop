@@ -45,7 +45,8 @@
 }
 
 .viewProduct {
-    border: 1px solid #528ec1;
+    height: auto;
+    border: 1px solid #DDDD;
     border-radius: 8px;
     margin: 10px;
     -webkit-border-radius: 8px;
@@ -56,7 +57,7 @@
 
 .content {
     text-align: center;
-    margin: 25px;
+    margin: 25px 0px;
 }
 
 .viewProduct img {

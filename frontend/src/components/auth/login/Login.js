@@ -88,7 +88,7 @@ return (
           Sign in{" "}
         </button>
         <div className="with-gmail">
-          <GoogleLogin
+          <GoogleLogin 
             clientId={clientId}
             buttonText="Login"
             onSuccess={(res) => onSuccess(res)}

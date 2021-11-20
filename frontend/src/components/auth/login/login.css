@@ -10,7 +10,7 @@
 }
 
 .loginChild {
-    position: fixed;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -20,9 +20,9 @@
     -o-transform: translate(-50%, -50%);
     display: grid;
     gap: 10px;
-    width: 350px;
+    width: 550px;
     border-radius: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #DDDD;
     padding: 25px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -39,6 +39,7 @@
     outline: none;
     border: none;
     padding: 10px;
+    outline: none;
 }
 
 .loginChild input:focus {
@@ -67,4 +68,10 @@
 .ErrorMsg {
     color: red;
     font-size: 18px;
+}
+
+.with-gmail button {
+    width: 100%;
+    margin: 20px 0px;
+    background-color: red !important;
 }
